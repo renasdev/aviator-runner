@@ -15,7 +15,9 @@ func _physics_process(delta):
 		movement.x = motion.x
 		
 	movement = move_and_slide(movement, Vector2(0, -1))
-	$AnimatedSprite.set_flip_h(movement.x < 0)
+	
+	if movement.x != 0:
+		$AnimatedSprite.set_flip_h(movement.x < 0)
 	
 func _on_FieldOfView_body_entered(body):	
 	if(body.get_name() == "Player"):
