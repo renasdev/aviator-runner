@@ -1,0 +1,76 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Stages/TitleScreen.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Menu/opp_logo.png" type="Texture" id=2]
+[ext_resource path="res://Stages/montserrat_eb_48.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Assets/Menu/opp_promo_traveler.png" type="Texture" id=4]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+new_game_scene = "res://Stages/cena1.tscn"
+chose_stage_scene = "res://Stages/ChoseStage.tscn"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+editor/display_folded = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 120.0
+margin_top = 80.0
+margin_right = -120.0
+margin_bottom = -80.0
+size_flags_vertical = 3
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
+margin_top = 62.0
+margin_right = 1040.0
+margin_bottom = 186.0
+texture = ExtResource( 2 )
+stretch_mode = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 190.0
+margin_right = 1040.0
+margin_bottom = 498.0
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+margin_right = 837.0
+margin_bottom = 308.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="NewGame" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_right = 837.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 300, 100 )
+custom_fonts/font = ExtResource( 3 )
+text = "New Game"
+
+[node name="ChoseStage" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_top = 104.0
+margin_right = 837.0
+margin_bottom = 204.0
+rect_min_size = Vector2( 300, 100 )
+custom_fonts/font = ExtResource( 3 )
+text = "Chose stage"
+
+[node name="Credits" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_top = 208.0
+margin_right = 837.0
+margin_bottom = 308.0
+rect_min_size = Vector2( 300, 100 )
+custom_fonts/font = ExtResource( 3 )
+text = "Credits"
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
+margin_left = 841.0
+margin_right = 1040.0
+margin_bottom = 308.0
+texture = ExtResource( 4 )
+stretch_mode = 4
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/NewGame" to="." method="_on_NewGame_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/ChoseStage" to="." method="_on_ChoseStage_pressed"]

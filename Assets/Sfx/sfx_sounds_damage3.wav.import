@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/sfx_sounds_damage3.wav-94e8d1255b95d49c0f1d6456f26ccca4.sample"
+
+[deps]
+
+source_file="res://Assets/Sfx/sfx_sounds_damage3.wav"
+dest_files=[ "res://.import/sfx_sounds_damage3.wav-94e8d1255b95d49c0f1d6456f26ccca4.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/underground_8_bit.ogg-441b51c94daa1fef77fe0cc185431e08.oggstr"
+
+[deps]
+
+source_file="res://Assets/Sfx/underground_8_bit.ogg"
+dest_files=[ "res://.import/underground_8_bit.ogg-441b51c94daa1fef77fe0cc185431e08.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

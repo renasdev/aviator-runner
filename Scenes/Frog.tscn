@@ -1,0 +1,71 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://Scripts/FrogAI.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Sprites/monsters/frog/Idle/frame_0_delay-0.8s.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Sprites/monsters/frog/Idle/frame_1_delay-0.08s.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Sprites/monsters/frog/Idle/frame_2_delay-0.08s.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Sprites/monsters/frog/Idle/frame_3_delay-0.08s.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Sprites/monsters/frog/Idle/frame_4_delay-0.08s.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Sprites/monsters/frog/Jump/frame_0_delay-0.08s.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Sprites/monsters/frog/Jump/frame_1_delay-0.08s.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Sprites/monsters/frog/Jump/frame_2_delay-0.08s.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Sprites/monsters/frog/Jump/frame_3_delay-0.08s.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Sprites/monsters/frog/Jump/frame_4_delay-0.08s.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Sfx/sfx_sounds_damage3.wav" type="AudioStream" id=12]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "Jump",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 29, 3.9 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 12, 8 )
+
+[sub_resource type="RectangleShape2D" id=4]
+
+[node name="Frog" type="KinematicBody2D"]
+script = ExtResource( 1 )
+explosion_path = "res://Scenes/Explosion.tscn"
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "Idle"
+playing = true
+
+[node name="FieldOfView" type="Area2D" parent="."]
+editor/display_folded = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FieldOfView"]
+scale = Vector2( 15, 10 )
+shape = SubResource( 2 )
+
+[node name="BodyArea" type="Area2D" parent="."]
+editor/display_folded = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BodyArea"]
+position = Vector2( -1, 19 )
+scale = Vector2( 1.5, 1.5 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 21 )
+shape = SubResource( 4 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 12 )
+
+[node name="Timer" type="Timer" parent="."]
+[connection signal="body_entered" from="FieldOfView" to="." method="_on_FieldOfView_body_entered"]
+[connection signal="body_entered" from="BodyArea" to="." method="_on_BodyArea_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
