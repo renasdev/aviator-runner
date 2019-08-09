@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 const MAX_SPEED = 400
 const JUMP_HEIGHT = 650
+const MAX_HEIGHT = 900
 var motion = Vector2()
 
 func _physics_process(delta):
@@ -32,7 +33,11 @@ func _physics_process(delta):
 			animation = "Fall"
 			
 	$AnimatedSprite.play(animation)
+
 	
+	if(motion.y < -MAX_HEIGHT):
+		motion.y = -MAX_HEIGHT
+		
 	motion = move_and_slide(motion, GameConstants.UP)
 	
 	# Player is falling non stop
