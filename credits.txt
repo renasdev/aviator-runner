@@ -9,3 +9,9 @@ juhani.junkala@musician.org - Essential Retro Video Game Sound Effects Collectio
 Music 
 https://opengameart.org/content/amber-forest - Tad Miller
 
+Prallax background
+https://opengameart.org/content/3-parallax-backgrounds - Mobile Game Graphics
+
+Code used
+https://github.com/gswashburn/Analog-Stick-Demo - gswashburn
+https://www.youtube.com/channel/UCxboW7x0jZqFdvMdCFKTMsQ - GDQuest
