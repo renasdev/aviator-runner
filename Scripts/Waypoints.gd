@@ -1,6 +1,8 @@
 tool
 extends Node2D
 
+class_name Waypoints
+
 export var editor_process: = true setget set_editor_process
 
 export var line_color: = Color(0.228943, 0.710254, 0.945312)

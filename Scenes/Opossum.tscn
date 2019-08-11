@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://Scripts/FrogAI.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/BasicEnemyAI.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/monsters/opossum/opossum-1.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Sprites/monsters/opossum/opossum-2.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Sprites/monsters/opossum/opossum-3.png" type="Texture" id=4]
@@ -29,12 +29,11 @@ extents = Vector2( 16.679, 13.5003 )
 [node name="Opossum" type="KinematicBody2D"]
 script = ExtResource( 1 )
 explosion_path = "res://Scenes/Explosion.tscn"
-sprite_is_left = false
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "Idle"
-frame = 1
+frame = 5
 playing = true
 
 [node name="FieldOfView" type="Area2D" parent="."]

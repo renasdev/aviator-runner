@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://default_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Flag.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Waypoints.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Opossum.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/Sprites/Backgrounds/back.png" type="Texture" id=6]
 
 [node name="Node2D" type="Node2D"]
 
@@ -12,8 +15,36 @@ format = 1
 tile_data = PoolIntArray( 0, 1, 0, 4, 1, 0, 5, 1, 0, 6, 1, 0, 7, 1, 0, 8, 1, 0, 9, 1, 0, 10, 1, 0, 11, 1, 0, 12, 1, 0, 15, 1, 0, 65536, 1, 0, 65551, 1, 0, 131072, 1, 0, 131086, 1, 0, 131087, 1, 0, 196608, 1, 0, 196610, 1, 0, 196623, 1, 0, 262144, 1, 0, 262155, 1, 0, 262159, 1, 0, 327680, 1, 0, 327693, 1, 0, 327695, 1, 0, 393216, 1, 0, 393220, 1, 0, 393231, 1, 0, 458752, 1, 0, 458763, 1, 0, 458767, 1, 0, 524288, 1, 0, 524296, 1, 0, 524303, 1, 0 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 161, 128 )
+position = Vector2( 163.275, 118.338 )
 
 [node name="Flag" parent="." instance=ExtResource( 3 )]
 position = Vector2( 992, -32 )
 next_scene_path = "res://Stages/cena1.tscn"
+
+[node name="Waypoints" parent="." instance=ExtResource( 4 )]
+editor/display_folded = true
+position = Vector2( 305.786, -23.673 )
+
+[node name="Position2D" type="Position2D" parent="Waypoints"]
+position = Vector2( 475.586, -7.75412 )
+
+[node name="Opossum" parent="." instance=ExtResource( 5 )]
+position = Vector2( 582.35, -27.55 )
+sprite_is_left = false
+waypoints_path = NodePath("../Waypoints")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+editor/display_folded = true
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+scale = Vector2( 3.5, 3.5 )
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}

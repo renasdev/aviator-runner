@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=2]
 
-[ext_resource path="res://Scripts/FrogAI.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/BasicEnemyAI.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/monsters/frog/Idle/frame_0_delay-0.8s.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Sprites/monsters/frog/Idle/frame_1_delay-0.08s.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Sprites/monsters/frog/Idle/frame_2_delay-0.08s.png" type="Texture" id=4]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Assets/Sprites/monsters/frog/Jump/frame_3_delay-0.08s.png" type="Texture" id=10]
 [ext_resource path="res://Assets/Sprites/monsters/frog/Jump/frame_4_delay-0.08s.png" type="Texture" id=11]
 [ext_resource path="res://Assets/Sfx/sfx_sounds_damage3.wav" type="AudioStream" id=12]
+
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
