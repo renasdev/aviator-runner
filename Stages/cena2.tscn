@@ -31,6 +31,7 @@ extents = Vector2( 5393, 112 )
 [node name="Node2D" type="Node2D"]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+editor/display_folded = true
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2( 0, 0 )
@@ -134,13 +135,14 @@ position = Vector2( 8160, -32 )
 next_scene_path = "res://Stages/cena3.tscn"
 
 [node name="Waypoints" parent="." instance=ExtResource( 11 )]
+editor/display_folded = true
 position = Vector2( 1504, 612 )
 
 [node name="1" type="Position2D" parent="Waypoints"]
 position = Vector2( -384, -4 )
 
 [node name="MovingPlatform" parent="Waypoints" instance=ExtResource( 12 )]
-position = Vector2( 1250.68, 609.361 )
+position = Vector2( 1299.99, 609.875 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Waypoints/MovingPlatform"]
 shape = SubResource( 1 )
@@ -153,7 +155,7 @@ position = Vector2( 2816, 672 )
 position = Vector2( 0, -372 )
 
 [node name="MovingPlatform2" parent="Waypoints2" instance=ExtResource( 12 )]
-position = Vector2( 2816, 310 )
+position = Vector2( 2816, 307 )
 editor_process = false
 speed = 300.0
 
@@ -172,7 +174,7 @@ position = Vector2( 288, -320 )
 
 [node name="MovingPlatform3" parent="Waypoints3" instance=ExtResource( 12 )]
 editor/display_folded = true
-position = Vector2( 4192, 160 )
+position = Vector2( 4212.41, 457.32 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Waypoints3/MovingPlatform3"]
 shape = SubResource( 3 )
@@ -186,7 +188,7 @@ position = Vector2( 544, 0 )
 
 [node name="MovingPlatform4" parent="Waypoints4" instance=ExtResource( 12 )]
 editor/display_folded = true
-position = Vector2( 5792, 64 )
+position = Vector2( 6085.33, 64 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Waypoints4/MovingPlatform4"]
 shape = SubResource( 3 )
@@ -200,7 +202,7 @@ position = Vector2( -544, 0 )
 
 [node name="MovingPlatform5" parent="Waypoints5" instance=ExtResource( 12 )]
 editor/display_folded = true
-position = Vector2( 7168, 64 )
+position = Vector2( 6874.67, 64 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Waypoints5/MovingPlatform5"]
 shape = SubResource( 3 )

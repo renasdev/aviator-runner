@@ -33,7 +33,7 @@ explosion_path = "res://Scenes/Explosion.tscn"
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "Idle"
-frame = 5
+frame = 3
 playing = true
 
 [node name="FieldOfView" type="Area2D" parent="."]

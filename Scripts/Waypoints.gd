@@ -20,7 +20,6 @@ func _init_nodes():
 	
 
 func _ready() -> void:
-	_init_nodes()
 	if !Engine.editor_hint:
 		set_process(false)
 
@@ -61,6 +60,8 @@ func get_current_point_position() -> Vector2:
 
 
 func get_next_point_position():
+	if(positions.size() <= 0):
+		_init_nodes()
 	_active_point_index = (_active_point_index + 1) % positions.size()
 	return get_current_point_position()
 
@@ -80,3 +81,13 @@ func set_editor_process(value:bool) -> void:
 	if not Engine.editor_hint:
 		return
 	set_process(value)
+	
+	
+func _get_configuration_warning():
+	_init_nodes()
+	var warning = ""
+	
+	if positions.size() == 0:
+		warning = "This node need more positions"
+			
+	return warning
