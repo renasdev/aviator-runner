@@ -106,7 +106,6 @@ func reset():
 
 func showAtPos(pos):	
 	if isDynamicallyShowing:
-		print("show")
 		animation_player.play("alpha_in", 0.0)
 		global_position = pos
 	
@@ -141,9 +140,9 @@ func sendSignal2Listener():
 		dispach_action("ui_right", false)
 		dispach_action("ui_left", false)
 		
-	dispach_action("ui_jump", currentForce.y > 0.6)
+	dispach_action("ui_jump", currentForce.y >= 0.3)
 		
-	print(currentForce)
+	#print(currentForce)
 		
 		
 func dispach_action(action:String, pressed: bool):
