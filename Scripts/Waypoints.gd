@@ -22,7 +22,7 @@ func _ready() -> void:
 	if !Engine.editor_hint:
 		set_process(false)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	update()
 
 

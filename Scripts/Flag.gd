@@ -15,7 +15,7 @@ func _on_Area2D_body_entered(body):
 		$AudioStreamPlayer2D.play(0.0)
 		timer.start()
 		
-
+#warning-ignore:return_value_discarded
 func next_scene():
 	get_tree().change_scene(next_scene_path)
 	

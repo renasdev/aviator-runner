@@ -7,7 +7,7 @@ export(String, FILE, "*.tscn,*.scn") var explosion_path
 var target:KinematicBody2D
 var movement = Vector2(0,0)
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	movement.y += 20
 	if target:
 		var direction = (target.get_position() - position).normalized()
@@ -26,8 +26,6 @@ func _on_FieldOfView_body_entered(body):
 func _on_BodyArea_body_entered(body):
 	if(body.get_name() == GameConstants.PLAYER):
 		var direction = (body.get_position() - position).normalized()
-		
-		print(direction)
 		
 		#Body is comming from above
 		if(direction.y < -0.6):
