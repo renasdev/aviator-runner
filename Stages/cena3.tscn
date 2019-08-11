@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://default_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
@@ -7,29 +7,31 @@
 [ext_resource path="res://Scenes/Opossum.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/Sprites/Backgrounds/back.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Sfx/platformer_level03_loop.ogg" type="AudioStream" id=7]
+[ext_resource path="res://Scenes/Gem.tscn" type="PackedScene" id=8]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
 format = 1
-tile_data = PoolIntArray( 0, 1, 0, 4, 1, 0, 5, 1, 0, 6, 1, 0, 7, 1, 0, 8, 1, 0, 9, 1, 0, 10, 1, 0, 11, 1, 0, 12, 1, 0, 15, 1, 0, 18, 1, 0, 19, 1, 0, 20, 1, 0, 21, 1, 0, 22, 1, 0, 23, 1, 0, 24, 1, 0, 25, 1, 0, 26, 1, 0, 27, 1, 0, 28, 1, 0, 29, 1, 0, 30, 1, 0, 31, 1, 0, 32, 1, 0, 33, 1, 0, 34, 1, 0, 35, 1, 0, 36, 1, 0, 37, 1, 0, 38, 1, 0, 39, 1, 0, 40, 1, 0, 65536, 1, 0, 65551, 1, 0, 131072, 1, 0, 131086, 1, 0, 131087, 1, 0, 196608, 1, 0, 196610, 1, 0, 196623, 1, 0, 262144, 1, 0, 262155, 1, 0, 262159, 1, 0, 327680, 1, 0, 327693, 1, 0, 327695, 1, 0, 393216, 1, 0, 393220, 1, 0, 393231, 1, 0, 458752, 1, 0, 458763, 1, 0, 458767, 1, 0, 524288, 1, 0, 524296, 1, 0, 524303, 1, 0 )
+tile_data = PoolIntArray( 0, 1, 0, 4, 1, 0, 5, 1, 0, 6, 1, 0, 7, 1, 0, 8, 1, 0, 9, 1, 0, 10, 1, 0, 11, 1, 0, 12, 1, 0, 15, 1, 0, 18, 1, 0, 19, 1, 0, 20, 1, 0, 21, 1, 0, 22, 1, 0, 23, 1, 0, 24, 1, 0, 25, 1, 0, 26, 1, 0, 28, 1, 0, 29, 1, 0, 30, 1, 0, 31, 1, 0, 32, 1, 0, 33, 1, 0, 34, 1, 0, 35, 1, 0, 36, 1, 0, 39, 1, 0, 40, 1, 0, 41, 1, 0, 42, 1, 0, 65536, 1, 0, 65551, 1, 0, 131072, 1, 0, 131086, 1, 0, 131087, 1, 0, 196608, 1, 0, 196610, 1, 0, 196623, 1, 0, 262144, 1, 0, 262155, 1, 0, 262159, 1, 0, 327680, 1, 0, 327693, 1, 0, 327695, 1, 0, 393216, 1, 0, 393220, 1, 0, 393231, 1, 0, 458752, 1, 0, 458763, 1, 0, 458767, 1, 0, 524288, 1, 0, 524296, 1, 0, 524303, 1, 0 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 163.275, 118.338 )
+position = Vector2( 760, -40 )
 
 [node name="Flag" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1002.25, -218.599 )
 next_scene_path = "res://Stages/cena1.tscn"
 
 [node name="Waypoints" parent="." instance=ExtResource( 4 )]
+editor/display_folded = true
 position = Vector2( 1185.6, -21.0229 )
 
 [node name="Position2D" type="Position2D" parent="Waypoints"]
 position = Vector2( 475.586, -7.75412 )
 
 [node name="Opossum" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1635.82, -28.1495 )
+position = Vector2( 1662.19, -29.9076 )
 sprite_is_left = false
 waypoints_path = NodePath("../Waypoints")
 
@@ -51,14 +53,65 @@ __meta__ = {
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
+autoplay = true
+
+[node name="Waypoints2" parent="." instance=ExtResource( 4 )]
+editor/display_folded = true
+position = Vector2( 1837.85, -28.0552 )
+
+[node name="Position2D" type="Position2D" parent="Waypoints2"]
+position = Vector2( 475.586, -7.75412 )
 
 [node name="Opossum2" parent="." instance=ExtResource( 5 )]
 position = Vector2( 1842.93, -32.2506 )
 sprite_is_left = false
 waypoints_path = NodePath("../Waypoints2")
 
-[node name="Waypoints2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1834.74, -26.0287 )
+[node name="GEMS" type="Node2D" parent="."]
 
-[node name="Position2D" type="Position2D" parent="Waypoints2"]
-position = Vector2( 521.358, 3.49905 )
+[node name="Gem" parent="GEMS" instance=ExtResource( 8 )]
+
+[node name="Gem12" parent="GEMS" instance=ExtResource( 8 )]
+position = Vector2( 1190, -21.0229 )
+
+[node name="Gem13" parent="GEMS" instance=ExtResource( 8 )]
+position = Vector2( 1320, -22.2506 )
+
+[node name="Gem14" parent="GEMS" instance=ExtResource( 8 )]
+position = Vector2( 1430, -21.0229 )
+
+[node name="Gem15" parent="GEMS" instance=ExtResource( 8 )]
+position = Vector2( 1560, -21.0229 )
+
+[node name="Gem16" parent="GEMS" instance=ExtResource( 8 )]
+position = Vector2( 1698.19, -22.2506 )
+
+[node name="Gem2" parent="GEMS" instance=ExtResource( 8 )]
+position = Vector2( 330, -28.0552 )
+
+[node name="Gem3" parent="GEMS" instance=ExtResource( 8 )]
+position = Vector2( 370, -28.777 )
+
+[node name="Gem4" parent="GEMS" instance=ExtResource( 8 )]
+position = Vector2( 410, -28.0552 )
+
+[node name="Gem5" parent="GEMS" instance=ExtResource( 8 )]
+position = Vector2( 450, -28.0552 )
+
+[node name="Gem6" parent="GEMS" instance=ExtResource( 8 )]
+position = Vector2( 490, -28.0552 )
+
+[node name="Gem7" parent="GEMS" instance=ExtResource( 8 )]
+position = Vector2( 530, -28.777 )
+
+[node name="Gem8" parent="GEMS" instance=ExtResource( 8 )]
+position = Vector2( 570, -28.777 )
+
+[node name="Gem9" parent="GEMS" instance=ExtResource( 8 )]
+position = Vector2( 610, -30 )
+
+[node name="Gem10" parent="GEMS" instance=ExtResource( 8 )]
+position = Vector2( 650, -29.9076 )
+
+[node name="Gem11" parent="GEMS" instance=ExtResource( 8 )]
+position = Vector2( 690, -30 )

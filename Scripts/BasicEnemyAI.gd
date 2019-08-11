@@ -3,6 +3,7 @@ extends KinematicBody2D
 const SPEED = 100
 
 export(String, FILE, "*.tscn,*.scn") var explosion_path
+export var gems_value := 10
 export var sprite_is_left:bool = true
 export var waypoints_path:NodePath
 
@@ -70,6 +71,7 @@ func _on_BodyArea_body_entered(body):
 			scene_instance.position = position
 			get_parent().add_child(scene_instance)
 			body.bounce(-500)
+			body.increment_gems(gems_value)
 			self.queue_free()
 		else: #Body come by the sides
 			$AudioStreamPlayer2D.play(0.0)

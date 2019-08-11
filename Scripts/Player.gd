@@ -4,6 +4,7 @@ const MAX_SPEED = 400
 const JUMP_HEIGHT = 650
 const MAX_HEIGHT = 900
 var motion = Vector2()
+var gems := 0
 
 func _physics_process(_delta):
 	motion.y += GameConstants.GRAVITY
@@ -50,6 +51,11 @@ func _physics_process(_delta):
 #warning-ignore:return_value_discarded
 func kill():
 	get_tree().reload_current_scene()
+	
+func increment_gems(amount:int):
+	gems += amount
+	print(gems)
+	$UI/ControlUI/HBoxContainer/GemsCounter.text = "%04d" % gems
 	
 func bounce(force:float):
 	motion.y += force
