@@ -35,10 +35,6 @@ func _physics_process(delta: float) -> void:
 		target_position = waypoints.get_next_point_position()
 		set_physics_process(false)
 		wait_timer.start()
-		if name == "MovingPlatform":
-			print(name, ' waiting')
-			print(distance_to_target)
-			print(target_position)
 	else:
 		position += motion
 
