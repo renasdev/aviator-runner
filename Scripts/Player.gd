@@ -5,7 +5,7 @@ const JUMP_HEIGHT = 650
 const MAX_HEIGHT = 900
 var motion = Vector2()
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	motion.y += GameConstants.GRAVITY
 	var animation = "Idle"
 	
@@ -47,6 +47,7 @@ func _physics_process(delta):
 	if motion.y > 2500:
 		kill()
 		
+#warning-ignore:return_value_discarded
 func kill():
 	get_tree().reload_current_scene()
 	
