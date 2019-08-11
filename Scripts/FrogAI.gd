@@ -18,8 +18,10 @@ func _physics_process(_delta):
 	movement = move_and_slide(movement, Vector2(0, -1))
 	
 	if movement.x != 0:
-		var flipH = movement.x < 0 if sprite_is_left  else movement.x > 0
-		$AnimatedSprite.set_flip_h(flipH)
+		if sprite_is_left:
+			$AnimatedSprite.set_flip_h(movement.x < 0)
+		else:
+			$AnimatedSprite.set_flip_h(movement.x > 0)
 	
 func _on_FieldOfView_body_entered(body):	
 	if(body.get_name() == "Player"):

@@ -3,13 +3,11 @@ extends Node2D
 const INACTIVE_IDX = -1;
 export var isDynamicallyShowing = false
 export var listenerNodePath = "/root/game/player"
-export var padname = ""
 
 var ball
 var bg 
 var animation_player
 var parent
-var listenerNode
 
 var centerPoint = Vector2(0,0)
 var currentForce = Vector2(0,0)
