@@ -3,6 +3,7 @@ extends KinematicBody2D
 const SPEED = 100
 
 export(String, FILE, "*.tscn,*.scn") var explosion_path
+export var sprite_is_left:bool = true
 
 var target:KinematicBody2D
 var movement = Vector2(0,0)
@@ -17,7 +18,8 @@ func _physics_process(_delta):
 	movement = move_and_slide(movement, Vector2(0, -1))
 	
 	if movement.x != 0:
-		$AnimatedSprite.set_flip_h(movement.x < 0)
+		var flipH = movement.x < 0 if sprite_is_left  else movement.x > 0
+		$AnimatedSprite.set_flip_h(flipH)
 	
 func _on_FieldOfView_body_entered(body):	
 	if(body.get_name() == "Player"):
