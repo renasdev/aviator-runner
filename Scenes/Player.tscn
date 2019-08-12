@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/Player/Jump0.png" type="Texture" id=2]
@@ -41,6 +41,21 @@ animations = [ {
 
 [sub_resource type="CapsuleShape2D" id=2]
 
+[sub_resource type="Animation" id=3]
+resource_name = "damage"
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 0.945098, 0.0117647, 0.0117647, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 1 )
 __meta__ = {
@@ -65,6 +80,7 @@ smoothing_enabled = true
 smoothing_speed = 10.0
 
 [node name="SFX" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="Jump" type="AudioStreamPlayer2D" parent="SFX"]
 stream = ExtResource( 13 )
@@ -73,3 +89,6 @@ stream = ExtResource( 13 )
 stream = ExtResource( 14 )
 
 [node name="UI" parent="." instance=ExtResource( 15 )]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/damage = SubResource( 3 )

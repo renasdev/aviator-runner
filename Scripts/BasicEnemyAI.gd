@@ -30,17 +30,16 @@ func _patrol_process(delta):
 	var flitpH = direction.x < 0 if sprite_is_left else direction.x > 0
 	$AnimatedSprite.set_flip_h(flitpH)
 	
-	var motion = direction * SPEED * delta
+	var motion = direction * SPEED
 	var distance_to_target: = position.distance_to(target_position)
-	if motion.length() > distance_to_target:
-		position = target_position
+	if distance_to_target < 10:
 		target_position = waypoints.get_next_point_position()
-		#set_physics_process(false)
-	else:
-		position += motion
+		
+	motion.y += 0 if is_on_floor() else GameConstants.GRAVITY
+	move_and_slide(motion)
 
 func _no_patrol_process():
-	movement.y += 20
+	movement.y += GameConstants.GRAVITY
 	if target:
 		var direction = (target.get_position() - position).normalized()
 		var motion = direction * SPEED
@@ -75,6 +74,7 @@ func _on_BodyArea_body_entered(body):
 			self.queue_free()
 		else: #Body come by the sides
 			$AudioStreamPlayer2D.play(0.0)
+			body.take_damage()
 			$Timer.start(0.5)
 
 

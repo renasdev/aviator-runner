@@ -17,10 +17,10 @@ format = 1
 tile_data = PoolIntArray( 0, 1, 0, 4, 1, 0, 5, 1, 0, 6, 1, 0, 7, 1, 0, 8, 1, 0, 9, 1, 0, 10, 1, 0, 11, 1, 0, 12, 1, 0, 15, 1, 0, 18, 1, 0, 19, 1, 0, 20, 1, 0, 21, 1, 0, 22, 1, 0, 23, 1, 0, 24, 1, 0, 25, 1, 0, 26, 1, 0, 28, 1, 0, 29, 1, 0, 30, 1, 0, 31, 1, 0, 32, 1, 0, 33, 1, 0, 34, 1, 0, 35, 1, 0, 36, 1, 0, 39, 1, 0, 40, 1, 0, 41, 1, 0, 42, 1, 0, 65536, 1, 0, 65551, 1, 0, 131072, 1, 0, 131086, 1, 0, 131087, 1, 0, 196608, 1, 0, 196610, 1, 0, 196623, 1, 0, 262144, 1, 0, 262155, 1, 0, 262159, 1, 0, 327680, 1, 0, 327693, 1, 0, 327695, 1, 0, 393216, 1, 0, 393220, 1, 0, 393231, 1, 0, 458752, 1, 0, 458763, 1, 0, 458767, 1, 0, 524288, 1, 0, 524296, 1, 0, 524303, 1, 0 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 760, -40 )
+position = Vector2( 161, 163 )
 
 [node name="Flag" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1002.25, -218.599 )
+position = Vector2( 2730, -35.8094 )
 next_scene_path = "res://Stages/cena1.tscn"
 
 [node name="Waypoints" parent="." instance=ExtResource( 4 )]
@@ -70,6 +70,7 @@ waypoints_path = NodePath("../Waypoints2")
 [node name="GEMS" type="Node2D" parent="."]
 
 [node name="Gem" parent="GEMS" instance=ExtResource( 8 )]
+position = Vector2( 930, 100 )
 
 [node name="Gem12" parent="GEMS" instance=ExtResource( 8 )]
 position = Vector2( 1190, -21.0229 )
@@ -85,12 +86,6 @@ position = Vector2( 1560, -21.0229 )
 
 [node name="Gem16" parent="GEMS" instance=ExtResource( 8 )]
 position = Vector2( 1698.19, -22.2506 )
-
-[node name="Gem2" parent="GEMS" instance=ExtResource( 8 )]
-position = Vector2( 330, -28.0552 )
-
-[node name="Gem3" parent="GEMS" instance=ExtResource( 8 )]
-position = Vector2( 370, -28.777 )
 
 [node name="Gem4" parent="GEMS" instance=ExtResource( 8 )]
 position = Vector2( 410, -28.0552 )
@@ -112,6 +107,3 @@ position = Vector2( 610, -30 )
 
 [node name="Gem10" parent="GEMS" instance=ExtResource( 8 )]
 position = Vector2( 650, -29.9076 )
-
-[node name="Gem11" parent="GEMS" instance=ExtResource( 8 )]
-position = Vector2( 690, -30 )

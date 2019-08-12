@@ -42,7 +42,7 @@ gems_value = 5
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "Idle"
-frame = 2
+frame = 3
 playing = true
 
 [node name="FieldOfView" type="Area2D" parent="."]
