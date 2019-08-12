@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://default_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
@@ -8,19 +8,20 @@
 [ext_resource path="res://Assets/Sprites/Backgrounds/back.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Sfx/platformer_level03_loop.ogg" type="AudioStream" id=7]
 [ext_resource path="res://Scenes/Gem.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Eagle.tscn" type="PackedScene" id=9]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
 format = 1
-tile_data = PoolIntArray( 0, 1, 0, 4, 1, 0, 5, 1, 0, 6, 1, 0, 7, 1, 0, 8, 1, 0, 9, 1, 0, 10, 1, 0, 11, 1, 0, 12, 1, 0, 15, 1, 0, 18, 1, 0, 19, 1, 0, 20, 1, 0, 21, 1, 0, 22, 1, 0, 23, 1, 0, 24, 1, 0, 25, 1, 0, 26, 1, 0, 28, 1, 0, 29, 1, 0, 30, 1, 0, 31, 1, 0, 32, 1, 0, 33, 1, 0, 34, 1, 0, 35, 1, 0, 36, 1, 0, 39, 1, 0, 40, 1, 0, 41, 1, 0, 42, 1, 0, 65536, 1, 0, 65551, 1, 0, 131072, 1, 0, 131086, 1, 0, 131087, 1, 0, 196608, 1, 0, 196610, 1, 0, 196623, 1, 0, 262144, 1, 0, 262155, 1, 0, 262159, 1, 0, 327680, 1, 0, 327693, 1, 0, 327695, 1, 0, 393216, 1, 0, 393220, 1, 0, 393231, 1, 0, 458752, 1, 0, 458763, 1, 0, 458767, 1, 0, 524288, 1, 0, 524296, 1, 0, 524303, 1, 0 )
+tile_data = PoolIntArray( 0, 1, 0, 4, 1, 0, 5, 1, 0, 6, 1, 0, 7, 1, 0, 8, 1, 0, 9, 1, 0, 10, 1, 0, 11, 1, 0, 12, 1, 0, 15, 1, 0, 18, 1, 0, 19, 1, 0, 20, 1, 0, 21, 1, 0, 22, 1, 0, 23, 1, 0, 24, 1, 0, 25, 1, 0, 26, 1, 0, 28, 1, 0, 29, 1, 0, 30, 1, 0, 31, 1, 0, 32, 1, 0, 33, 1, 0, 34, 1, 0, 35, 1, 0, 36, 1, 0, 39, 1, 0, 40, 1, 0, 41, 1, 0, 42, 1, 0, 52, 1, 0, 53, 1, 0, 54, 1, 0, 55, 1, 0, 56, 1, 0, 61, 1, 0, 62, 1, 0, 63, 1, 0, 64, 1, 0, 65536, 1, 0, 65551, 1, 0, 131072, 1, 0, 131086, 1, 0, 131087, 1, 0, 196608, 1, 0, 196610, 1, 0, 196623, 1, 0, 262144, 1, 0, 262155, 1, 0, 262159, 1, 0, 327680, 1, 0, 327693, 1, 0, 327695, 1, 0, 393216, 1, 0, 393220, 1, 0, 393231, 1, 0, 458752, 1, 0, 458763, 1, 0, 458767, 1, 0, 524288, 1, 0, 524296, 1, 0, 524303, 1, 0 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 161, 163 )
+position = Vector2( 160, 130 )
 
 [node name="Flag" parent="." instance=ExtResource( 3 )]
-position = Vector2( 2730, -35.8094 )
+position = Vector2( 4130, -28.0552 )
 next_scene_path = "res://Stages/cena1.tscn"
 
 [node name="Waypoints" parent="." instance=ExtResource( 4 )]
@@ -87,6 +88,42 @@ position = Vector2( 1560, -21.0229 )
 [node name="Gem16" parent="GEMS" instance=ExtResource( 8 )]
 position = Vector2( 1698.19, -22.2506 )
 
+[node name="Gem17" parent="GEMS" instance=ExtResource( 8 )]
+position = Vector2( 3500, -30 )
+
+[node name="Gem18" parent="GEMS" instance=ExtResource( 8 )]
+position = Vector2( 3540, -30 )
+
+[node name="Gem19" parent="GEMS" instance=ExtResource( 8 )]
+position = Vector2( 3580, -30 )
+
+[node name="Gem20" parent="GEMS" instance=ExtResource( 8 )]
+position = Vector2( 3580, -64 )
+
+[node name="Gem21" parent="GEMS" instance=ExtResource( 8 )]
+position = Vector2( 3540, -64 )
+
+[node name="Gem22" parent="GEMS" instance=ExtResource( 8 )]
+position = Vector2( 3500, -64 )
+
+[node name="Gem23" parent="GEMS" instance=ExtResource( 8 )]
+position = Vector2( 3500, -100 )
+
+[node name="Gem24" parent="GEMS" instance=ExtResource( 8 )]
+position = Vector2( 3540, -100 )
+
+[node name="Gem25" parent="GEMS" instance=ExtResource( 8 )]
+position = Vector2( 3580, -100 )
+
+[node name="Gem26" parent="GEMS" instance=ExtResource( 8 )]
+position = Vector2( 3580, -130 )
+
+[node name="Gem27" parent="GEMS" instance=ExtResource( 8 )]
+position = Vector2( 3540, -130 )
+
+[node name="Gem28" parent="GEMS" instance=ExtResource( 8 )]
+position = Vector2( 3500, -130 )
+
 [node name="Gem4" parent="GEMS" instance=ExtResource( 8 )]
 position = Vector2( 410, -28.0552 )
 
@@ -107,3 +144,14 @@ position = Vector2( 610, -30 )
 
 [node name="Gem10" parent="GEMS" instance=ExtResource( 8 )]
 position = Vector2( 650, -29.9076 )
+
+[node name="Waypoints3" parent="." instance=ExtResource( 4 )]
+editor/display_folded = true
+position = Vector2( 3080, 210 )
+
+[node name="Position2D" type="Position2D" parent="Waypoints3"]
+position = Vector2( 6.10352e-05, -350 )
+
+[node name="Eagle" parent="." instance=ExtResource( 9 )]
+position = Vector2( 3130, 210 )
+waypoints_path = NodePath("../Waypoints3")
