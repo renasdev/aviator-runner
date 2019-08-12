@@ -20,12 +20,12 @@ func _ready():
 
 func _physics_process(_delta):
 	if waypoints:
-		_patrol_process(_delta)
+		_patrol_process()
 	else:
 		_no_patrol_process()
 	
 
-func _patrol_process(delta):
+func _patrol_process():
 	var direction = (target_position - position).normalized()
 	var flitpH = direction.x < 0 if sprite_is_left else direction.x > 0
 	$AnimatedSprite.set_flip_h(flitpH)

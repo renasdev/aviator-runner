@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Stages/TitleScreen.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Menu/opp_logo.png" type="Texture" id=2]
 [ext_resource path="res://Stages/montserrat_eb_48.tres" type="DynamicFont" id=3]
 [ext_resource path="res://Assets/Menu/opp_promo_traveler.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Sfx/hope.ogg" type="AudioStream" id=5]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -72,5 +73,9 @@ margin_right = 1040.0
 margin_bottom = 308.0
 texture = ExtResource( 4 )
 stretch_mode = 4
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+autoplay = true
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/NewGame" to="." method="_on_NewGame_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/ChoseStage" to="." method="_on_ChoseStage_pressed"]

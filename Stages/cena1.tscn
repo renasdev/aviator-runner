@@ -63,6 +63,7 @@ position = Vector2( 3415, 812 )
 shape = SubResource( 1 )
 
 [node name="Gems" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="Gem" parent="Gems" instance=ExtResource( 8 )]
 position = Vector2( -140, 430 )
