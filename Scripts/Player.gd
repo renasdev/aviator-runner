@@ -45,7 +45,6 @@ func _physics_process(_delta):
 	# Player is falling non stop
 	if motion.y > 900 and motion.y < 2000 and !$SFX/Falling.is_playing() :
 		$SFX/Falling.play(0.0)
-		pass
 	if motion.y > 2500:
 		kill()
 		
@@ -58,7 +57,6 @@ func take_damage():
 	
 func increment_gems(amount:int):
 	gems += amount
-	print(gems)
 	$UI/ControlUI/HBoxContainer/GemsCounter.text = "%04d" % gems
 	
 func bounce(force:float):
