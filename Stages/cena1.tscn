@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/paralax-background-1.jpg" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Assets/Sfx/underground_8_bit.ogg" type="AudioStream" id=5]
 [ext_resource path="res://Scenes/Frog.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/DeathZone.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Gem.tscn" type="PackedScene" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 4355, 107 )
@@ -60,3 +61,59 @@ editor/display_folded = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone"]
 position = Vector2( 3415, 812 )
 shape = SubResource( 1 )
+
+[node name="Gems" type="Node2D" parent="."]
+
+[node name="Gem" parent="Gems" instance=ExtResource( 8 )]
+position = Vector2( -140, 430 )
+
+[node name="Gem2" parent="Gems" instance=ExtResource( 8 )]
+position = Vector2( -100, 430 )
+
+[node name="Gem3" parent="Gems" instance=ExtResource( 8 )]
+position = Vector2( -64, 430 )
+
+[node name="Gem4" parent="Gems" instance=ExtResource( 8 )]
+position = Vector2( 1200, 434 )
+
+[node name="Gem16" parent="Gems" instance=ExtResource( 8 )]
+position = Vector2( 1060, 380 )
+
+[node name="Gem17" parent="Gems" instance=ExtResource( 8 )]
+position = Vector2( 980, 340 )
+
+[node name="Gem18" parent="Gems" instance=ExtResource( 8 )]
+position = Vector2( 900, 300 )
+
+[node name="Gem5" parent="Gems" instance=ExtResource( 8 )]
+position = Vector2( 1250, 370 )
+
+[node name="Gem6" parent="Gems" instance=ExtResource( 8 )]
+position = Vector2( 1310, 300 )
+
+[node name="Gem7" parent="Gems" instance=ExtResource( 8 )]
+position = Vector2( 1390, 241 )
+
+[node name="Gem8" parent="Gems" instance=ExtResource( 8 )]
+position = Vector2( 3110, 300 )
+
+[node name="Gem9" parent="Gems" instance=ExtResource( 8 )]
+position = Vector2( 3070, 300 )
+
+[node name="Gem10" parent="Gems" instance=ExtResource( 8 )]
+position = Vector2( 3610, -150 )
+
+[node name="Gem11" parent="Gems" instance=ExtResource( 8 )]
+position = Vector2( 4130, -280 )
+
+[node name="Gem12" parent="Gems" instance=ExtResource( 8 )]
+position = Vector2( 4270, -400 )
+
+[node name="Gem13" parent="Gems" instance=ExtResource( 8 )]
+position = Vector2( 4320, -400 )
+
+[node name="Gem14" parent="Gems" instance=ExtResource( 8 )]
+position = Vector2( 4370, -400 )
+
+[node name="Gem15" parent="Gems" instance=ExtResource( 8 )]
+position = Vector2( 6690, 560 )

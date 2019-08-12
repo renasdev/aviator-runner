@@ -20,7 +20,6 @@ animations = [ {
 extents = Vector2( 20, 17.7494 )
 
 [node name="Gem" type="Node2D"]
-position = Vector2( 290, -28.0552 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
@@ -28,7 +27,7 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
-frame = 1
+frame = 4
 playing = true
 
 [node name="Area2D" type="Area2D" parent="."]
