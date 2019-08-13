@@ -77,5 +77,6 @@ stretch_mode = 4
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
 autoplay = true
+bus = "Background"
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/NewGame" to="." method="_on_NewGame_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/ChoseStage" to="." method="_on_ChoseStage_pressed"]

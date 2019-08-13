@@ -33,7 +33,7 @@ explosion_path = "res://Scenes/Explosion.tscn"
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "Idle"
-frame = 3
+frame = 2
 playing = true
 
 [node name="FieldOfView" type="Area2D" parent="."]
@@ -58,6 +58,7 @@ shape = SubResource( 4 )
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 visible = false
 stream = ExtResource( 8 )
+bus = "SFX"
 
 [node name="Timer" type="Timer" parent="."]
 [connection signal="body_entered" from="FieldOfView" to="." method="_on_FieldOfView_body_entered"]
