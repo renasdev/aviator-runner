@@ -16,10 +16,9 @@ animations = [ {
 
 [node name="Eagle" instance=ExtResource( 1 )]
 gems_value = 15
-sprite_is_left = false
 boucenes = -600
 
 [node name="AnimatedSprite" parent="." index="0"]
 frames = SubResource( 1 )
 animation = "default"
-frame = 0
+frame = 3
