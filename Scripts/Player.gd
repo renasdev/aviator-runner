@@ -39,8 +39,13 @@ func _physics_process(_delta):
 	
 	if(motion.y < -MAX_HEIGHT):
 		motion.y = -MAX_HEIGHT
-		
+	
+	var motionYBefore = motion.y
 	motion = move_and_slide(motion, GameConstants.UP)
+	
+	if motion.y == 0 and motionYBefore < -200:
+		motion.y = motionYBefore
+	
 	
 	# Player is falling non stop
 	if motion.y > 900 and motion.y < 2000 and !$SFX/Falling.is_playing() :
