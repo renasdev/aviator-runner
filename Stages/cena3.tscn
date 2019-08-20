@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://default_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
@@ -8,20 +8,24 @@
 [ext_resource path="res://Assets/Sprites/Backgrounds/back.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Sfx/platformer_level03_loop.ogg" type="AudioStream" id=7]
 [ext_resource path="res://Scenes/Gem.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Scenes/Eagle.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/MovingPlatform.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Eagle.tscn" type="PackedScene" id=10]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 100, 20 )
 
 [node name="Node2D" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
 format = 1
-tile_data = PoolIntArray( 0, 1, 0, 4, 1, 0, 5, 1, 0, 6, 1, 0, 7, 1, 0, 8, 1, 0, 9, 1, 0, 10, 1, 0, 11, 1, 0, 12, 1, 0, 15, 1, 0, 18, 1, 0, 19, 1, 0, 20, 1, 0, 21, 1, 0, 22, 1, 0, 23, 1, 0, 24, 1, 0, 25, 1, 0, 26, 1, 0, 28, 1, 0, 29, 1, 0, 30, 1, 0, 31, 1, 0, 32, 1, 0, 33, 1, 0, 34, 1, 0, 35, 1, 0, 36, 1, 0, 39, 1, 0, 40, 1, 0, 41, 1, 0, 42, 1, 0, 52, 1, 0, 53, 1, 0, 54, 1, 0, 55, 1, 0, 56, 1, 0, 61, 1, 0, 62, 1, 0, 63, 1, 0, 64, 1, 0, 65536, 1, 0, 65551, 1, 0, 131072, 1, 0, 131086, 1, 0, 131087, 1, 0, 196608, 1, 0, 196610, 1, 0, 196623, 1, 0, 262144, 1, 0, 262155, 1, 0, 262159, 1, 0, 327680, 1, 0, 327693, 1, 0, 327695, 1, 0, 393216, 1, 0, 393220, 1, 0, 393231, 1, 0, 458752, 1, 0, 458763, 1, 0, 458767, 1, 0, 524288, 1, 0, 524296, 1, 0, 524303, 1, 0 )
+tile_data = PoolIntArray( 0, 1, 0, 4, 1, 0, 5, 1, 0, 6, 1, 0, 7, 1, 0, 8, 1, 0, 9, 1, 0, 10, 1, 0, 15, 1, 0, 18, 1, 0, 19, 1, 0, 20, 1, 0, 21, 1, 0, 22, 1, 0, 23, 1, 0, 24, 1, 0, 25, 1, 0, 26, 1, 0, 28, 1, 0, 29, 1, 0, 30, 1, 0, 31, 1, 0, 32, 1, 0, 33, 1, 0, 34, 1, 0, 35, 1, 0, 36, 1, 0, 39, 1, 0, 40, 1, 0, 41, 1, 0, 42, 1, 0, 52, 1, 0, 53, 1, 0, 54, 1, 0, 55, 1, 0, 56, 1, 0, 61, 1, 0, 62, 1, 0, 63, 1, 0, 64, 1, 0, 65, 1, 0, 66, 1, 0, 67, 1, 0, 68, 1, 0, 69, 1, 0, 70, 1, 0, 71, 1, 0, 72, 1, 0, 73, 1, 0, 74, 1, 0, 75, 1, 0, 76, 1, 0, 77, 1, 0, 78, 1, 0, 79, 1, 0, 80, 1, 0, 98, 1, 0, 99, 1, 0, 100, 1, 0, 101, 1, 0, 102, 1, 0, 103, 1, 0, 104, 1, 0, 119, 1, 0, 120, 1, 0, 121, 1, 0, 122, 1, 0, 123, 1, 0, 124, 1, 0, 125, 1, 0, 126, 1, 0, 127, 1, 0, 128, 1, 0, 129, 1, 0, 130, 1, 0, 131, 1, 0, 132, 1, 0, 133, 1, 0, 134, 1, 0, 135, 1, 0, 136, 1, 0, 137, 1, 0, 145, 1, 0, 146, 1, 0, 147, 1, 0, 148, 1, 0, 149, 1, 0, 150, 1, 0, 151, 1, 0, 152, 1, 0, 153, 1, 0, 154, 1, 0, 155, 1, 0, 65536, 1, 0, 65551, 1, 0, 131072, 1, 0, 131086, 1, 0, 131087, 1, 0, 196608, 1, 0, 196610, 1, 0, 196619, 1, 0, 196623, 1, 0, 262144, 1, 0, 262159, 1, 0, 327680, 1, 0, 327693, 1, 0, 327695, 1, 0, 393216, 1, 0, 393220, 1, 0, 393231, 1, 0, 458752, 1, 0, 458763, 1, 0, 458767, 1, 0, 524288, 1, 0, 524296, 1, 0, 524303, 1, 0 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 160, 110 )
 
 [node name="Flag" parent="." instance=ExtResource( 3 )]
-position = Vector2( 4130, -28.0552 )
+position = Vector2( 9640, -30 )
 next_scene_path = "res://Stages/cena1.tscn"
 
 [node name="Waypoints" parent="." instance=ExtResource( 4 )]
@@ -70,6 +74,7 @@ sprite_is_left = false
 waypoints_path = NodePath("../Waypoints2")
 
 [node name="GEMS" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="Gem" parent="GEMS" instance=ExtResource( 8 )]
 position = Vector2( 930, 100 )
@@ -125,6 +130,114 @@ position = Vector2( 3540, -130 )
 [node name="Gem28" parent="GEMS" instance=ExtResource( 8 )]
 position = Vector2( 3500, -130 )
 
+[node name="Gem29" parent="GEMS" instance=ExtResource( 8 )]
+position = Vector2( 4200, -17.6206 )
+
+[node name="Gem50" parent="GEMS" instance=ExtResource( 8 )]
+position = Vector2( 7770, -19.9076 )
+
+[node name="Gem61" parent="GEMS" instance=ExtResource( 8 )]
+position = Vector2( 8250, -19.9076 )
+
+[node name="Gem30" parent="GEMS" instance=ExtResource( 8 )]
+position = Vector2( 4240, -17.6206 )
+
+[node name="Gem45" parent="GEMS" instance=ExtResource( 8 )]
+position = Vector2( 7810, -19.9076 )
+
+[node name="Gem60" parent="GEMS" instance=ExtResource( 8 )]
+position = Vector2( 8290, -19.9076 )
+
+[node name="Gem31" parent="GEMS" instance=ExtResource( 8 )]
+position = Vector2( 4280, -17.6206 )
+
+[node name="Gem43" parent="GEMS" instance=ExtResource( 8 )]
+position = Vector2( 7850, -19.9076 )
+
+[node name="Gem56" parent="GEMS" instance=ExtResource( 8 )]
+position = Vector2( 8330, -19.9076 )
+
+[node name="Gem32" parent="GEMS" instance=ExtResource( 8 )]
+position = Vector2( 4320, -17.6206 )
+
+[node name="Gem46" parent="GEMS" instance=ExtResource( 8 )]
+position = Vector2( 7890, -19.9076 )
+
+[node name="Gem53" parent="GEMS" instance=ExtResource( 8 )]
+position = Vector2( 8370, -19.9076 )
+
+[node name="Gem33" parent="GEMS" instance=ExtResource( 8 )]
+position = Vector2( 4360, -17.6206 )
+
+[node name="Gem51" parent="GEMS" instance=ExtResource( 8 )]
+position = Vector2( 7930, -19.9076 )
+
+[node name="Gem58" parent="GEMS" instance=ExtResource( 8 )]
+position = Vector2( 8410, -19.9076 )
+
+[node name="Gem34" parent="GEMS" instance=ExtResource( 8 )]
+position = Vector2( 4400, -17.6206 )
+
+[node name="Gem47" parent="GEMS" instance=ExtResource( 8 )]
+position = Vector2( 7970, -19.9076 )
+
+[node name="Gem54" parent="GEMS" instance=ExtResource( 8 )]
+position = Vector2( 8450, -19.9076 )
+
+[node name="Gem35" parent="GEMS" instance=ExtResource( 8 )]
+position = Vector2( 4440, -17.6206 )
+
+[node name="Gem42" parent="GEMS" instance=ExtResource( 8 )]
+position = Vector2( 8010, -19.9076 )
+
+[node name="Gem62" parent="GEMS" instance=ExtResource( 8 )]
+position = Vector2( 8490, -19.9076 )
+
+[node name="Gem36" parent="GEMS" instance=ExtResource( 8 )]
+position = Vector2( 4480, -17.6206 )
+
+[node name="Gem41" parent="GEMS" instance=ExtResource( 8 )]
+position = Vector2( 8050, -19.9076 )
+
+[node name="Gem64" parent="GEMS" instance=ExtResource( 8 )]
+position = Vector2( 8530, -19.9076 )
+
+[node name="Gem37" parent="GEMS" instance=ExtResource( 8 )]
+position = Vector2( 4520, -17.6206 )
+
+[node name="Gem48" parent="GEMS" instance=ExtResource( 8 )]
+position = Vector2( 8090, -19.9076 )
+
+[node name="Gem63" parent="GEMS" instance=ExtResource( 8 )]
+position = Vector2( 8570, -19.9076 )
+
+[node name="Gem38" parent="GEMS" instance=ExtResource( 8 )]
+position = Vector2( 4560, -17.6206 )
+
+[node name="Gem49" parent="GEMS" instance=ExtResource( 8 )]
+position = Vector2( 8130, -19.9076 )
+
+[node name="Gem55" parent="GEMS" instance=ExtResource( 8 )]
+position = Vector2( 8610, -19.9076 )
+
+[node name="Gem39" parent="GEMS" instance=ExtResource( 8 )]
+position = Vector2( 4600, -17.6206 )
+
+[node name="Gem52" parent="GEMS" instance=ExtResource( 8 )]
+position = Vector2( 8170, -19.9076 )
+
+[node name="Gem57" parent="GEMS" instance=ExtResource( 8 )]
+position = Vector2( 8650, -19.9076 )
+
+[node name="Gem40" parent="GEMS" instance=ExtResource( 8 )]
+position = Vector2( 4640, -17.6206 )
+
+[node name="Gem44" parent="GEMS" instance=ExtResource( 8 )]
+position = Vector2( 8210, -19.9076 )
+
+[node name="Gem59" parent="GEMS" instance=ExtResource( 8 )]
+position = Vector2( 8690, -19.9076 )
+
 [node name="Gem4" parent="GEMS" instance=ExtResource( 8 )]
 position = Vector2( 410, -28.0552 )
 
@@ -146,13 +259,39 @@ position = Vector2( 610, -30 )
 [node name="Gem10" parent="GEMS" instance=ExtResource( 8 )]
 position = Vector2( 650, -29.9076 )
 
-[node name="Waypoints3" parent="." instance=ExtResource( 4 )]
+[node name="Waypoints4" parent="." instance=ExtResource( 4 )]
+position = Vector2( 5290, 30 )
+
+[node name="Position2D" type="Position2D" parent="Waypoints4"]
+position = Vector2( 520, 0 )
+
+[node name="MovingPlatform" parent="Waypoints4" instance=ExtResource( 9 )]
+position = Vector2( 5290, 30 )
+editor_process = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Waypoints4/MovingPlatform"]
+shape = SubResource( 1 )
+
+[node name="Waypoints5" parent="." instance=ExtResource( 4 )]
 editor/display_folded = true
-position = Vector2( 3080, 210 )
+position = Vector2( 9030, 100 )
 
-[node name="Position2D" type="Position2D" parent="Waypoints3"]
-position = Vector2( 6.10352e-05, -350 )
+[node name="Position2D" type="Position2D" parent="Waypoints5"]
+position = Vector2( 0, -170 )
 
-[node name="Eagle" parent="." instance=ExtResource( 9 )]
-position = Vector2( 3080, -140 )
-waypoints_path = NodePath("../Waypoints3")
+[node name="Eagle" parent="." instance=ExtResource( 10 )]
+position = Vector2( 3040, 10 )
+waypoints_path = NodePath("")
+
+[node name="Eagle2" parent="." instance=ExtResource( 10 )]
+position = Vector2( 6030, 20 )
+
+[node name="Eagle3" parent="." instance=ExtResource( 10 )]
+position = Vector2( 6980, 10 )
+
+[node name="Eagle4" parent="." instance=ExtResource( 10 )]
+position = Vector2( 7390, 16 )
+
+[node name="Eagle5" parent="." instance=ExtResource( 10 )]
+position = Vector2( 9030, -70 )
+waypoints_path = NodePath("../Waypoints5")

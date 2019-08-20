@@ -27,6 +27,9 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
+	if Engine.editor_hint && !editor_process:
+		return
+	
 	var direction: = (target_position - position).normalized()
 	var motion: = direction * speed * delta
 	var distance_to_target: = position.distance_to(target_position)

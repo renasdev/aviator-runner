@@ -7,6 +7,7 @@ export var gems_value := 10
 export var sprite_is_left:bool = true
 export var waypoints_path:NodePath
 export var boucenes := -500
+export var move := true
 
 var target:KinematicBody2D
 var movement = Vector2(0,0)
@@ -22,7 +23,7 @@ func _ready():
 func _physics_process(_delta):
 	if waypoints:
 		_patrol_process()
-	else:
+	elif move:
 		_no_patrol_process()
 	
 
