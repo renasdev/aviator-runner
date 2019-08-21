@@ -1,16 +1,23 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://default_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Eagle.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Waypoints.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scripts/FallingRock.gd" type="Script" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 58.607, 120 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 58.6069, 155.29 )
 
 [node name="Node2D" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
 format = 1
-tile_data = PoolIntArray( 655360, 0, 0, 655361, 0, 0, 655362, 0, 0, 655363, 0, 0, 655364, 0, 0, 655365, 0, 0, 655366, 0, 0, 655367, 0, 0, 655370, 0, 0, 655371, 0, 0, 655372, 0, 0, 655373, 0, 0, 655374, 0, 0, 655375, 0, 0, 655376, 0, 0, 655377, 0, 0, 655378, 0, 0, 655379, 0, 0 )
+tile_data = PoolIntArray( 655360, 0, 0, 655361, 0, 0, 655362, 0, 0, 655363, 0, 0, 655364, 0, 0, 655365, 0, 0, 655366, 0, 0, 655367, 0, 0, 655370, 0, 0, 655371, 0, 0, 655372, 0, 0, 655373, 0, 0, 655374, 0, 0, 655375, 0, 0, 655376, 0, 0, 655377, 0, 0, 655378, 0, 0, 655379, 0, 0, 655380, 0, 0, 655381, 0, 0, 655382, 0, 0, 655383, 0, 0, 655384, 0, 0, 655385, 0, 0, 655386, 0, 0, 655387, 0, 0, 655388, 0, 0, 655389, 0, 0, 655390, 0, 0, 655391, 0, 0, 655392, 0, 0, 655393, 0, 0, 655394, 0, 0 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 641.587, 362.636 )
@@ -21,13 +28,7 @@ waypoints_path = NodePath("../Waypoints")
 boucenes = -15000
 
 [node name="Eagle2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1352.91, 700.167 )
-
-[node name="Eagle3" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1732.29, 661.114 )
-
-[node name="Eagle4" parent="." instance=ExtResource( 3 )]
-position = Vector2( 2053.08, 666.693 )
+position = Vector2( 1880, 590 )
 
 [node name="Waypoints" parent="." instance=ExtResource( 4 )]
 editor/display_folded = true
@@ -35,3 +36,111 @@ position = Vector2( 585.956, 573.997 )
 
 [node name="Position2D" type="Position2D" parent="Waypoints"]
 position = Vector2( -7.17505, 301.349 )
+
+[node name="FallingRock" type="KinematicBody2D" parent="."]
+editor/display_folded = true
+position = Vector2( 905.988, 190 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FallingRock"]
+shape = SubResource( 1 )
+
+[node name="Area2D" type="Area2D" parent="FallingRock"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FallingRock/Area2D"]
+position = Vector2( 0, 290 )
+shape = SubResource( 2 )
+
+[node name="FallingRock2" type="KinematicBody2D" parent="."]
+editor/display_folded = true
+position = Vector2( 1050, 190 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FallingRock2"]
+shape = SubResource( 1 )
+
+[node name="Area2D" type="Area2D" parent="FallingRock2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FallingRock2/Area2D"]
+position = Vector2( 0, 290 )
+shape = SubResource( 2 )
+
+[node name="FallingRock3" type="KinematicBody2D" parent="."]
+editor/display_folded = true
+position = Vector2( 1190, 190 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FallingRock3"]
+shape = SubResource( 1 )
+
+[node name="Area2D" type="Area2D" parent="FallingRock3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FallingRock3/Area2D"]
+position = Vector2( 0, 290 )
+shape = SubResource( 2 )
+
+[node name="FallingRock4" type="KinematicBody2D" parent="."]
+editor/display_folded = true
+position = Vector2( 1330, 190 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FallingRock4"]
+shape = SubResource( 1 )
+
+[node name="Area2D" type="Area2D" parent="FallingRock4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FallingRock4/Area2D"]
+position = Vector2( 0, 290 )
+shape = SubResource( 2 )
+
+[node name="FallingRock5" type="KinematicBody2D" parent="."]
+editor/display_folded = true
+position = Vector2( 1470, 190 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FallingRock5"]
+shape = SubResource( 1 )
+
+[node name="Area2D" type="Area2D" parent="FallingRock5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FallingRock5/Area2D"]
+position = Vector2( 0, 290 )
+shape = SubResource( 2 )
+
+[node name="FallingRock6" type="KinematicBody2D" parent="."]
+editor/display_folded = true
+position = Vector2( 1610, 190 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FallingRock6"]
+shape = SubResource( 1 )
+
+[node name="Area2D" type="Area2D" parent="FallingRock6"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FallingRock6/Area2D"]
+position = Vector2( 0, 290 )
+shape = SubResource( 2 )
+[connection signal="body_entered" from="FallingRock/Area2D" to="FallingRock" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="FallingRock2/Area2D" to="FallingRock2" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="FallingRock3/Area2D" to="FallingRock3" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="FallingRock4/Area2D" to="FallingRock4" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="FallingRock5/Area2D" to="FallingRock5" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="FallingRock6/Area2D" to="FallingRock6" method="_on_Area2D_body_entered"]

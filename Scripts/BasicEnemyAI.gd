@@ -75,10 +75,5 @@ func _on_BodyArea_body_entered(body):
 			body.increment_gems(gems_value)
 			self.queue_free()
 		else: #Body come by the sides
-			$AudioStreamPlayer2D.play(0.0)
 			body.take_damage()
-			$Timer.start(0.5)
 
-
-func _on_Timer_timeout():
-	target.kill()

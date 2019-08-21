@@ -260,6 +260,7 @@ position = Vector2( 610, -30 )
 position = Vector2( 650, -29.9076 )
 
 [node name="Waypoints4" parent="." instance=ExtResource( 4 )]
+editor/display_folded = true
 position = Vector2( 5290, 30 )
 
 [node name="Position2D" type="Position2D" parent="Waypoints4"]
