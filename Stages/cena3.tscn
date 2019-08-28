@@ -1,11 +1,11 @@
 [gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://default_tileset.tres" type="TileSet" id=1]
-[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/Flag.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/Waypoints.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/Opossum.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Assets/Sprites/Backgrounds/back.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Sprites/Backgrounds/back.png" type="Texture" id=1]
+[ext_resource path="res://default_tileset.tres" type="TileSet" id=2]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Flag.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Waypoints.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Opossum.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/Sfx/platformer_level03_loop.ogg" type="AudioStream" id=7]
 [ext_resource path="res://Scenes/Gem.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/MovingPlatform.tscn" type="PackedScene" id=9]
@@ -16,59 +16,60 @@ extents = Vector2( 90, 30 )
 
 [node name="Node2D" type="Node2D"]
 
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 1, 0 )
+motion_mirroring = Vector2( 1, 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+scale = Vector2( 4, 4 )
+texture = ExtResource( 1 )
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
 [node name="TileMap" type="TileMap" parent="."]
-tile_set = ExtResource( 1 )
+tile_set = ExtResource( 2 )
 format = 1
 tile_data = PoolIntArray( 0, 1, 0, 4, 1, 0, 5, 1, 0, 6, 1, 0, 7, 1, 0, 8, 1, 0, 9, 1, 0, 10, 1, 0, 15, 1, 0, 18, 1, 0, 19, 1, 0, 20, 1, 0, 21, 1, 0, 22, 1, 0, 23, 1, 0, 24, 1, 0, 25, 1, 0, 26, 1, 0, 28, 1, 0, 29, 1, 0, 30, 1, 0, 31, 1, 0, 32, 1, 0, 33, 1, 0, 34, 1, 0, 35, 1, 0, 36, 1, 0, 39, 1, 0, 40, 1, 0, 41, 1, 0, 42, 1, 0, 52, 1, 0, 53, 1, 0, 54, 1, 0, 55, 1, 0, 56, 1, 0, 61, 1, 0, 62, 1, 0, 63, 1, 0, 64, 1, 0, 65, 1, 0, 66, 1, 0, 67, 1, 0, 68, 1, 0, 69, 1, 0, 70, 1, 0, 71, 1, 0, 72, 1, 0, 73, 1, 0, 74, 1, 0, 75, 1, 0, 76, 1, 0, 77, 1, 0, 78, 1, 0, 79, 1, 0, 80, 1, 0, 98, 1, 0, 99, 1, 0, 100, 1, 0, 101, 1, 0, 102, 1, 0, 103, 1, 0, 104, 1, 0, 119, 1, 0, 120, 1, 0, 121, 1, 0, 122, 1, 0, 123, 1, 0, 124, 1, 0, 125, 1, 0, 126, 1, 0, 127, 1, 0, 128, 1, 0, 129, 1, 0, 130, 1, 0, 131, 1, 0, 132, 1, 0, 133, 1, 0, 134, 1, 0, 135, 1, 0, 136, 1, 0, 137, 1, 0, 145, 1, 0, 146, 1, 0, 147, 1, 0, 148, 1, 0, 149, 1, 0, 150, 1, 0, 151, 1, 0, 152, 1, 0, 153, 1, 0, 154, 1, 0, 155, 1, 0, 65536, 1, 0, 65551, 1, 0, 131072, 1, 0, 131086, 1, 0, 131087, 1, 0, 196608, 1, 0, 196610, 1, 0, 196619, 1, 0, 196623, 1, 0, 262144, 1, 0, 262159, 1, 0, 327680, 1, 0, 327693, 1, 0, 327695, 1, 0, 393216, 1, 0, 393220, 1, 0, 393231, 1, 0, 458752, 1, 0, 458763, 1, 0, 458767, 1, 0, 524288, 1, 0, 524296, 1, 0, 524303, 1, 0 )
 
-[node name="Player" parent="." instance=ExtResource( 2 )]
+[node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 160, 110 )
 
-[node name="Flag" parent="." instance=ExtResource( 3 )]
+[node name="Flag" parent="." instance=ExtResource( 4 )]
 position = Vector2( 9640, -30 )
 next_scene_path = "res://Stages/TestStage.tscn"
 
-[node name="Waypoints" parent="." instance=ExtResource( 4 )]
+[node name="Waypoints" parent="." instance=ExtResource( 5 )]
 editor/display_folded = true
 position = Vector2( 1185.6, -21.0229 )
 
 [node name="Position2D" type="Position2D" parent="Waypoints"]
 position = Vector2( 475.586, -7.75412 )
 
-[node name="Opossum" parent="." instance=ExtResource( 5 )]
+[node name="Opossum" parent="." instance=ExtResource( 6 )]
 position = Vector2( 1662.19, -29.9076 )
 sprite_is_left = false
 waypoints_path = NodePath("../Waypoints")
-
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-editor/display_folded = true
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2( 0, 0 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-scale = Vector2( 3.5, 3.5 )
-texture = ExtResource( 6 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
 autoplay = true
 bus = "Background"
 
-[node name="Waypoints2" parent="." instance=ExtResource( 4 )]
+[node name="Waypoints2" parent="." instance=ExtResource( 5 )]
 editor/display_folded = true
 position = Vector2( 1837.85, -28.0552 )
 
 [node name="Position2D" type="Position2D" parent="Waypoints2"]
 position = Vector2( 475.586, -7.75412 )
 
-[node name="Opossum2" parent="." instance=ExtResource( 5 )]
+[node name="Opossum2" parent="." instance=ExtResource( 6 )]
 position = Vector2( 1842.93, -32.2506 )
 sprite_is_left = false
 waypoints_path = NodePath("../Waypoints2")
@@ -259,7 +260,7 @@ position = Vector2( 610, -30 )
 [node name="Gem10" parent="GEMS" instance=ExtResource( 8 )]
 position = Vector2( 650, -29.9076 )
 
-[node name="Waypoints4" parent="." instance=ExtResource( 4 )]
+[node name="Waypoints4" parent="." instance=ExtResource( 5 )]
 editor/display_folded = true
 position = Vector2( 5290, 30 )
 
@@ -273,7 +274,7 @@ editor_process = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Waypoints4/MovingPlatform"]
 shape = SubResource( 1 )
 
-[node name="Waypoints5" parent="." instance=ExtResource( 4 )]
+[node name="Waypoints5" parent="." instance=ExtResource( 5 )]
 editor/display_folded = true
 position = Vector2( 9030, 100 )
 
