@@ -8,6 +8,9 @@ var motion = Vector2()
 var gems := 0
 var dying := false
 
+func _ready():
+	$AnimatedSprite.play("Idle")
+
 func _process_input():
 	if dying:
 		motion.x = 0
