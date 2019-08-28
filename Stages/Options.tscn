@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/Options.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Sfx/Amber Forest piano.ogg" type="AudioStream" id=2]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 50.0
+margin_top = 50.0
+margin_right = -50.0
+margin_bottom = -50.0
+
+[node name="HSplitContainer" type="HSplitContainer" parent="VBoxContainer"]
+margin_right = 1180.0
+margin_bottom = 16.0
+
+[node name="Label" type="Label" parent="VBoxContainer/HSplitContainer"]
+margin_top = 1.0
+margin_right = 55.0
+margin_bottom = 15.0
+text = "VOLUME"
+
+[node name="VolumeHSlider" type="HSlider" parent="VBoxContainer/HSplitContainer"]
+margin_left = 67.0
+margin_right = 1180.0
+margin_bottom = 16.0
+max_value = 1.0
+step = 0.0
+
+[node name="GoBackButton" type="Button" parent="VBoxContainer"]
+margin_top = 20.0
+margin_right = 1180.0
+margin_bottom = 40.0
+text = "Go Back"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+autoplay = true
+[connection signal="value_changed" from="VBoxContainer/HSplitContainer/VolumeHSlider" to="." method="_on_VolumeHSlider_value_changed"]
+[connection signal="pressed" from="VBoxContainer/GoBackButton" to="." method="_on_GoBackButton_pressed"]

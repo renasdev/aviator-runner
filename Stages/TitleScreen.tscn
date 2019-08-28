@@ -12,6 +12,7 @@ anchor_bottom = 1.0
 script = ExtResource( 1 )
 new_game_scene = "res://Stages/cena1.tscn"
 chose_stage_scene = "res://Stages/ChoseStage.tscn"
+options_scene = "res://Stages/Options.tscn"
 credits_scene = "res://Stages/Credits.tscn"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
@@ -25,21 +26,21 @@ size_flags_vertical = 3
 alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
-margin_top = 62.0
+margin_top = 10.0
 margin_right = 1040.0
-margin_bottom = 186.0
+margin_bottom = 134.0
 texture = ExtResource( 2 )
 stretch_mode = 4
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 190.0
+margin_top = 138.0
 margin_right = 1040.0
-margin_bottom = 498.0
+margin_bottom = 550.0
 alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
 margin_right = 837.0
-margin_bottom = 308.0
+margin_bottom = 412.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 alignment = 1
@@ -59,10 +60,18 @@ rect_min_size = Vector2( 300, 100 )
 custom_fonts/font = ExtResource( 3 )
 text = "Chose stage"
 
-[node name="Credits" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="Options" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
 margin_top = 208.0
 margin_right = 837.0
 margin_bottom = 308.0
+rect_min_size = Vector2( 300, 100 )
+custom_fonts/font = ExtResource( 3 )
+text = "Options"
+
+[node name="Credits" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_top = 312.0
+margin_right = 837.0
+margin_bottom = 412.0
 rect_min_size = Vector2( 300, 100 )
 custom_fonts/font = ExtResource( 3 )
 text = "Credits"
@@ -70,7 +79,7 @@ text = "Credits"
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
 margin_left = 841.0
 margin_right = 1040.0
-margin_bottom = 308.0
+margin_bottom = 412.0
 texture = ExtResource( 4 )
 stretch_mode = 4
 
@@ -80,4 +89,5 @@ autoplay = true
 bus = "Background"
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/NewGame" to="." method="_on_NewGame_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/ChoseStage" to="." method="_on_ChoseStage_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/Options" to="." method="_on_Options_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/Credits" to="." method="_on_Credits_pressed"]
