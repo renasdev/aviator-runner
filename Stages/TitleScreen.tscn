@@ -12,9 +12,9 @@ anchor_bottom = 1.0
 script = ExtResource( 1 )
 new_game_scene = "res://Stages/cena1.tscn"
 chose_stage_scene = "res://Stages/ChoseStage.tscn"
+credits_scene = "res://Stages/Credits.tscn"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 120.0
@@ -80,3 +80,4 @@ autoplay = true
 bus = "Background"
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/NewGame" to="." method="_on_NewGame_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/ChoseStage" to="." method="_on_ChoseStage_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/Credits" to="." method="_on_Credits_pressed"]
