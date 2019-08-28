@@ -26,7 +26,7 @@ position = Vector2( 160, 110 )
 
 [node name="Flag" parent="." instance=ExtResource( 3 )]
 position = Vector2( 9640, -30 )
-next_scene_path = "res://Stages/cena1.tscn"
+next_scene_path = "res://Stages/TestStage.tscn"
 
 [node name="Waypoints" parent="." instance=ExtResource( 4 )]
 editor/display_folded = true
