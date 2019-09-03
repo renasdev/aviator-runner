@@ -1,10 +1,12 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://default_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Eagle.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Waypoints.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scripts/FallingRock.gd" type="Script" id=5]
+[ext_resource path="res://Scripts/Minotaur.gd" type="Script" id=6]
+[ext_resource path="res://Assets/Sprites/monsters/minotaur/Minotaur - Sprite Sheet.png" type="Texture" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 58.607, 120 )
@@ -12,18 +14,113 @@ extents = Vector2( 58.607, 120 )
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 58.6069, 155.29 )
 
+[sub_resource type="Animation" id=3]
+resource_name = "Idle"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.5, 0.8, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 28, 23, 52, 41 ), Rect2( 124, 22, 52, 42 ), Rect2( 124, 22, 52, 42 ), Rect2( 316, 23, 52, 41 ), Rect2( 412, 23, 52, 41 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "Run"
+length = 0.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 26, 118, 52, 40 ), Rect2( 218, 117, 52, 41 ), Rect2( 315, 119, 52, 41 ), Rect2( 509, 116, 52, 40 ), Rect2( 604, 117, 52, 41 ), Rect2( 699, 119, 52, 41 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "Simple_Attack"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 5, 307, 56, 45 ), Rect2( 111, 293, 72, 65 ), Rect2( 211, 293, 66, 65 ), Rect2( 316, 295, 57, 63 ), Rect2( 412, 311, 55, 46 ), Rect2( 508, 311, 49, 46 ), Rect2( 604, 311, 49, 46 ), Rect2( 700, 311, 48, 41 ), Rect2( 796, 310, 52, 42 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.3, 0.4, 0.5, 0.7, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( -90, -24.503 ), Vector2( -40, -38.5 ), Vector2( -20, -38.5 ), Vector2( -20, -8.5 ), Vector2( -30, -8.5 ), Vector2( -30, -18.5 ), Vector2( -30, -20 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("HitBoxArea2D/CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("FrontHitArea2D/CollisionShape2D:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="CapsuleShape2D" id=5]
+radius = 50.0
+height = 30.0
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 60, 90 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 50, 100 )
+
 [node name="Node2D" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
 format = 1
-tile_data = PoolIntArray( 655360, 0, 0, 655361, 0, 0, 655362, 0, 0, 655363, 0, 0, 655364, 0, 0, 655365, 0, 0, 655366, 0, 0, 655367, 0, 0, 655370, 0, 0, 655371, 0, 0, 655372, 0, 0, 655373, 0, 0, 655374, 0, 0, 655375, 0, 0, 655376, 0, 0, 655377, 0, 0, 655378, 0, 0, 655379, 0, 0, 655380, 0, 0, 655381, 0, 0, 655382, 0, 0, 655383, 0, 0, 655384, 0, 0, 655385, 0, 0, 655394, 0, 0, 655395, 0, 0, 655396, 0, 0, 655397, 0, 0, 655398, 0, 0 )
+tile_data = PoolIntArray( 655360, 0, 0, 655361, 0, 0, 655362, 0, 0, 655365, 0, 0, 655366, 0, 0, 655367, 0, 0, 655368, 0, 0, 655369, 0, 0, 655370, 0, 0, 655371, 0, 0, 655372, 0, 0, 655373, 0, 0, 655374, 0, 0, 655375, 0, 0, 655376, 0, 0, 655377, 0, 0, 655378, 0, 0, 655379, 0, 0, 655380, 0, 0, 655381, 0, 0, 655382, 0, 0, 655383, 0, 0, 655384, 0, 0, 655385, 0, 0, 655394, 0, 0, 655395, 0, 0, 655396, 0, 0, 655397, 0, 0, 655398, 0, 0 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 641.587, 362.636 )
+position = Vector2( 550, 490 )
 
 [node name="Eagle" parent="." instance=ExtResource( 3 )]
-position = Vector2( 583.007, 683.43 )
+position = Vector2( 240, 690 )
 waypoints_path = NodePath("../Waypoints")
 boucenes = -15000
 
@@ -32,14 +129,14 @@ position = Vector2( 1970, 660 )
 
 [node name="Waypoints" parent="." instance=ExtResource( 4 )]
 editor/display_folded = true
-position = Vector2( 585.956, 573.997 )
+position = Vector2( 250, 573.997 )
 
 [node name="Position2D" type="Position2D" parent="Waypoints"]
 position = Vector2( -7.17505, 301.349 )
 
 [node name="FallingRock" type="KinematicBody2D" parent="."]
 editor/display_folded = true
-position = Vector2( 905.988, 170 )
+position = Vector2( 900, -160 )
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_group_": true
@@ -56,7 +153,7 @@ shape = SubResource( 2 )
 
 [node name="FallingRock2" type="KinematicBody2D" parent="."]
 editor/display_folded = true
-position = Vector2( 1050, 170 )
+position = Vector2( 1044.01, -160 )
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_group_": true
@@ -73,7 +170,7 @@ shape = SubResource( 2 )
 
 [node name="FallingRock3" type="KinematicBody2D" parent="."]
 editor/display_folded = true
-position = Vector2( 1190, 170 )
+position = Vector2( 1184.01, -160 )
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_group_": true
@@ -90,7 +187,7 @@ shape = SubResource( 2 )
 
 [node name="FallingRock4" type="KinematicBody2D" parent="."]
 editor/display_folded = true
-position = Vector2( 1330, 170 )
+position = Vector2( 1324.01, -160 )
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_group_": true
@@ -107,7 +204,7 @@ shape = SubResource( 2 )
 
 [node name="FallingRock5" type="KinematicBody2D" parent="."]
 editor/display_folded = true
-position = Vector2( 1470, 170 )
+position = Vector2( 1464.01, -160 )
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_group_": true
@@ -124,7 +221,7 @@ shape = SubResource( 2 )
 
 [node name="FallingRock6" type="KinematicBody2D" parent="."]
 editor/display_folded = true
-position = Vector2( 1610, 170 )
+position = Vector2( 1604.01, -160 )
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_group_": true
@@ -138,9 +235,47 @@ shape = SubResource( 1 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FallingRock6/Area2D"]
 position = Vector2( 0, 290 )
 shape = SubResource( 2 )
+
+[node name="KinematicBody2D2" type="KinematicBody2D" parent="."]
+position = Vector2( 440, 598.5 )
+script = ExtResource( 6 )
+
+[node name="Sprite" type="Sprite" parent="KinematicBody2D2"]
+position = Vector2( -30, -20 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 7 )
+region_enabled = true
+region_rect = Rect2( 796, 310, 52, 42 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="KinematicBody2D2"]
+anims/Idle = SubResource( 3 )
+anims/Run = SubResource( 4 )
+anims/Simple_Attack = SubResource( 7 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D2"]
+position = Vector2( -50, -20 )
+shape = SubResource( 5 )
+
+[node name="FrontHitArea2D" type="Area2D" parent="KinematicBody2D2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D2/FrontHitArea2D"]
+position = Vector2( 10, -38.5 )
+shape = SubResource( 6 )
+
+[node name="HitBoxArea2D" type="Area2D" parent="KinematicBody2D2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D2/HitBoxArea2D"]
+position = Vector2( 20, -38.5 )
+shape = SubResource( 8 )
+
+[node name="FrontRayCast2D" type="RayCast2D" parent="KinematicBody2D2"]
+enabled = true
+cast_to = Vector2( 1000, 0 )
 [connection signal="body_entered" from="FallingRock/Area2D" to="FallingRock" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="FallingRock2/Area2D" to="FallingRock2" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="FallingRock3/Area2D" to="FallingRock3" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="FallingRock4/Area2D" to="FallingRock4" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="FallingRock5/Area2D" to="FallingRock5" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="FallingRock6/Area2D" to="FallingRock6" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="KinematicBody2D2/FrontHitArea2D" to="KinematicBody2D2" method="_on_FrontHitArea2D_body_entered"]
+[connection signal="body_entered" from="KinematicBody2D2/HitBoxArea2D" to="KinematicBody2D2" method="_on_HitBoxArea2D_body_entered"]
