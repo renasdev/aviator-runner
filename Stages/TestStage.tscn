@@ -267,10 +267,6 @@ shape = SubResource( 6 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D2/HitBoxArea2D"]
 position = Vector2( 20, -38.5 )
 shape = SubResource( 8 )
-
-[node name="FrontRayCast2D" type="RayCast2D" parent="KinematicBody2D2"]
-enabled = true
-cast_to = Vector2( 1000, 0 )
 [connection signal="body_entered" from="FallingRock/Area2D" to="FallingRock" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="FallingRock2/Area2D" to="FallingRock2" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="FallingRock3/Area2D" to="FallingRock3" method="_on_Area2D_body_entered"]
