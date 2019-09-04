@@ -75,7 +75,6 @@ func _kill():
 	get_tree().reload_current_scene()
 	
 func _on_KillerTimer_timeout():
-	print("timeout")
 	_kill()
 	
 func take_damage():
