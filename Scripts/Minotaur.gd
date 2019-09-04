@@ -1,5 +1,6 @@
 extends KinematicBody2D
 
+const MAX_SPEED = 300
 var motion = Vector2(0, 0)
 var direction = 1
 
@@ -11,13 +12,13 @@ func _ready():
 
 func _process(_delta):
 	if(direction == 1):
-		motion.x = min(200, motion.x + 50)
+		motion.x = min(MAX_SPEED, motion.x + 50)
 		$Sprite.flip_h = false
 		$HitBoxArea2D/CollisionShape2D.position = Vector2(20, -38.5)
 		$FrontHitArea2D/CollisionShape2D.position = Vector2(10, -38.5)
 		$FloorRayCast2D.set_cast_to(Vector2(20, 50))
 	else:
-		motion.x = max(-200, motion.x - 50)
+		motion.x = max(-MAX_SPEED, motion.x - 50)
 		$Sprite.flip_h = true
 		$HitBoxArea2D/CollisionShape2D.position = Vector2(-80, -38.5)
 		$FrontHitArea2D/CollisionShape2D.position = Vector2(-90, -38.5)

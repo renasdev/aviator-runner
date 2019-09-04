@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://default_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
@@ -30,9 +30,12 @@ tracks/0/keys = {
 "values": [ Rect2( 28, 23, 52, 41 ), Rect2( 124, 22, 52, 42 ), Rect2( 124, 22, 52, 42 ), Rect2( 316, 23, 52, 41 ), Rect2( 412, 23, 52, 41 ) ]
 }
 
+[sub_resource type="Animation" id=9]
+resource_name = "Jump"
+
 [sub_resource type="Animation" id=4]
 resource_name = "Run"
-length = 0.5
+length = 0.7
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:region_rect")
@@ -41,10 +44,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ Rect2( 26, 118, 52, 40 ), Rect2( 218, 117, 52, 41 ), Rect2( 315, 119, 52, 41 ), Rect2( 509, 116, 52, 40 ), Rect2( 604, 117, 52, 41 ), Rect2( 699, 119, 52, 41 ) ]
+"values": [ Rect2( 26, 118, 52, 40 ), Rect2( 121, 116, 52, 40 ), Rect2( 218, 117, 52, 41 ), Rect2( 315, 119, 52, 41 ), Rect2( 412, 117, 52, 41 ), Rect2( 509, 116, 52, 40 ), Rect2( 604, 117, 52, 41 ), Rect2( 699, 119, 52, 41 ) ]
 }
 
 [sub_resource type="Animation" id=5]
@@ -245,24 +248,30 @@ position = Vector2( -30, -20 )
 scale = Vector2( 3, 3 )
 texture = ExtResource( 7 )
 region_enabled = true
-region_rect = Rect2( 124, 22, 52, 42 )
+region_rect = Rect2( 121, 116, 52, 40 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Minotaur"]
 anims/Idle = SubResource( 3 )
+anims/Jump = SubResource( 9 )
 anims/Run = SubResource( 4 )
 anims/Simple_Attack = SubResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Minotaur"]
+visible = false
 position = Vector2( -50, -20 )
 shape = SubResource( 6 )
 
 [node name="FrontHitArea2D" type="Area2D" parent="Minotaur"]
+editor/display_folded = true
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Minotaur/FrontHitArea2D"]
 position = Vector2( 20, -38.5 )
 shape = SubResource( 7 )
 
 [node name="HitBoxArea2D" type="Area2D" parent="Minotaur"]
+editor/display_folded = true
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Minotaur/HitBoxArea2D"]
 position = Vector2( 10, -38.5 )
@@ -279,6 +288,7 @@ enabled = true
 cast_to = Vector2( -1000, 0 )
 
 [node name="FloorRayCast2D" type="RayCast2D" parent="Minotaur"]
+visible = false
 position = Vector2( 0, 1.5 )
 enabled = true
 cast_to = Vector2( 20, 50 )
