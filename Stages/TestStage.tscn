@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://default_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Scripts/Minotaur.gd" type="Script" id=6]
 [ext_resource path="res://Assets/Sprites/monsters/minotaur/Minotaur - Sprite Sheet.png" type="Texture" id=7]
 [ext_resource path="res://Scenes/Flag.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Assets/Sfx/Tactical Pursuit.ogg" type="AudioStream" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 58.607, 120 )
@@ -116,7 +117,7 @@ extents = Vector2( 50, 100 )
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
 format = 1
-tile_data = PoolIntArray( 524329, 0, 0, 524330, 0, 0, 524331, 0, 0, 524332, 0, 0, 524333, 0, 0, 524334, 0, 0, 655360, 0, 0, 655361, 0, 0, 655362, 0, 0, 655365, 0, 0, 655366, 0, 0, 655367, 0, 0, 655368, 0, 0, 655369, 0, 0, 655370, 0, 0, 655371, 0, 0, 655372, 0, 0, 655376, 0, 0, 655377, 0, 0, 655378, 0, 0, 655379, 0, 0, 655380, 0, 0, 655381, 0, 0, 655382, 0, 0, 655383, 0, 0, 655384, 0, 0, 655385, 0, 0, 655386, 0, 0, 655387, 0, 0, 655388, 0, 0, 655389, 0, 0, 655393, 0, 0, 655394, 0, 0, 655395, 0, 0, 655396, 0, 0, 655397, 0, 0, 655398, 0, 0 )
+tile_data = PoolIntArray( 524329, 0, 0, 524330, 0, 0, 524331, 0, 0, 524332, 0, 0, 524333, 0, 0, 524334, 0, 0, 655360, 0, 0, 655361, 0, 0, 655362, 0, 0, 655365, 0, 0, 655366, 0, 0, 655367, 0, 0, 655368, 0, 0, 655369, 0, 0, 655370, 0, 0, 655371, 0, 0, 655372, 0, 0, 655376, 0, 0, 655377, 0, 0, 655378, 0, 0, 655379, 0, 0, 655380, 0, 0, 655381, 0, 0, 655382, 0, 0, 655383, 0, 0, 655384, 0, 0, 655385, 0, 0, 655386, 0, 0, 655387, 0, 0, 655388, 0, 0, 655392, 0, 0, 655393, 0, 0, 655394, 0, 0, 655395, 0, 0, 655396, 0, 0, 655397, 0, 0, 655398, 0, 0 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 720, 600 )
@@ -236,7 +237,6 @@ position = Vector2( 0, 290 )
 shape = SubResource( 2 )
 
 [node name="Minotaur" type="KinematicBody2D" parent="."]
-editor/display_folded = true
 position = Vector2( 450, 596 )
 script = ExtResource( 6 )
 __meta__ = {
@@ -278,14 +278,12 @@ position = Vector2( 10, -38.5 )
 shape = SubResource( 9 )
 
 [node name="RightRayCast2D" type="RayCast2D" parent="Minotaur"]
-visible = false
 enabled = true
-cast_to = Vector2( 1000, 0 )
+cast_to = Vector2( 3000, 0 )
 
 [node name="LeftRayCast2D" type="RayCast2D" parent="Minotaur"]
-visible = false
 enabled = true
-cast_to = Vector2( -1000, 0 )
+cast_to = Vector2( -3000, 0 )
 
 [node name="FloorRayCast2D" type="RayCast2D" parent="Minotaur"]
 visible = false
@@ -297,6 +295,11 @@ collide_with_areas = true
 [node name="Flag" parent="." instance=ExtResource( 8 )]
 position = Vector2( 2910, 480 )
 next_scene_path = "res://Stages/Credits.tscn"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+autoplay = true
+bus = "Background"
 [connection signal="body_entered" from="FallingRock/Area2D" to="FallingRock" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="FallingRock2/Area2D" to="FallingRock2" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="FallingRock3/Area2D" to="FallingRock3" method="_on_Area2D_body_entered"]
