@@ -47,7 +47,7 @@ tracks/0/keys = {
 "values": [ Rect2( 26, 118, 52, 40 ), Rect2( 218, 117, 52, 41 ), Rect2( 315, 119, 52, 41 ), Rect2( 509, 116, 52, 40 ), Rect2( 604, 117, 52, 41 ), Rect2( 699, 119, 52, 41 ) ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=5]
 resource_name = "Simple_Attack"
 length = 0.8
 tracks/0/type = "value"
@@ -99,11 +99,11 @@ tracks/3/keys = {
 "values": [ true, false ]
 }
 
-[sub_resource type="CapsuleShape2D" id=5]
+[sub_resource type="CapsuleShape2D" id=6]
 radius = 50.0
 height = 30.0
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 60, 90 )
 
 [sub_resource type="RectangleShape2D" id=8]
@@ -250,23 +250,31 @@ region_rect = Rect2( 796, 310, 52, 42 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="KinematicBody2D2"]
 anims/Idle = SubResource( 3 )
 anims/Run = SubResource( 4 )
-anims/Simple_Attack = SubResource( 7 )
+anims/Simple_Attack = SubResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D2"]
 position = Vector2( -50, -20 )
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 
 [node name="FrontHitArea2D" type="Area2D" parent="KinematicBody2D2"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D2/FrontHitArea2D"]
-position = Vector2( 10, -38.5 )
-shape = SubResource( 6 )
+position = Vector2( 20, -38.5 )
+shape = SubResource( 7 )
 
 [node name="HitBoxArea2D" type="Area2D" parent="KinematicBody2D2"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D2/HitBoxArea2D"]
-position = Vector2( 20, -38.5 )
+position = Vector2( 10, -38.5 )
 shape = SubResource( 8 )
+
+[node name="RightRayCast2D" type="RayCast2D" parent="KinematicBody2D2"]
+enabled = true
+cast_to = Vector2( 1000, 0 )
+
+[node name="LeftRayCast2D" type="RayCast2D" parent="KinematicBody2D2"]
+enabled = true
+cast_to = Vector2( -1000, 0 )
 [connection signal="body_entered" from="FallingRock/Area2D" to="FallingRock" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="FallingRock2/Area2D" to="FallingRock2" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="FallingRock3/Area2D" to="FallingRock3" method="_on_Area2D_body_entered"]
