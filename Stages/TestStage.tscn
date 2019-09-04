@@ -116,7 +116,7 @@ extents = Vector2( 50, 100 )
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
 format = 1
-tile_data = PoolIntArray( 524330, 0, 0, 524331, 0, 0, 524332, 0, 0, 524333, 0, 0, 524334, 0, 0, 655360, 0, 0, 655361, 0, 0, 655362, 0, 0, 655365, 0, 0, 655366, 0, 0, 655367, 0, 0, 655368, 0, 0, 655369, 0, 0, 655370, 0, 0, 655371, 0, 0, 655372, 0, 0, 655376, 0, 0, 655377, 0, 0, 655378, 0, 0, 655379, 0, 0, 655380, 0, 0, 655381, 0, 0, 655382, 0, 0, 655383, 0, 0, 655384, 0, 0, 655385, 0, 0, 655386, 0, 0, 655387, 0, 0, 655388, 0, 0, 655389, 0, 0, 655390, 0, 0, 655391, 0, 0, 655392, 0, 0, 655396, 0, 0, 655397, 0, 0, 655398, 0, 0 )
+tile_data = PoolIntArray( 524329, 0, 0, 524330, 0, 0, 524331, 0, 0, 524332, 0, 0, 524333, 0, 0, 524334, 0, 0, 655360, 0, 0, 655361, 0, 0, 655362, 0, 0, 655365, 0, 0, 655366, 0, 0, 655367, 0, 0, 655368, 0, 0, 655369, 0, 0, 655370, 0, 0, 655371, 0, 0, 655372, 0, 0, 655376, 0, 0, 655377, 0, 0, 655378, 0, 0, 655379, 0, 0, 655380, 0, 0, 655381, 0, 0, 655382, 0, 0, 655383, 0, 0, 655384, 0, 0, 655385, 0, 0, 655386, 0, 0, 655387, 0, 0, 655388, 0, 0, 655389, 0, 0, 655393, 0, 0, 655394, 0, 0, 655395, 0, 0, 655396, 0, 0, 655397, 0, 0, 655398, 0, 0 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 720, 600 )
@@ -135,7 +135,7 @@ position = Vector2( -7.17505, 301.349 )
 
 [node name="FallingRock" type="KinematicBody2D" parent="."]
 editor/display_folded = true
-position = Vector2( 1324.01, 190 )
+position = Vector2( 1100, 190 )
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_group_": true
@@ -152,7 +152,7 @@ shape = SubResource( 2 )
 
 [node name="FallingRock2" type="KinematicBody2D" parent="."]
 editor/display_folded = true
-position = Vector2( 1468.02, 190 )
+position = Vector2( 1244.01, 190 )
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_group_": true
@@ -169,7 +169,7 @@ shape = SubResource( 2 )
 
 [node name="FallingRock3" type="KinematicBody2D" parent="."]
 editor/display_folded = true
-position = Vector2( 1608.02, 190 )
+position = Vector2( 1384.01, 190 )
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_group_": true
@@ -186,7 +186,7 @@ shape = SubResource( 2 )
 
 [node name="FallingRock4" type="KinematicBody2D" parent="."]
 editor/display_folded = true
-position = Vector2( 1748.02, 190 )
+position = Vector2( 1524.01, 190 )
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_group_": true
@@ -203,7 +203,7 @@ shape = SubResource( 2 )
 
 [node name="FallingRock5" type="KinematicBody2D" parent="."]
 editor/display_folded = true
-position = Vector2( 1888.02, 190 )
+position = Vector2( 1664.01, 190 )
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_group_": true
@@ -220,7 +220,7 @@ shape = SubResource( 2 )
 
 [node name="FallingRock6" type="KinematicBody2D" parent="."]
 editor/display_folded = true
-position = Vector2( 2028.02, 190 )
+position = Vector2( 1804.01, 190 )
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_group_": true
