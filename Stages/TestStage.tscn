@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://default_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Scripts/FallingRock.gd" type="Script" id=5]
 [ext_resource path="res://Scripts/Minotaur.gd" type="Script" id=6]
 [ext_resource path="res://Assets/Sprites/monsters/minotaur/Minotaur - Sprite Sheet.png" type="Texture" id=7]
+[ext_resource path="res://Scenes/Flag.tscn" type="PackedScene" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 58.607, 120 )
@@ -30,11 +31,10 @@ tracks/0/keys = {
 "values": [ Rect2( 28, 23, 52, 41 ), Rect2( 124, 22, 52, 42 ), Rect2( 124, 22, 52, 42 ), Rect2( 316, 23, 52, 41 ), Rect2( 412, 23, 52, 41 ) ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=4]
 resource_name = "Jump"
 
-[sub_resource type="Animation" id=4]
-resource_name = "Run"
+[sub_resource type="Animation" id=5]
 length = 0.7
 loop = true
 tracks/0/type = "value"
@@ -50,8 +50,7 @@ tracks/0/keys = {
 "values": [ Rect2( 26, 118, 52, 40 ), Rect2( 121, 116, 52, 40 ), Rect2( 218, 117, 52, 41 ), Rect2( 315, 119, 52, 41 ), Rect2( 412, 117, 52, 41 ), Rect2( 509, 116, 52, 40 ), Rect2( 604, 117, 52, 41 ), Rect2( 699, 119, 52, 41 ) ]
 }
 
-[sub_resource type="Animation" id=5]
-resource_name = "Simple_Attack"
+[sub_resource type="Animation" id=6]
 length = 0.8
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:region_rect")
@@ -102,14 +101,14 @@ tracks/3/keys = {
 "values": [ true, false ]
 }
 
-[sub_resource type="CapsuleShape2D" id=6]
+[sub_resource type="CapsuleShape2D" id=7]
 radius = 50.0
 height = 30.0
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 60, 90 )
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 50, 100 )
 
 [node name="Node2D" type="Node2D"]
@@ -117,7 +116,7 @@ extents = Vector2( 50, 100 )
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
 format = 1
-tile_data = PoolIntArray( 655360, 0, 0, 655361, 0, 0, 655362, 0, 0, 655365, 0, 0, 655366, 0, 0, 655367, 0, 0, 655368, 0, 0, 655369, 0, 0, 655370, 0, 0, 655371, 0, 0, 655372, 0, 0, 655376, 0, 0, 655377, 0, 0, 655378, 0, 0, 655379, 0, 0, 655380, 0, 0, 655381, 0, 0, 655384, 0, 0, 655385, 0, 0, 655386, 0, 0, 655387, 0, 0, 655388, 0, 0, 655389, 0, 0, 655390, 0, 0, 655394, 0, 0, 655395, 0, 0, 655396, 0, 0, 655397, 0, 0, 655398, 0, 0 )
+tile_data = PoolIntArray( 524330, 0, 0, 524331, 0, 0, 524332, 0, 0, 524333, 0, 0, 524334, 0, 0, 655360, 0, 0, 655361, 0, 0, 655362, 0, 0, 655365, 0, 0, 655366, 0, 0, 655367, 0, 0, 655368, 0, 0, 655369, 0, 0, 655370, 0, 0, 655371, 0, 0, 655372, 0, 0, 655376, 0, 0, 655377, 0, 0, 655378, 0, 0, 655379, 0, 0, 655380, 0, 0, 655381, 0, 0, 655382, 0, 0, 655383, 0, 0, 655384, 0, 0, 655385, 0, 0, 655386, 0, 0, 655387, 0, 0, 655388, 0, 0, 655389, 0, 0, 655390, 0, 0, 655391, 0, 0, 655392, 0, 0, 655396, 0, 0, 655397, 0, 0, 655398, 0, 0 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 720, 600 )
@@ -136,7 +135,7 @@ position = Vector2( -7.17505, 301.349 )
 
 [node name="FallingRock" type="KinematicBody2D" parent="."]
 editor/display_folded = true
-position = Vector2( 900, -160 )
+position = Vector2( 1324.01, 190 )
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_group_": true
@@ -153,7 +152,7 @@ shape = SubResource( 2 )
 
 [node name="FallingRock2" type="KinematicBody2D" parent="."]
 editor/display_folded = true
-position = Vector2( 1044.01, -160 )
+position = Vector2( 1468.02, 190 )
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_group_": true
@@ -170,7 +169,7 @@ shape = SubResource( 2 )
 
 [node name="FallingRock3" type="KinematicBody2D" parent="."]
 editor/display_folded = true
-position = Vector2( 1184.01, -160 )
+position = Vector2( 1608.02, 190 )
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_group_": true
@@ -187,7 +186,7 @@ shape = SubResource( 2 )
 
 [node name="FallingRock4" type="KinematicBody2D" parent="."]
 editor/display_folded = true
-position = Vector2( 1324.01, -160 )
+position = Vector2( 1748.02, 190 )
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_group_": true
@@ -204,7 +203,7 @@ shape = SubResource( 2 )
 
 [node name="FallingRock5" type="KinematicBody2D" parent="."]
 editor/display_folded = true
-position = Vector2( 1464.01, -160 )
+position = Vector2( 1888.02, 190 )
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_group_": true
@@ -221,7 +220,7 @@ shape = SubResource( 2 )
 
 [node name="FallingRock6" type="KinematicBody2D" parent="."]
 editor/display_folded = true
-position = Vector2( 1604.01, -160 )
+position = Vector2( 2028.02, 190 )
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_group_": true
@@ -237,6 +236,7 @@ position = Vector2( 0, 290 )
 shape = SubResource( 2 )
 
 [node name="Minotaur" type="KinematicBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 450, 596 )
 script = ExtResource( 6 )
 __meta__ = {
@@ -248,18 +248,18 @@ position = Vector2( -30, -20 )
 scale = Vector2( 3, 3 )
 texture = ExtResource( 7 )
 region_enabled = true
-region_rect = Rect2( 121, 116, 52, 40 )
+region_rect = Rect2( 412, 117, 52, 41 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Minotaur"]
 anims/Idle = SubResource( 3 )
-anims/Jump = SubResource( 9 )
-anims/Run = SubResource( 4 )
-anims/Simple_Attack = SubResource( 5 )
+anims/Jump = SubResource( 4 )
+anims/Run = SubResource( 5 )
+anims/Simple_Attack = SubResource( 6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Minotaur"]
 visible = false
 position = Vector2( -50, -20 )
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 
 [node name="FrontHitArea2D" type="Area2D" parent="Minotaur"]
 editor/display_folded = true
@@ -267,7 +267,7 @@ visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Minotaur/FrontHitArea2D"]
 position = Vector2( 20, -38.5 )
-shape = SubResource( 7 )
+shape = SubResource( 8 )
 
 [node name="HitBoxArea2D" type="Area2D" parent="Minotaur"]
 editor/display_folded = true
@@ -275,7 +275,7 @@ visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Minotaur/HitBoxArea2D"]
 position = Vector2( 10, -38.5 )
-shape = SubResource( 8 )
+shape = SubResource( 9 )
 
 [node name="RightRayCast2D" type="RayCast2D" parent="Minotaur"]
 visible = false
@@ -293,6 +293,10 @@ position = Vector2( 0, 1.5 )
 enabled = true
 cast_to = Vector2( 20, 50 )
 collide_with_areas = true
+
+[node name="Flag" parent="." instance=ExtResource( 8 )]
+position = Vector2( 2910, 480 )
+next_scene_path = "res://Stages/Credits.tscn"
 [connection signal="body_entered" from="FallingRock/Area2D" to="FallingRock" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="FallingRock2/Area2D" to="FallingRock2" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="FallingRock3/Area2D" to="FallingRock3" method="_on_Area2D_body_entered"]
