@@ -36,17 +36,16 @@ func _process(_delta):
 		direction = -1
 
 	if is_colliding_with_tilemap():
-		print("there is floor ")
+		"""there is floor ahead"""
+		pass
 	elif is_on_floor():
-		print("jump!!")
+		"""JUMP"""
 		motion.y -= 800
-	else:
-		print("shit")
 		
 func is_colliding_with_tilemap():
 	var objects_collide = []
 	if $FloorRayCast2D.is_colliding():
-		print($FloorRayCast2D.get_collider())
+		# print($FloorRayCast2D.get_collider())
 		return true
 		
 	return false
