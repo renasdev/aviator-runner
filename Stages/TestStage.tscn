@@ -1,116 +1,13 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://default_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Eagle.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Waypoints.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scripts/FallingRock.gd" type="Script" id=5]
-[ext_resource path="res://Scripts/Minotaur.gd" type="Script" id=6]
-[ext_resource path="res://Assets/Sprites/monsters/minotaur/Minotaur - Sprite Sheet.png" type="Texture" id=7]
-[ext_resource path="res://Scenes/Flag.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Assets/Sfx/Tactical Pursuit.ogg" type="AudioStream" id=9]
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 58.607, 120 )
-
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 58.6069, 155.29 )
-
-[sub_resource type="Animation" id=3]
-resource_name = "Idle"
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:region_rect")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.3, 0.5, 0.8, 1 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ Rect2( 28, 23, 52, 41 ), Rect2( 124, 22, 52, 42 ), Rect2( 124, 22, 52, 42 ), Rect2( 316, 23, 52, 41 ), Rect2( 412, 23, 52, 41 ) ]
-}
-
-[sub_resource type="Animation" id=4]
-resource_name = "Jump"
-
-[sub_resource type="Animation" id=5]
-length = 0.7
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:region_rect")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ Rect2( 26, 118, 52, 40 ), Rect2( 121, 116, 52, 40 ), Rect2( 218, 117, 52, 41 ), Rect2( 315, 119, 52, 41 ), Rect2( 412, 117, 52, 41 ), Rect2( 509, 116, 52, 40 ), Rect2( 604, 117, 52, 41 ), Rect2( 699, 119, 52, 41 ) ]
-}
-
-[sub_resource type="Animation" id=6]
-length = 0.8
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:region_rect")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ Rect2( 5, 307, 56, 45 ), Rect2( 111, 293, 72, 65 ), Rect2( 211, 293, 66, 65 ), Rect2( 316, 295, 57, 63 ), Rect2( 412, 311, 55, 46 ), Rect2( 508, 311, 49, 46 ), Rect2( 604, 311, 49, 46 ), Rect2( 700, 311, 48, 41 ), Rect2( 796, 310, 52, 42 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.1, 0.3, 0.4, 0.5, 0.7, 0.8 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ Vector2( -90, -24.503 ), Vector2( -40, -38.5 ), Vector2( -20, -38.5 ), Vector2( -20, -8.5 ), Vector2( -30, -8.5 ), Vector2( -30, -18.5 ), Vector2( -30, -20 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("HitBoxArea2D/CollisionShape2D:disabled")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 0.1, 0.4 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
-"values": [ true, false, true ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("FrontHitArea2D/CollisionShape2D:disabled")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ true, false ]
-}
-
-[sub_resource type="CapsuleShape2D" id=7]
-radius = 50.0
-height = 30.0
-
-[sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 60, 90 )
-
-[sub_resource type="RectangleShape2D" id=9]
-extents = Vector2( 50, 100 )
+[ext_resource path="res://Scenes/FallingRock.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Flag.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/Sfx/Tactical Pursuit.ogg" type="AudioStream" id=7]
+[ext_resource path="res://Scenes/Minotaur.tscn" type="PackedScene" id=8]
 
 [node name="Node2D" type="Node2D"]
 
@@ -134,177 +31,29 @@ position = Vector2( 250, 573.997 )
 [node name="Position2D" type="Position2D" parent="Waypoints"]
 position = Vector2( -7.17505, 301.349 )
 
-[node name="FallingRock" type="KinematicBody2D" parent="."]
-editor/display_folded = true
-position = Vector2( 1100, 190 )
-script = ExtResource( 5 )
-__meta__ = {
-"_edit_group_": true
-}
+[node name="FallingRock" parent="." instance=ExtResource( 5 )]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FallingRock"]
-shape = SubResource( 1 )
+[node name="FallingRock2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1240, 190 )
 
-[node name="Area2D" type="Area2D" parent="FallingRock"]
+[node name="FallingRock3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1380, 190 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FallingRock/Area2D"]
-position = Vector2( 0, 290 )
-shape = SubResource( 2 )
+[node name="FallingRock4" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1520, 190 )
 
-[node name="FallingRock2" type="KinematicBody2D" parent="."]
-editor/display_folded = true
-position = Vector2( 1244.01, 190 )
-script = ExtResource( 5 )
-__meta__ = {
-"_edit_group_": true
-}
+[node name="FallingRock5" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1660, 190 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FallingRock2"]
-shape = SubResource( 1 )
+[node name="FallingRock6" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1800, 190 )
 
-[node name="Area2D" type="Area2D" parent="FallingRock2"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FallingRock2/Area2D"]
-position = Vector2( 0, 290 )
-shape = SubResource( 2 )
-
-[node name="FallingRock3" type="KinematicBody2D" parent="."]
-editor/display_folded = true
-position = Vector2( 1384.01, 190 )
-script = ExtResource( 5 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FallingRock3"]
-shape = SubResource( 1 )
-
-[node name="Area2D" type="Area2D" parent="FallingRock3"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FallingRock3/Area2D"]
-position = Vector2( 0, 290 )
-shape = SubResource( 2 )
-
-[node name="FallingRock4" type="KinematicBody2D" parent="."]
-editor/display_folded = true
-position = Vector2( 1524.01, 190 )
-script = ExtResource( 5 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FallingRock4"]
-shape = SubResource( 1 )
-
-[node name="Area2D" type="Area2D" parent="FallingRock4"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FallingRock4/Area2D"]
-position = Vector2( 0, 290 )
-shape = SubResource( 2 )
-
-[node name="FallingRock5" type="KinematicBody2D" parent="."]
-editor/display_folded = true
-position = Vector2( 1664.01, 190 )
-script = ExtResource( 5 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FallingRock5"]
-shape = SubResource( 1 )
-
-[node name="Area2D" type="Area2D" parent="FallingRock5"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FallingRock5/Area2D"]
-position = Vector2( 0, 290 )
-shape = SubResource( 2 )
-
-[node name="FallingRock6" type="KinematicBody2D" parent="."]
-editor/display_folded = true
-position = Vector2( 1804.01, 190 )
-script = ExtResource( 5 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FallingRock6"]
-shape = SubResource( 1 )
-
-[node name="Area2D" type="Area2D" parent="FallingRock6"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FallingRock6/Area2D"]
-position = Vector2( 0, 290 )
-shape = SubResource( 2 )
-
-[node name="Minotaur" type="KinematicBody2D" parent="."]
-position = Vector2( 450, 596 )
-script = ExtResource( 6 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Minotaur"]
-position = Vector2( -30, -20 )
-scale = Vector2( 3, 3 )
-texture = ExtResource( 7 )
-region_enabled = true
-region_rect = Rect2( 412, 117, 52, 41 )
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Minotaur"]
-anims/Idle = SubResource( 3 )
-anims/Jump = SubResource( 4 )
-anims/Run = SubResource( 5 )
-anims/Simple_Attack = SubResource( 6 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Minotaur"]
-visible = false
-position = Vector2( -50, -20 )
-shape = SubResource( 7 )
-
-[node name="FrontHitArea2D" type="Area2D" parent="Minotaur"]
-editor/display_folded = true
-visible = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Minotaur/FrontHitArea2D"]
-position = Vector2( 20, -38.5 )
-shape = SubResource( 8 )
-
-[node name="HitBoxArea2D" type="Area2D" parent="Minotaur"]
-editor/display_folded = true
-visible = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Minotaur/HitBoxArea2D"]
-position = Vector2( 10, -38.5 )
-shape = SubResource( 9 )
-
-[node name="RightRayCast2D" type="RayCast2D" parent="Minotaur"]
-enabled = true
-cast_to = Vector2( 3000, 0 )
-
-[node name="LeftRayCast2D" type="RayCast2D" parent="Minotaur"]
-enabled = true
-cast_to = Vector2( -3000, 0 )
-
-[node name="FloorRayCast2D" type="RayCast2D" parent="Minotaur"]
-visible = false
-position = Vector2( 0, 1.5 )
-enabled = true
-cast_to = Vector2( 20, 50 )
-collide_with_areas = true
-
-[node name="Flag" parent="." instance=ExtResource( 8 )]
+[node name="Flag" parent="." instance=ExtResource( 6 )]
 position = Vector2( 2910, 480 )
 next_scene_path = "res://Stages/Credits.tscn"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 9 )
-autoplay = true
+stream = ExtResource( 7 )
 bus = "Background"
-[connection signal="body_entered" from="FallingRock/Area2D" to="FallingRock" method="_on_Area2D_body_entered"]
-[connection signal="body_entered" from="FallingRock2/Area2D" to="FallingRock2" method="_on_Area2D_body_entered"]
-[connection signal="body_entered" from="FallingRock3/Area2D" to="FallingRock3" method="_on_Area2D_body_entered"]
-[connection signal="body_entered" from="FallingRock4/Area2D" to="FallingRock4" method="_on_Area2D_body_entered"]
-[connection signal="body_entered" from="FallingRock5/Area2D" to="FallingRock5" method="_on_Area2D_body_entered"]
-[connection signal="body_entered" from="FallingRock6/Area2D" to="FallingRock6" method="_on_Area2D_body_entered"]
-[connection signal="body_entered" from="Minotaur/FrontHitArea2D" to="Minotaur" method="_on_FrontHitArea2D_body_entered"]
-[connection signal="body_entered" from="Minotaur/HitBoxArea2D" to="Minotaur" method="_on_HitBoxArea2D_body_entered"]
+
+[node name="Minotaur" parent="." instance=ExtResource( 8 )]

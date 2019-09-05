@@ -1,0 +1,192 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://default_tileset.tres" type="TileSet" id=1]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Gem.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/FallingRock.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Minotaur.tscn" type="PackedScene" id=5]
+
+[node name="Node2D" type="Node2D"]
+__meta__ = {
+"_edit_horizontal_guides_": [ 850.0 ]
+}
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+format = 1
+tile_data = PoolIntArray( 1114104, 0, 0, 1114105, 0, 0, 1114106, 0, 0, 1114107, 0, 0, 1114108, 0, 0, 1114109, 0, 0, 1114110, 0, 0, 1114111, 0, 0, 1048576, 0, 0, 1048577, 0, 0, 1048578, 0, 0, 1048579, 0, 0, 1048580, 0, 0, 1048581, 0, 0, 1048582, 0, 0, 1048583, 0, 0, 1048584, 0, 0, 1048585, 0, 0, 1048586, 0, 0, 1048587, 0, 0, 1048588, 0, 0, 1048589, 0, 0, 1048590, 0, 0, 1048594, 0, 0, 1048595, 0, 0, 1048596, 0, 0, 1048597, 0, 0, 1048598, 0, 0, 1048599, 0, 0, 1048600, 0, 0, 1048601, 0, 0, 1048602, 0, 0, 1048603, 0, 0, 1048604, 0, 0, 1048605, 0, 0, 1048606, 0, 0, 1048607, 0, 0, 1048608, 0, 0, 1048609, 0, 0, 1048610, 0, 0, 1048611, 0, 0, 1048612, 0, 0, 1048613, 0, 0, 1048614, 0, 0, 1048618, 0, 0, 1048619, 0, 0, 1048620, 0, 0, 1048621, 0, 0, 1048622, 0, 0, 1048623, 0, 0, 1048624, 0, 0, 1048625, 0, 0, 1048626, 0, 0, 1048627, 0, 0, 1048628, 0, 0, 1048632, 0, 0, 1048633, 0, 0, 1048634, 0, 0, 1048635, 0, 0, 1048636, 0, 0, 1048637, 0, 0, 1048638, 0, 0, 1048639, 0, 0 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 300, 880 )
+
+[node name="GEMS" type="Node2D" parent="."]
+
+[node name="Gem" parent="GEMS" instance=ExtResource( 3 )]
+position = Vector2( 380, 1000 )
+
+[node name="Gem2" parent="GEMS" instance=ExtResource( 3 )]
+position = Vector2( 430, 1000 )
+
+[node name="Gem3" parent="GEMS" instance=ExtResource( 3 )]
+position = Vector2( 480, 1000 )
+
+[node name="Gem4" parent="GEMS" instance=ExtResource( 3 )]
+position = Vector2( 530, 1000 )
+
+[node name="Gem5" parent="GEMS" instance=ExtResource( 3 )]
+position = Vector2( 580, 1000 )
+
+[node name="Gem6" parent="GEMS" instance=ExtResource( 3 )]
+position = Vector2( 630, 1000 )
+
+[node name="Gem7" parent="GEMS" instance=ExtResource( 3 )]
+position = Vector2( 680, 1000 )
+
+[node name="Gem8" parent="GEMS" instance=ExtResource( 3 )]
+position = Vector2( 950, 870 )
+
+[node name="Gem9" parent="GEMS" instance=ExtResource( 3 )]
+position = Vector2( 1000, 870 )
+
+[node name="Gem10" parent="GEMS" instance=ExtResource( 3 )]
+position = Vector2( 1050, 870 )
+
+[node name="Gem11" parent="GEMS" instance=ExtResource( 3 )]
+position = Vector2( 1100, 870 )
+
+[node name="Gem12" parent="GEMS" instance=ExtResource( 3 )]
+position = Vector2( 1150, 870 )
+
+[node name="Gem13" parent="GEMS" instance=ExtResource( 3 )]
+position = Vector2( 1200, 870 )
+
+[node name="Gem14" parent="GEMS" instance=ExtResource( 3 )]
+position = Vector2( 1430, 1000 )
+
+[node name="Gem15" parent="GEMS" instance=ExtResource( 3 )]
+position = Vector2( 1480, 1000 )
+
+[node name="Gem16" parent="GEMS" instance=ExtResource( 3 )]
+position = Vector2( 1530, 1000 )
+
+[node name="Gem17" parent="GEMS" instance=ExtResource( 3 )]
+position = Vector2( 1580, 1000 )
+
+[node name="Gem18" parent="GEMS" instance=ExtResource( 3 )]
+position = Vector2( 1630, 1000 )
+
+[node name="Gem19" parent="GEMS" instance=ExtResource( 3 )]
+position = Vector2( 1680, 1000 )
+
+[node name="Gem20" parent="GEMS" instance=ExtResource( 3 )]
+position = Vector2( 1790, 870 )
+
+[node name="Gem21" parent="GEMS" instance=ExtResource( 3 )]
+position = Vector2( 1840, 870 )
+
+[node name="Gem22" parent="GEMS" instance=ExtResource( 3 )]
+position = Vector2( 1890, 870 )
+
+[node name="Gem23" parent="GEMS" instance=ExtResource( 3 )]
+position = Vector2( 1940, 870 )
+
+[node name="Gem24" parent="GEMS" instance=ExtResource( 3 )]
+position = Vector2( 1990, 870 )
+
+[node name="Gem25" parent="GEMS" instance=ExtResource( 3 )]
+position = Vector2( 2130, 1000 )
+
+[node name="Gem29" parent="GEMS" instance=ExtResource( 3 )]
+position = Vector2( 2730, 1000 )
+
+[node name="Gem33" parent="GEMS" instance=ExtResource( 3 )]
+position = Vector2( 2930, 1000 )
+
+[node name="Gem37" parent="GEMS" instance=ExtResource( 3 )]
+position = Vector2( 3130, 1000 )
+
+[node name="Gem42" parent="GEMS" instance=ExtResource( 3 )]
+position = Vector2( 3650, 1000 )
+
+[node name="Gem48" parent="GEMS" instance=ExtResource( 3 )]
+position = Vector2( 3850, 1000 )
+
+[node name="Gem26" parent="GEMS" instance=ExtResource( 3 )]
+position = Vector2( 2180, 1000 )
+
+[node name="Gem31" parent="GEMS" instance=ExtResource( 3 )]
+position = Vector2( 2780, 1000 )
+
+[node name="Gem36" parent="GEMS" instance=ExtResource( 3 )]
+position = Vector2( 2980, 1000 )
+
+[node name="Gem38" parent="GEMS" instance=ExtResource( 3 )]
+position = Vector2( 3180, 1000 )
+
+[node name="Gem44" parent="GEMS" instance=ExtResource( 3 )]
+position = Vector2( 3700, 1000 )
+
+[node name="Gem47" parent="GEMS" instance=ExtResource( 3 )]
+position = Vector2( 3900, 1000 )
+
+[node name="Gem27" parent="GEMS" instance=ExtResource( 3 )]
+position = Vector2( 2230, 1000 )
+
+[node name="Gem32" parent="GEMS" instance=ExtResource( 3 )]
+position = Vector2( 2830, 1000 )
+
+[node name="Gem35" parent="GEMS" instance=ExtResource( 3 )]
+position = Vector2( 3030, 1000 )
+
+[node name="Gem40" parent="GEMS" instance=ExtResource( 3 )]
+position = Vector2( 3230, 1000 )
+
+[node name="Gem41" parent="GEMS" instance=ExtResource( 3 )]
+position = Vector2( 3750, 1000 )
+
+[node name="Gem45" parent="GEMS" instance=ExtResource( 3 )]
+position = Vector2( 3950, 1000 )
+
+[node name="Gem28" parent="GEMS" instance=ExtResource( 3 )]
+position = Vector2( 2280, 1000 )
+
+[node name="Gem30" parent="GEMS" instance=ExtResource( 3 )]
+position = Vector2( 2880, 1000 )
+
+[node name="Gem34" parent="GEMS" instance=ExtResource( 3 )]
+position = Vector2( 3080, 1000 )
+
+[node name="Gem39" parent="GEMS" instance=ExtResource( 3 )]
+position = Vector2( 3280, 1000 )
+
+[node name="Gem43" parent="GEMS" instance=ExtResource( 3 )]
+position = Vector2( 3800, 1000 )
+
+[node name="Gem46" parent="GEMS" instance=ExtResource( 3 )]
+position = Vector2( 4000, 1000 )
+
+[node name="FallingRocks" type="Node2D" parent="."]
+editor/display_folded = true
+
+[node name="FallingRock" parent="FallingRocks" instance=ExtResource( 4 )]
+position = Vector2( 2750, 580 )
+
+[node name="FallingRock2" parent="FallingRocks" instance=ExtResource( 4 )]
+position = Vector2( 2870, 580 )
+
+[node name="FallingRock3" parent="FallingRocks" instance=ExtResource( 4 )]
+position = Vector2( 2990, 580 )
+
+[node name="FallingRock4" parent="FallingRocks" instance=ExtResource( 4 )]
+position = Vector2( 3110, 580 )
+
+[node name="FallingRock5" parent="FallingRocks" instance=ExtResource( 4 )]
+position = Vector2( 3230, 580 )
+
+[node name="FallingRock6" parent="FallingRocks" instance=ExtResource( 4 )]
+position = Vector2( 3350, 580 )
+
+[node name="Minotaur" parent="." instance=ExtResource( 5 )]
+position = Vector2( -200, 983 )

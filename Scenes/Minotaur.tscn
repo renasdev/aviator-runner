@@ -1,0 +1,199 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Scripts/Minotaur.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Sprites/monsters/minotaur/Minotaur - Sprite Sheet.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Sfx/sfx_wpn_sword2.wav" type="AudioStream" id=3]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Idle"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.5, 0.8, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 28, 23, 52, 41 ), Rect2( 124, 22, 52, 42 ), Rect2( 124, 22, 52, 42 ), Rect2( 316, 23, 52, 41 ), Rect2( 412, 23, 52, 41 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "Jump"
+
+[sub_resource type="Animation" id=3]
+length = 0.7
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 26, 118, 52, 40 ), Rect2( 121, 116, 52, 40 ), Rect2( 218, 117, 52, 41 ), Rect2( 315, 119, 52, 41 ), Rect2( 412, 117, 52, 41 ), Rect2( 509, 116, 52, 40 ), Rect2( 604, 117, 52, 41 ), Rect2( 699, 119, 52, 41 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+length = 0.8
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 5, 307, 56, 45 ), Rect2( 111, 293, 72, 65 ), Rect2( 211, 293, 66, 65 ), Rect2( 316, 295, 57, 63 ), Rect2( 412, 311, 55, 46 ), Rect2( 508, 311, 49, 46 ), Rect2( 604, 311, 49, 46 ), Rect2( 700, 311, 48, 41 ), Rect2( 796, 310, 52, 42 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.3, 0.4, 0.5, 0.7, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( -90, -24.503 ), Vector2( -40, -38.5 ), Vector2( -20, -38.5 ), Vector2( -20, -8.5 ), Vector2( -30, -8.5 ), Vector2( -30, -18.5 ), Vector2( -30, -20 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("HitBoxArea2D/CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("FrontHitArea2D/CollisionShape2D:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("AudioStreamPlayer2D:stream")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.1, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ null, ExtResource( 3 ), null ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.1, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("AudioStreamPlayer2D:autoplay")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="CapsuleShape2D" id=5]
+radius = 50.0
+height = 30.0
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 60, 90 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 50, 100 )
+
+[node name="Minotaur" type="KinematicBody2D"]
+position = Vector2( 450, 596 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -30, -20 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 796, 310, 52, 42 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Idle = SubResource( 1 )
+anims/Jump = SubResource( 2 )
+anims/Run = SubResource( 3 )
+anims/Simple_Attack = SubResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( -50, -20 )
+shape = SubResource( 5 )
+
+[node name="FrontHitArea2D" type="Area2D" parent="."]
+editor/display_folded = true
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FrontHitArea2D"]
+position = Vector2( 20, -38.5 )
+shape = SubResource( 6 )
+
+[node name="HitBoxArea2D" type="Area2D" parent="."]
+editor/display_folded = true
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBoxArea2D"]
+position = Vector2( 10, -38.5 )
+shape = SubResource( 7 )
+disabled = true
+
+[node name="RightRayCast2D" type="RayCast2D" parent="."]
+enabled = true
+cast_to = Vector2( 3000, 0 )
+
+[node name="LeftRayCast2D" type="RayCast2D" parent="."]
+enabled = true
+cast_to = Vector2( -3000, 0 )
+
+[node name="FloorRayCast2D" type="RayCast2D" parent="."]
+visible = false
+position = Vector2( 0, 1.5 )
+enabled = true
+cast_to = Vector2( 20, 50 )
+collide_with_areas = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+bus = "SFX"
+[connection signal="body_entered" from="FrontHitArea2D" to="." method="_on_FrontHitArea2D_body_entered"]
+[connection signal="body_entered" from="HitBoxArea2D" to="." method="_on_HitBoxArea2D_body_entered"]

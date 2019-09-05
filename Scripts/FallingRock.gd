@@ -4,11 +4,12 @@ const FALLING_SPEED := 1
 
 var falling := false
 var motion := Vector2(0, 0)
+var is_colliding := false
 
 onready var initial_pos = position
 
 func _ready():
-	pass # Replace with function body.
+	pass
 
 func _process(delta):
 	if falling:
@@ -18,6 +19,9 @@ func _process(delta):
 		
 		if collision and collision.get_collider().get_name() == GameConstants.PLAYER:
 			collision.get_collider().take_damage()
+		elif !is_colliding and collision:
+			$AudioStreamPlayer2D.play(0.0)
+			is_colliding = true
 			
 
 func _draw() -> void:
