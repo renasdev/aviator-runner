@@ -17,6 +17,7 @@ extents = Vector2( 90, 30 )
 [node name="Node2D" type="Node2D"]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+editor/display_folded = true
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2( 1, 0 )
@@ -43,7 +44,7 @@ position = Vector2( 160, 110 )
 
 [node name="Flag" parent="." instance=ExtResource( 4 )]
 position = Vector2( 9640, -30 )
-next_scene_path = "res://Stages/TestStage.tscn"
+next_scene_path = "res://Stages/cena4.tscn"
 
 [node name="Waypoints" parent="." instance=ExtResource( 5 )]
 editor/display_folded = true

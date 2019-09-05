@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://default_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Gem.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/FallingRock.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Minotaur.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/Sfx/Tactical Pursuit.ogg" type="AudioStream" id=6]
 
 [node name="Node2D" type="Node2D"]
 __meta__ = {
@@ -16,12 +17,13 @@ __meta__ = {
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
 format = 1
-tile_data = PoolIntArray( 1114104, 0, 0, 1114105, 0, 0, 1114106, 0, 0, 1114107, 0, 0, 1114108, 0, 0, 1114109, 0, 0, 1114110, 0, 0, 1114111, 0, 0, 1048576, 0, 0, 1048577, 0, 0, 1048578, 0, 0, 1048579, 0, 0, 1048580, 0, 0, 1048581, 0, 0, 1048582, 0, 0, 1048583, 0, 0, 1048584, 0, 0, 1048585, 0, 0, 1048586, 0, 0, 1048587, 0, 0, 1048588, 0, 0, 1048589, 0, 0, 1048590, 0, 0, 1048594, 0, 0, 1048595, 0, 0, 1048596, 0, 0, 1048597, 0, 0, 1048598, 0, 0, 1048599, 0, 0, 1048600, 0, 0, 1048601, 0, 0, 1048602, 0, 0, 1048603, 0, 0, 1048604, 0, 0, 1048605, 0, 0, 1048606, 0, 0, 1048607, 0, 0, 1048608, 0, 0, 1048609, 0, 0, 1048610, 0, 0, 1048611, 0, 0, 1048612, 0, 0, 1048613, 0, 0, 1048614, 0, 0, 1048618, 0, 0, 1048619, 0, 0, 1048620, 0, 0, 1048621, 0, 0, 1048622, 0, 0, 1048623, 0, 0, 1048624, 0, 0, 1048625, 0, 0, 1048626, 0, 0, 1048627, 0, 0, 1048628, 0, 0, 1048632, 0, 0, 1048633, 0, 0, 1048634, 0, 0, 1048635, 0, 0, 1048636, 0, 0, 1048637, 0, 0, 1048638, 0, 0, 1048639, 0, 0 )
+tile_data = PoolIntArray( 1114104, 0, 0, 1114105, 0, 0, 1114106, 0, 0, 1114107, 0, 0, 1114108, 0, 0, 1114109, 0, 0, 1114110, 0, 0, 1114111, 0, 0, 1048576, 0, 0, 1048577, 0, 0, 1048578, 0, 0, 1048579, 0, 0, 1048580, 0, 0, 1048581, 0, 0, 1048582, 0, 0, 1048583, 0, 0, 1048584, 0, 0, 1048585, 0, 0, 1048586, 0, 0, 1048587, 0, 0, 1048588, 0, 0, 1048589, 0, 0, 1048590, 0, 0, 1048594, 0, 0, 1048595, 0, 0, 1048596, 0, 0, 1048597, 0, 0, 1048598, 0, 0, 1048599, 0, 0, 1048600, 0, 0, 1048601, 0, 0, 1048602, 0, 0, 1048603, 0, 0, 1048604, 0, 0, 1048605, 0, 0, 1048606, 0, 0, 1048607, 0, 0, 1048608, 0, 0, 1048609, 0, 0, 1048610, 0, 0, 1048611, 0, 0, 1048612, 0, 0, 1048613, 0, 0, 1048614, 0, 0, 1048619, 0, 0, 1048620, 0, 0, 1048621, 0, 0, 1048622, 0, 0, 1048623, 0, 0, 1048624, 0, 0, 1048625, 0, 0, 1048626, 0, 0, 1048627, 0, 0, 1048628, 0, 0, 1048629, 0, 0, 1048632, 0, 0, 1048633, 0, 0, 1048634, 0, 0, 1048635, 0, 0, 1048636, 0, 0, 1048637, 0, 0, 1048638, 0, 0, 1048639, 0, 0 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 300, 880 )
 
 [node name="GEMS" type="Node2D" parent="."]
+editor/display_folded = true
 
 [node name="Gem" parent="GEMS" instance=ExtResource( 3 )]
 position = Vector2( 380, 1000 )
@@ -43,6 +45,18 @@ position = Vector2( 630, 1000 )
 
 [node name="Gem7" parent="GEMS" instance=ExtResource( 3 )]
 position = Vector2( 680, 1000 )
+
+[node name="Gem41" parent="GEMS" instance=ExtResource( 3 )]
+position = Vector2( 730, 1000 )
+
+[node name="Gem42" parent="GEMS" instance=ExtResource( 3 )]
+position = Vector2( 780, 1000 )
+
+[node name="Gem43" parent="GEMS" instance=ExtResource( 3 )]
+position = Vector2( 780, 1000 )
+
+[node name="Gem44" parent="GEMS" instance=ExtResource( 3 )]
+position = Vector2( 830, 1000 )
 
 [node name="Gem8" parent="GEMS" instance=ExtResource( 3 )]
 position = Vector2( 950, 870 )
@@ -98,17 +112,11 @@ position = Vector2( 1990, 870 )
 [node name="Gem25" parent="GEMS" instance=ExtResource( 3 )]
 position = Vector2( 2130, 1000 )
 
-[node name="Gem29" parent="GEMS" instance=ExtResource( 3 )]
-position = Vector2( 2730, 1000 )
-
 [node name="Gem33" parent="GEMS" instance=ExtResource( 3 )]
 position = Vector2( 2930, 1000 )
 
 [node name="Gem37" parent="GEMS" instance=ExtResource( 3 )]
 position = Vector2( 3130, 1000 )
-
-[node name="Gem42" parent="GEMS" instance=ExtResource( 3 )]
-position = Vector2( 3650, 1000 )
 
 [node name="Gem48" parent="GEMS" instance=ExtResource( 3 )]
 position = Vector2( 3850, 1000 )
@@ -125,9 +133,6 @@ position = Vector2( 2980, 1000 )
 [node name="Gem38" parent="GEMS" instance=ExtResource( 3 )]
 position = Vector2( 3180, 1000 )
 
-[node name="Gem44" parent="GEMS" instance=ExtResource( 3 )]
-position = Vector2( 3700, 1000 )
-
 [node name="Gem47" parent="GEMS" instance=ExtResource( 3 )]
 position = Vector2( 3900, 1000 )
 
@@ -143,14 +148,17 @@ position = Vector2( 3030, 1000 )
 [node name="Gem40" parent="GEMS" instance=ExtResource( 3 )]
 position = Vector2( 3230, 1000 )
 
-[node name="Gem41" parent="GEMS" instance=ExtResource( 3 )]
-position = Vector2( 3750, 1000 )
-
 [node name="Gem45" parent="GEMS" instance=ExtResource( 3 )]
 position = Vector2( 3950, 1000 )
 
 [node name="Gem28" parent="GEMS" instance=ExtResource( 3 )]
 position = Vector2( 2280, 1000 )
+
+[node name="Gem29" parent="GEMS" instance=ExtResource( 3 )]
+position = Vector2( 2330, 1000 )
+
+[node name="Gem52" parent="GEMS" instance=ExtResource( 3 )]
+position = Vector2( 2380, 1000 )
 
 [node name="Gem30" parent="GEMS" instance=ExtResource( 3 )]
 position = Vector2( 2880, 1000 )
@@ -161,32 +169,41 @@ position = Vector2( 3080, 1000 )
 [node name="Gem39" parent="GEMS" instance=ExtResource( 3 )]
 position = Vector2( 3280, 1000 )
 
-[node name="Gem43" parent="GEMS" instance=ExtResource( 3 )]
-position = Vector2( 3800, 1000 )
+[node name="Gem49" parent="GEMS" instance=ExtResource( 3 )]
+position = Vector2( 3330, 1000 )
+
+[node name="Gem50" parent="GEMS" instance=ExtResource( 3 )]
+position = Vector2( 3380, 1000 )
+
+[node name="Gem51" parent="GEMS" instance=ExtResource( 3 )]
+position = Vector2( 3430, 1000 )
 
 [node name="Gem46" parent="GEMS" instance=ExtResource( 3 )]
 position = Vector2( 4000, 1000 )
 
 [node name="FallingRocks" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="FallingRock" parent="FallingRocks" instance=ExtResource( 4 )]
-position = Vector2( 2750, 580 )
+position = Vector2( 2790, 580 )
 
 [node name="FallingRock2" parent="FallingRocks" instance=ExtResource( 4 )]
-position = Vector2( 2870, 580 )
+position = Vector2( 2910, 580 )
 
 [node name="FallingRock3" parent="FallingRocks" instance=ExtResource( 4 )]
-position = Vector2( 2990, 580 )
+position = Vector2( 3030, 580 )
 
 [node name="FallingRock4" parent="FallingRocks" instance=ExtResource( 4 )]
-position = Vector2( 3110, 580 )
+position = Vector2( 3150, 580 )
 
 [node name="FallingRock5" parent="FallingRocks" instance=ExtResource( 4 )]
-position = Vector2( 3230, 580 )
+position = Vector2( 3270, 580 )
 
 [node name="FallingRock6" parent="FallingRocks" instance=ExtResource( 4 )]
-position = Vector2( 3350, 580 )
+position = Vector2( 3390, 580 )
 
 [node name="Minotaur" parent="." instance=ExtResource( 5 )]
 position = Vector2( -200, 983 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+autoplay = true
