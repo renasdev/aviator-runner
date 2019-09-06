@@ -65,10 +65,10 @@ func _physics_process(_delta):
 	if motion.y > 900 and motion.y < 2000 and !$SFX/Falling.is_playing() :
 		$SFX/Falling.play(0.0)
 	if motion.y > 2500:
-		_kill()
+		instant_kill()
 		
 	if Input.is_action_pressed("reload"):
-		_kill()
+		instant_kill()
 		
 #warning-ignore:return_value_discarded
 func _kill():
@@ -84,6 +84,15 @@ func take_damage():
 		$AnimationPlayer.play("damage")
 		if !$SFX/Damage.is_playing():
 			$SFX/Damage.play()
+	
+func instant_kill():
+	if not dying:
+		dying = true
+		$AnimationPlayer.play("damage")
+		if !$SFX/Damage.is_playing():
+			$SFX/Damage.play()
+		$KillerTimer.start(0.1)
+	
 	
 func increment_gems(amount:int):
 	gems += amount

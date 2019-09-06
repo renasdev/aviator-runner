@@ -143,7 +143,7 @@ position = Vector2( 1504, 612 )
 position = Vector2( -384, -4 )
 
 [node name="MovingPlatform" parent="Waypoints" instance=ExtResource( 12 )]
-position = Vector2( 1339.99, 610.292 )
+position = Vector2( 1120, 608 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Waypoints/MovingPlatform"]
 shape = SubResource( 1 )
@@ -156,7 +156,7 @@ position = Vector2( 2816, 672 )
 position = Vector2( 0, -372 )
 
 [node name="MovingPlatform2" parent="Waypoints2" instance=ExtResource( 12 )]
-position = Vector2( 2816, 300 )
+position = Vector2( 2816, 672 )
 editor_process = false
 speed = 300.0
 
@@ -175,7 +175,7 @@ position = Vector2( 288, -320 )
 
 [node name="MovingPlatform3" parent="Waypoints3" instance=ExtResource( 12 )]
 editor/display_folded = true
-position = Vector2( 4192, 160 )
+position = Vector2( 4192, 480 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Waypoints3/MovingPlatform3"]
 shape = SubResource( 3 )
@@ -189,7 +189,7 @@ position = Vector2( 544, 0 )
 
 [node name="MovingPlatform4" parent="Waypoints4" instance=ExtResource( 12 )]
 editor/display_folded = true
-position = Vector2( 6336, 64 )
+position = Vector2( 5932, 64 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Waypoints4/MovingPlatform4"]
 shape = SubResource( 3 )
@@ -203,7 +203,7 @@ position = Vector2( -544, 0 )
 
 [node name="MovingPlatform5" parent="Waypoints5" instance=ExtResource( 12 )]
 editor/display_folded = true
-position = Vector2( 6624, 64 )
+position = Vector2( 7028, 64 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Waypoints5/MovingPlatform5"]
 shape = SubResource( 3 )
