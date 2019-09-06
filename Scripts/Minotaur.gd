@@ -1,8 +1,10 @@
 extends KinematicBody2D
 
 const MAX_SPEED = 350
+
 var motion = Vector2(0, 0)
 var direction = 1
+var is_jumping := false
 
 func _ready():
 	$AnimationPlayer.play("Run")
@@ -34,12 +36,18 @@ func _process(_delta):
 		direction = 1
 	elif $LeftRayCast2D.is_colliding() && $LeftRayCast2D.get_collider().get_name() == GameConstants.PLAYER:
 		direction = -1
+		
+	if is_on_floor() && is_jumping:
+		is_jumping = false
+		GameConstants.get_current_camera().shake(3.0, 0.5)
+		$ImpactAudioStreamPlayer2D.play(0.0)
 
 	if is_colliding_with_tilemap():
 		"""there is floor ahead"""
 		pass
 	elif is_on_floor():
 		"""JUMP"""
+		is_jumping = true
 		motion.y -= 800
 		
 func is_colliding_with_tilemap():

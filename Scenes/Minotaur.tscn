@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scripts/Minotaur.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/monsters/minotaur/Minotaur - Sprite Sheet.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Sfx/sfx_wpn_sword2.wav" type="AudioStream" id=3]
+[ext_resource path="res://Assets/Sfx/sfx_sounds_impact1.wav" type="AudioStream" id=4]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Idle"
@@ -194,6 +195,10 @@ cast_to = Vector2( 20, 50 )
 collide_with_areas = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+bus = "SFX"
+
+[node name="ImpactAudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 4 )
 bus = "SFX"
 [connection signal="body_entered" from="FrontHitArea2D" to="." method="_on_FrontHitArea2D_body_entered"]
 [connection signal="body_entered" from="HitBoxArea2D" to="." method="_on_HitBoxArea2D_body_entered"]
