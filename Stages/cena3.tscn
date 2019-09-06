@@ -55,7 +55,6 @@ position = Vector2( 475.586, -7.75412 )
 
 [node name="Opossum" parent="." instance=ExtResource( 6 )]
 position = Vector2( 1662.19, -29.9076 )
-sprite_is_left = false
 waypoints_path = NodePath("../Waypoints")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
@@ -72,7 +71,6 @@ position = Vector2( 475.586, -7.75412 )
 
 [node name="Opossum2" parent="." instance=ExtResource( 6 )]
 position = Vector2( 1842.93, -32.2506 )
-sprite_is_left = false
 waypoints_path = NodePath("../Waypoints2")
 
 [node name="GEMS" type="Node2D" parent="."]
@@ -262,11 +260,10 @@ position = Vector2( 610, -30 )
 position = Vector2( 650, -29.9076 )
 
 [node name="Waypoints4" parent="." instance=ExtResource( 5 )]
-editor/display_folded = true
 position = Vector2( 5290, 30 )
 
 [node name="Position2D" type="Position2D" parent="Waypoints4"]
-position = Vector2( 520, 0 )
+position = Vector2( 380, 0 )
 
 [node name="MovingPlatform" parent="Waypoints4" instance=ExtResource( 9 )]
 position = Vector2( 5290, 30 )
@@ -275,19 +272,12 @@ editor_process = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Waypoints4/MovingPlatform"]
 shape = SubResource( 1 )
 
-[node name="Waypoints5" parent="." instance=ExtResource( 5 )]
-editor/display_folded = true
-position = Vector2( 9030, 100 )
-
-[node name="Position2D" type="Position2D" parent="Waypoints5"]
-position = Vector2( 0, -170 )
-
 [node name="Eagle" parent="." instance=ExtResource( 10 )]
 position = Vector2( 3040, 10 )
 waypoints_path = NodePath("")
 
 [node name="Eagle2" parent="." instance=ExtResource( 10 )]
-position = Vector2( 6080, 26 )
+position = Vector2( 5970, 30 )
 
 [node name="Eagle3" parent="." instance=ExtResource( 10 )]
 position = Vector2( 6980, 10 )
@@ -296,5 +286,4 @@ position = Vector2( 6980, 10 )
 position = Vector2( 7390, 16 )
 
 [node name="Eagle5" parent="." instance=ExtResource( 10 )]
-position = Vector2( 9030, -70 )
-waypoints_path = NodePath("../Waypoints5")
+position = Vector2( 9070, 10 )
