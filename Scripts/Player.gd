@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 const MAX_SPEED = 400
 const JUMP_HEIGHT = 650
-const MAX_HEIGHT = 900
+const MAX_HEIGHT = 750
 
 export var auto_kill_on_falling := true
 
