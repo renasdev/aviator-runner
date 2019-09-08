@@ -4,6 +4,7 @@ extends Node2D
 export(String, FILE, "*.tscn,*.scn") var next_scene_path
 
 onready var timer = $Timer
+var has_touched := false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -11,7 +12,8 @@ func _ready():
 	timer.set_wait_time( 1 )
 
 func _on_Area2D_body_entered(body):
-	if(body.get_name() == GameConstants.PLAYER):
+	if(!has_touched && body.get_name() == GameConstants.PLAYER):
+		has_touched = true
 		$AudioStreamPlayer2D.play(0.0)
 		timer.start()
 		
