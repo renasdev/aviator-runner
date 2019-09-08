@@ -125,6 +125,7 @@ centered = false
 
 [node name="Player" parent="." instance=ExtResource( 8 )]
 position = Vector2( 110, 409.5 )
+auto_kill_on_falling = false
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 9 )
@@ -136,14 +137,15 @@ position = Vector2( 8160, -32 )
 next_scene_path = "res://Stages/cena3.tscn"
 
 [node name="Waypoints" parent="." instance=ExtResource( 11 )]
-editor/display_folded = true
 position = Vector2( 1504, 612 )
 
 [node name="1" type="Position2D" parent="Waypoints"]
 position = Vector2( -384, -4 )
 
 [node name="MovingPlatform" parent="Waypoints" instance=ExtResource( 12 )]
-position = Vector2( 1120, 608 )
+editor/display_folded = true
+position = Vector2( 1504, 612 )
+editor_process = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Waypoints/MovingPlatform"]
 shape = SubResource( 1 )
@@ -164,7 +166,6 @@ speed = 300.0
 shape = SubResource( 2 )
 
 [node name="Waypoints3" parent="." instance=ExtResource( 11 )]
-editor/display_folded = true
 position = Vector2( 4192, 480 )
 
 [node name="1" type="Position2D" parent="Waypoints3"]
@@ -174,28 +175,26 @@ position = Vector2( 0, -320 )
 position = Vector2( 288, -320 )
 
 [node name="MovingPlatform3" parent="Waypoints3" instance=ExtResource( 12 )]
-editor/display_folded = true
 position = Vector2( 4192, 480 )
+editor_process = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Waypoints3/MovingPlatform3"]
 shape = SubResource( 3 )
 
 [node name="Waypoints4" parent="." instance=ExtResource( 11 )]
-editor/display_folded = true
 position = Vector2( 5792, 64 )
 
 [node name="1" type="Position2D" parent="Waypoints4"]
 position = Vector2( 544, 0 )
 
 [node name="MovingPlatform4" parent="Waypoints4" instance=ExtResource( 12 )]
-editor/display_folded = true
-position = Vector2( 5932, 64 )
+position = Vector2( 5792, 64 )
+editor_process = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Waypoints4/MovingPlatform4"]
 shape = SubResource( 3 )
 
 [node name="Waypoints5" parent="." instance=ExtResource( 11 )]
-editor/display_folded = true
 position = Vector2( 7168, 64 )
 
 [node name="Position2D" type="Position2D" parent="Waypoints5"]
@@ -203,16 +202,16 @@ position = Vector2( -544, 0 )
 
 [node name="MovingPlatform5" parent="Waypoints5" instance=ExtResource( 12 )]
 editor/display_folded = true
-position = Vector2( 7028, 64 )
+position = Vector2( 7168, 64 )
+editor_process = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Waypoints5/MovingPlatform5"]
 shape = SubResource( 3 )
 
 [node name="DeathZone" parent="." instance=ExtResource( 13 )]
-editor/display_folded = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone"]
-position = Vector2( 4403, 1059 )
+position = Vector2( 4390, 1160 )
 shape = SubResource( 4 )
 
 [node name="Frog" parent="." instance=ExtResource( 14 )]
@@ -238,28 +237,31 @@ bus = "Background"
 [node name="Gems" type="Node2D" parent="."]
 
 [node name="Gem" parent="Gems" instance=ExtResource( 16 )]
-position = Vector2( 220, 560 )
+position = Vector2( 1110, 565 )
 
 [node name="Gem2" parent="Gems" instance=ExtResource( 16 )]
-position = Vector2( 260, 560 )
+position = Vector2( 1160, 565 )
 
 [node name="Gem3" parent="Gems" instance=ExtResource( 16 )]
-position = Vector2( 300, 560 )
+position = Vector2( 1210, 565 )
 
 [node name="Gem4" parent="Gems" instance=ExtResource( 16 )]
-position = Vector2( 340, 560 )
+position = Vector2( 1260, 565 )
 
-[node name="Gem5" parent="Gems" instance=ExtResource( 16 )]
-position = Vector2( 1750, 560 )
+[node name="Gem20" parent="Gems" instance=ExtResource( 16 )]
+position = Vector2( 1310, 565 )
 
-[node name="Gem6" parent="Gems" instance=ExtResource( 16 )]
-position = Vector2( 1790, 560 )
+[node name="Gem21" parent="Gems" instance=ExtResource( 16 )]
+position = Vector2( 1360, 565 )
 
-[node name="Gem7" parent="Gems" instance=ExtResource( 16 )]
-position = Vector2( 1820, 540 )
+[node name="Gem22" parent="Gems" instance=ExtResource( 16 )]
+position = Vector2( 1410, 565 )
 
-[node name="Gem8" parent="Gems" instance=ExtResource( 16 )]
-position = Vector2( 1850, 520.5 )
+[node name="Gem23" parent="Gems" instance=ExtResource( 16 )]
+position = Vector2( 1460, 565 )
+
+[node name="Gem24" parent="Gems" instance=ExtResource( 16 )]
+position = Vector2( 1510, 565 )
 
 [node name="Gem9" parent="Gems" instance=ExtResource( 16 )]
 position = Vector2( 3600, 110.5 )
@@ -293,3 +295,9 @@ position = Vector2( 4190, 240 )
 
 [node name="Gem19" parent="Gems" instance=ExtResource( 16 )]
 position = Vector2( 6490, -100 )
+
+[node name="Gem26" parent="Gems" instance=ExtResource( 16 )]
+position = Vector2( 6540, -100 )
+
+[node name="Gem25" parent="Gems" instance=ExtResource( 16 )]
+position = Vector2( 6440, -100 )
