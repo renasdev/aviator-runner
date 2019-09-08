@@ -4,6 +4,8 @@ const MAX_SPEED = 400
 const JUMP_HEIGHT = 650
 const MAX_HEIGHT = 900
 
+export var auto_kill_on_falling := true
+
 var motion = Vector2()
 var gems := 0
 var dying := false
@@ -54,17 +56,12 @@ func _physics_process(_delta):
 	if(motion.y < -MAX_HEIGHT):
 		motion.y = -MAX_HEIGHT
 	
-	var motionYBefore = motion.y
 	motion = move_and_slide(motion, GameConstants.UP)
-	
-	if motion.y == 0 and motionYBefore < -200:
-		motion.y = motionYBefore
-	
 	
 	# Player is falling non stop
 	if motion.y > 900 and motion.y < 2000 and !$SFX/Falling.is_playing() :
 		$SFX/Falling.play(0.0)
-	if motion.y > 2500:
+	if auto_kill_on_falling && motion.y > 2500:
 		instant_kill()
 		
 	if Input.is_action_pressed("reload"):
