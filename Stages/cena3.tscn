@@ -74,7 +74,6 @@ position = Vector2( 1842.93, -32.2506 )
 waypoints_path = NodePath("../Waypoints2")
 
 [node name="GEMS" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="Gem" parent="GEMS" instance=ExtResource( 8 )]
 position = Vector2( 930, 100 )
@@ -205,6 +204,9 @@ position = Vector2( 8530, -19.9076 )
 [node name="Gem37" parent="GEMS" instance=ExtResource( 8 )]
 position = Vector2( 4520, -17.6206 )
 
+[node name="Gem67" parent="GEMS" instance=ExtResource( 8 )]
+position = Vector2( 4680, -17.6206 )
+
 [node name="Gem48" parent="GEMS" instance=ExtResource( 8 )]
 position = Vector2( 8090, -19.9076 )
 
@@ -213,6 +215,9 @@ position = Vector2( 8570, -19.9076 )
 
 [node name="Gem38" parent="GEMS" instance=ExtResource( 8 )]
 position = Vector2( 4560, -17.6206 )
+
+[node name="Gem66" parent="GEMS" instance=ExtResource( 8 )]
+position = Vector2( 4720, -17.6206 )
 
 [node name="Gem49" parent="GEMS" instance=ExtResource( 8 )]
 position = Vector2( 8130, -19.9076 )
@@ -223,6 +228,9 @@ position = Vector2( 8610, -19.9076 )
 [node name="Gem39" parent="GEMS" instance=ExtResource( 8 )]
 position = Vector2( 4600, -17.6206 )
 
+[node name="Gem65" parent="GEMS" instance=ExtResource( 8 )]
+position = Vector2( 4760, -17.6206 )
+
 [node name="Gem52" parent="GEMS" instance=ExtResource( 8 )]
 position = Vector2( 8170, -19.9076 )
 
@@ -231,6 +239,9 @@ position = Vector2( 8650, -19.9076 )
 
 [node name="Gem40" parent="GEMS" instance=ExtResource( 8 )]
 position = Vector2( 4640, -17.6206 )
+
+[node name="Gem68" parent="GEMS" instance=ExtResource( 8 )]
+position = Vector2( 4800, -17.6206 )
 
 [node name="Gem44" parent="GEMS" instance=ExtResource( 8 )]
 position = Vector2( 8210, -19.9076 )
