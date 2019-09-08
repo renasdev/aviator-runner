@@ -15,7 +15,13 @@ chose_stage_scene = "res://Stages/ChoseStage.tscn"
 options_scene = "res://Stages/Options.tscn"
 credits_scene = "res://Stages/Credits.tscn"
 
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.243137, 0.239216, 0.239216, 1 )
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
+editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 120.0
