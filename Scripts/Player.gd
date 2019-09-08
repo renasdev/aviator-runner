@@ -42,6 +42,9 @@ func _process_input():
 		else:
 			animation = "Fall"
 			
+	if Input.is_action_pressed("reload"):
+		instant_kill()
+			
 	return animation
 		
 
@@ -62,9 +65,6 @@ func _physics_process(_delta):
 	if motion.y > 900 and motion.y < 2000 and !$SFX/Falling.is_playing() :
 		$SFX/Falling.play(0.0)
 	if auto_kill_on_falling && motion.y > 2500:
-		instant_kill()
-		
-	if Input.is_action_pressed("reload"):
 		instant_kill()
 		
 #warning-ignore:return_value_discarded
