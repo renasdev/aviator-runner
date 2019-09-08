@@ -13,14 +13,10 @@ func load_file(filename):
 	var index = 1
 	while not f.eof_reached():
 		var line = f.get_line()
-		##result[str(index)] = line
 		result = str(result, "\n", line)
 		index += 1
 	f.close()
 	return result
-	
-
-
 
 func _on_Button_pressed():
 	get_tree().change_scene("res://Stages/TitleScreen.tscn")
