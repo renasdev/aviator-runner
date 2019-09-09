@@ -268,4 +268,4 @@ shape = SubResource( 1 )
 
 [node name="Flag" parent="." instance=ExtResource( 13 )]
 position = Vector2( 4520, 860 )
-next_scene_path = "res://Stages/Credits.tscn"
+next_scene_path = "res://Stages/PlaneTest.tscn"

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/plane.ogg-376f4db772d937dae1e44da34476e890.oggstr"
+
+[deps]
+
+source_file="res://Assets/Sfx/plane.ogg"
+dest_files=[ "res://.import/plane.ogg-376f4db772d937dae1e44da34476e890.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

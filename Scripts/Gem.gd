@@ -1,7 +1,7 @@
 extends Node2D
 
 func _on_Area2D_body_entered(body):
-	if(body.get_name() == GameConstants.PLAYER):
+	if GameConstants.is_player(body):
 		body.increment_gems(1)
 		$AudioStreamPlayer2D.play(0.0)
 		$Timer.start(0)

@@ -22,4 +22,3 @@ move = false
 [node name="AnimatedSprite" parent="." index="0"]
 frames = SubResource( 1 )
 animation = "default"
-frame = 2

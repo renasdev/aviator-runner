@@ -13,9 +13,10 @@
 [ext_resource path="res://Scenes/Waypoints.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scenes/MovingPlatform.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scenes/DeathZone.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Assets/Sfx/Amber Forest piano.ogg" type="AudioStream" id=14]
+[ext_resource path="res://Assets/Amber Forest piano.ogg" type="AudioStream" id=14]
 [ext_resource path="res://Scenes/Gem.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Scenes/Opossum.tscn" type="PackedScene" id=16]
+
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 96, 24 )

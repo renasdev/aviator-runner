@@ -61,7 +61,7 @@ func _on_FieldOfView_body_entered(body):
 		target = body
 
 func _on_BodyArea_body_entered(body):
-	if(body.get_name() == GameConstants.PLAYER):
+	if(GameConstants.is_player(body)):
 		var direction = (body.get_position() - position).normalized()
 		
 		#Body is comming from above
@@ -69,7 +69,7 @@ func _on_BodyArea_body_entered(body):
 			var scene = load(explosion_path)
 			var scene_instance = scene.instance()
 			scene_instance.set_name(name + "_animation")
-			scene_instance.position = position
+			scene_instance.position =  position
 			get_parent().add_child(scene_instance)
 			body.bounce(boucenes)
 			body.increment_gems(gems_value)

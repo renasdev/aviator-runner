@@ -6,6 +6,8 @@ const PLAYER = "Player"
 
 var _camera:Camera2D
 
+func is_player(obj: Node2D):
+	return obj.get_name() == "Player" || obj.get_name() == "PlayerPlane"
 
 func set_current_camera(camera:Camera2D):
 	_camera = camera

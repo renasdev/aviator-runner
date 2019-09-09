@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/sky run.ogg-f8e10255b479ae9e753749688854c0a4.oggstr"
+
+[deps]
+
+source_file="res://Assets/Sfx/sky run.ogg"
+dest_files=[ "res://.import/sky run.ogg-f8e10255b479ae9e753749688854c0a4.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
