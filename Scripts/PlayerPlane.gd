@@ -17,13 +17,14 @@ func _physics_process(_delta):
 	if Input.is_action_pressed("ui_right"):
 		motion.x = min(motion.x + 50, MAX_H_SPEED * 1.5)
 		has_player_input = true
-	if Input.is_action_pressed("ui_left"):
-		motion.x = max(motion.x - 50, -MAX_H_SPEED)
+	elif Input.is_action_pressed("ui_left"):
+		motion.x = -20
 		has_player_input = true
+		
 	if Input.is_action_pressed("ui_up"):
 		motion.y = max(motion.y - 50, -MAX_V_SPEED)
 		has_player_input = true
-	if Input.is_action_pressed("ui_down"):
+	elif Input.is_action_pressed("ui_down"):
 		motion.y = min(motion.y + 50, MAX_V_SPEED)
 		has_player_input = true
 	if !has_player_input:

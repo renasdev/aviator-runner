@@ -3,7 +3,7 @@ extends CanvasLayer
 var is_paused := false
 
 func _ready():
-	pass
+	$MobileUI.visible = OS.has_touchscreen_ui_hint()
 
 func _physics_process(_delta):
 	if Input.is_action_just_pressed("ui_pause"):
@@ -20,3 +20,7 @@ func _change_pause_state(value: bool):
 func _on_MainMenuButton_pressed():
 	_change_pause_state(false)
 	get_tree().change_scene("res://Stages/TitleScreen.tscn")
+
+
+func _on_PauseButton_pressed():
+	_change_pause_state(true)

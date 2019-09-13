@@ -17,23 +17,33 @@ var squaredHalfSizeLength = 0
 var currentPointerIDX = INACTIVE_IDX;
 
 func _ready():
-	set_process_input(true)
-	bg = get_node("bg")
-	ball = get_node("ball")	
-	animation_player = get_node("AnimationPlayer")
-	parent = get_parent()
-	halfSize = bg.texture.get_size()/2
-	squaredHalfSizeLength = halfSize.x * halfSize.y
+	if !OS.has_touchscreen_ui_hint():
+		queue_free()
+	else:
+		set_process_input(true)
+		bg = get_node("bg")
+		ball = get_node("ball")	
+		animation_player = get_node("AnimationPlayer")
+		parent = get_parent()
+		halfSize = bg.texture.get_size()/2
+		squaredHalfSizeLength = halfSize.x * halfSize.y
+		
+		if (listenerNodePath != "" && listenerNodePath!=null):
+			listenerNodePath = get_node(listenerNodePath)
+		elif listenerNodePath=="":
+			listenerNodePath = null
 	
-	if (listenerNodePath != "" && listenerNodePath!=null):
-		listenerNodePath = get_node(listenerNodePath)
-	elif listenerNodePath=="":
-		listenerNodePath = null
-
-#	isDynamicallyShowing = isDynamicallyShowing and parent extends Control
-	if isDynamicallyShowing:
-		modulate.a = 0
-#		hide()
+	#	isDynamicallyShowing = isDynamicallyShowing and parent extends Control
+		if isDynamicallyShowing:
+			modulate.a = 0
+	#		hide()
+		# Unset all events
+		dispach_action("ui_right", false)
+		dispach_action("ui_left", false)
+		dispach_action("ui_up", false)
+		dispach_action("ui_jump", false)
+		dispach_action("ui_down", false)
+		
 
 func get_force():
 	return currentForce
