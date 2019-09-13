@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scripts/UIController.gd" type="Script" id=1]
 [ext_resource path="res://Assets/AnalogLeft.gd" type="Script" id=2]
 [ext_resource path="res://Assets/big_circle.png" type="Texture" id=3]
 [ext_resource path="res://Assets/small_circle.png" type="Texture" id=4]
 [ext_resource path="res://Stages/montserrat_eb_48.tres" type="DynamicFont" id=5]
+[ext_resource path="res://Assets/Icon_Pause1Blue.png" type="Texture" id=6]
 
 [sub_resource type="Animation" id=1]
 resource_name = "alpha_in"
@@ -125,8 +126,6 @@ size_flags_vertical = 3
 text = "GO TO MAIN MENU"
 
 [node name="MobileUI" type="Control" parent="."]
-editor/display_folded = true
-visible = false
 margin_right = 140.0
 margin_bottom = 130.0
 
@@ -138,7 +137,8 @@ margin_bottom = 80.0
 margin_right = 130.0
 margin_bottom = 80.0
 size_flags_vertical = 3
-text = "PAUSE"
+icon = ExtResource( 6 )
+flat = true
 [connection signal="pressed" from="ControlPause/VBoxContainer/ResumeButton" to="." method="_on_ResumeButton_pressed"]
 [connection signal="pressed" from="ControlPause/VBoxContainer/MainMenuButton" to="." method="_on_MainMenuButton_pressed"]
 [connection signal="pressed" from="MobileUI/VBoxContainer/PauseButton" to="." method="_on_PauseButton_pressed"]
