@@ -3,7 +3,6 @@
 [ext_resource path="res://Scripts/Options.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Amber Forest piano.ogg" type="AudioStream" id=2]
 
-
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -23,25 +22,60 @@ margin_bottom = 16.0
 
 [node name="Label" type="Label" parent="VBoxContainer/HSplitContainer"]
 margin_top = 1.0
-margin_right = 55.0
+margin_right = 48.0
 margin_bottom = 15.0
-text = "VOLUME"
+text = "volume"
 
 [node name="VolumeHSlider" type="HSlider" parent="VBoxContainer/HSplitContainer"]
-margin_left = 67.0
+margin_left = 60.0
 margin_right = 1180.0
 margin_bottom = 16.0
 max_value = 1.0
 step = 0.0
 
-[node name="GoBackButton" type="Button" parent="VBoxContainer"]
+[node name="HSplitContainer2" type="HSplitContainer" parent="VBoxContainer"]
 margin_top = 20.0
 margin_right = 1180.0
-margin_bottom = 40.0
-text = "Go Back"
+margin_bottom = 44.0
+
+[node name="Label" type="Label" parent="VBoxContainer/HSplitContainer2"]
+margin_top = 5.0
+margin_right = 63.0
+margin_bottom = 19.0
+text = "fullscreen"
+
+[node name="FullscreenCheckBox" type="CheckBox" parent="VBoxContainer/HSplitContainer2"]
+margin_left = 75.0
+margin_right = 1180.0
+margin_bottom = 24.0
+
+[node name="HSplitContainer3" type="HSplitContainer" parent="VBoxContainer"]
+margin_top = 48.0
+margin_right = 1180.0
+margin_bottom = 68.0
+
+[node name="Label" type="Label" parent="VBoxContainer/HSplitContainer3"]
+margin_top = 3.0
+margin_right = 56.0
+margin_bottom = 17.0
+text = "language"
+
+[node name="MenuButton" type="MenuButton" parent="VBoxContainer/HSplitContainer3"]
+margin_left = 68.0
+margin_right = 1180.0
+margin_bottom = 20.0
+text = "teste"
+switch_on_hover = true
+
+[node name="GoBackButton" type="Button" parent="VBoxContainer"]
+margin_top = 72.0
+margin_right = 1180.0
+margin_bottom = 92.0
+text = "go-back"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
 autoplay = true
 [connection signal="value_changed" from="VBoxContainer/HSplitContainer/VolumeHSlider" to="." method="_on_VolumeHSlider_value_changed"]
+[connection signal="pressed" from="VBoxContainer/HSplitContainer2/FullscreenCheckBox" to="." method="_on_FullscreenCheckBox_pressed"]
 [connection signal="pressed" from="VBoxContainer/GoBackButton" to="." method="_on_GoBackButton_pressed"]

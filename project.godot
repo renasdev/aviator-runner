@@ -59,6 +59,10 @@ ui_pause={
  ]
 }
 
+[locale]
+
+translations=PoolStringArray( "res://Assets/i18n/translations.en.translation", "res://Assets/i18n/translations.pt_BR.translation" )
+
 [rendering]
 
 quality/driver/driver_name="GLES2"

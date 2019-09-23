@@ -21,7 +21,6 @@ anchor_bottom = 1.0
 color = Color( 0.243137, 0.239216, 0.239216, 1 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 120.0
@@ -56,7 +55,7 @@ margin_right = 837.0
 margin_bottom = 100.0
 rect_min_size = Vector2( 300, 100 )
 custom_fonts/font = ExtResource( 3 )
-text = "New Game"
+text = "new-game"
 
 [node name="ChoseStage" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
 margin_top = 104.0
@@ -64,7 +63,7 @@ margin_right = 837.0
 margin_bottom = 204.0
 rect_min_size = Vector2( 300, 100 )
 custom_fonts/font = ExtResource( 3 )
-text = "Chose stage"
+text = "chose-stage"
 
 [node name="Options" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
 margin_top = 208.0
@@ -72,7 +71,7 @@ margin_right = 837.0
 margin_bottom = 308.0
 rect_min_size = Vector2( 300, 100 )
 custom_fonts/font = ExtResource( 3 )
-text = "Options"
+text = "options"
 
 [node name="Credits" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
 margin_top = 312.0
@@ -80,7 +79,7 @@ margin_right = 837.0
 margin_bottom = 412.0
 rect_min_size = Vector2( 300, 100 )
 custom_fonts/font = ExtResource( 3 )
-text = "Credits"
+text = "credits"
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
 margin_left = 841.0
