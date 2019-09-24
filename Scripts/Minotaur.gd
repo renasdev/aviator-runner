@@ -51,9 +51,7 @@ func _process(_delta):
 		motion.y -= 800
 		
 func is_colliding_with_tilemap():
-	var objects_collide = []
 	if $FloorRayCast2D.is_colliding():
-		# print($FloorRayCast2D.get_collider())
 		return true
 		
 	return false

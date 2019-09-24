@@ -11,7 +11,7 @@ onready var initial_pos = position
 func _ready():
 	pass
 
-func _process(delta):
+func _process(_delta):
 	if falling:
 		motion.y -= -FALLING_SPEED
 		motion.x = 0
