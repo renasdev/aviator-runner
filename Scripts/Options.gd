@@ -8,7 +8,6 @@ var supported_locales := {"Português" : "pt_BR", "English" : "en"}
 
 func _ready():
 	var volumeDb = AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Master"))
-	print(volumeDb)
 	var volume = db2linear(volumeDb)
 	volume_slider.value = volume
 	full_screen_checkbox.pressed = OS.window_fullscreen
@@ -25,16 +24,20 @@ func _on_Language_change(id):
 	var text = language_menu_button.get_popup().get_item_text(id)
 	TranslationServer.set_locale(supported_locales[text])
 	language_menu_button.text = text
+	GameSave.save_game()
 
 func _on_VolumeHSlider_value_changed(value):
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), linear2db(value))
 	var volumeDb = AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Master"))
 	print(value, " ", volumeDb)
-
-func _on_GoBackButton_pressed():
-	get_tree().change_scene("res://Stages/TitleScreen.tscn")
-
+	GameSave.save_game()
 
 func _on_FullscreenCheckBox_pressed():
 	OS.window_fullscreen = full_screen_checkbox.pressed
+	GameSave.save_game()
+	
+
+func _on_GoBackButton_pressed():
+	GameSave.save_game()
+	get_tree().change_scene("res://Stages/TitleScreen.tscn")
 	
