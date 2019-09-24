@@ -16,51 +16,51 @@ margin_top = 50.0
 margin_right = -50.0
 margin_bottom = -50.0
 
-[node name="HSplitContainer" type="HSplitContainer" parent="VBoxContainer"]
+[node name="VolumeContainer" type="HSplitContainer" parent="VBoxContainer"]
 margin_right = 1180.0
 margin_bottom = 16.0
 
-[node name="Label" type="Label" parent="VBoxContainer/HSplitContainer"]
+[node name="Label" type="Label" parent="VBoxContainer/VolumeContainer"]
 margin_top = 1.0
 margin_right = 48.0
 margin_bottom = 15.0
 text = "volume"
 
-[node name="VolumeHSlider" type="HSlider" parent="VBoxContainer/HSplitContainer"]
+[node name="VolumeHSlider" type="HSlider" parent="VBoxContainer/VolumeContainer"]
 margin_left = 60.0
 margin_right = 1180.0
 margin_bottom = 16.0
 max_value = 1.0
 step = 0.0
 
-[node name="HSplitContainer2" type="HSplitContainer" parent="VBoxContainer"]
+[node name="FullScreenContainer" type="HSplitContainer" parent="VBoxContainer"]
 margin_top = 20.0
 margin_right = 1180.0
 margin_bottom = 44.0
 
-[node name="Label" type="Label" parent="VBoxContainer/HSplitContainer2"]
+[node name="Label" type="Label" parent="VBoxContainer/FullScreenContainer"]
 margin_top = 5.0
 margin_right = 63.0
 margin_bottom = 19.0
 text = "fullscreen"
 
-[node name="FullscreenCheckBox" type="CheckBox" parent="VBoxContainer/HSplitContainer2"]
+[node name="FullscreenCheckBox" type="CheckBox" parent="VBoxContainer/FullScreenContainer"]
 margin_left = 75.0
 margin_right = 1180.0
 margin_bottom = 24.0
 
-[node name="HSplitContainer3" type="HSplitContainer" parent="VBoxContainer"]
+[node name="LanguageContainer" type="HSplitContainer" parent="VBoxContainer"]
 margin_top = 48.0
 margin_right = 1180.0
 margin_bottom = 68.0
 
-[node name="Label" type="Label" parent="VBoxContainer/HSplitContainer3"]
+[node name="Label" type="Label" parent="VBoxContainer/LanguageContainer"]
 margin_top = 3.0
 margin_right = 56.0
 margin_bottom = 17.0
 text = "language"
 
-[node name="MenuButton" type="MenuButton" parent="VBoxContainer/HSplitContainer3"]
+[node name="MenuButton" type="MenuButton" parent="VBoxContainer/LanguageContainer"]
 margin_left = 68.0
 margin_right = 1180.0
 margin_bottom = 20.0
@@ -76,6 +76,6 @@ text = "go-back"
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
 autoplay = true
-[connection signal="value_changed" from="VBoxContainer/HSplitContainer/VolumeHSlider" to="." method="_on_VolumeHSlider_value_changed"]
-[connection signal="pressed" from="VBoxContainer/HSplitContainer2/FullscreenCheckBox" to="." method="_on_FullscreenCheckBox_pressed"]
+[connection signal="value_changed" from="VBoxContainer/VolumeContainer/VolumeHSlider" to="." method="_on_VolumeHSlider_value_changed"]
+[connection signal="pressed" from="VBoxContainer/FullScreenContainer/FullscreenCheckBox" to="." method="_on_FullscreenCheckBox_pressed"]
 [connection signal="pressed" from="VBoxContainer/GoBackButton" to="." method="_on_GoBackButton_pressed"]
