@@ -26,20 +26,20 @@ func _process(_delta):
 		$FrontHitArea2D/CollisionShape2D.position = Vector2(-90, -38.5)
 		$FloorRayCast2D.set_cast_to(Vector2(-100, 50))
 		
-	motion.y += GameConstants.GRAVITY
-	motion = move_and_slide(motion, GameConstants.UP)
+	motion.y += GameGlobals.GRAVITY
+	motion = move_and_slide(motion, GameGlobals.UP)
 	
 	if !$AnimationPlayer.is_playing():
 		$AnimationPlayer.play("Run")
 		
-	if $RightRayCast2D.is_colliding() && $RightRayCast2D.get_collider().get_name() == GameConstants.PLAYER:
+	if $RightRayCast2D.is_colliding() && $RightRayCast2D.get_collider().get_name() == GameGlobals.PLAYER:
 		direction = 1
-	elif $LeftRayCast2D.is_colliding() && $LeftRayCast2D.get_collider().get_name() == GameConstants.PLAYER:
+	elif $LeftRayCast2D.is_colliding() && $LeftRayCast2D.get_collider().get_name() == GameGlobals.PLAYER:
 		direction = -1
 		
 	if is_on_floor() && is_jumping:
 		is_jumping = false
-		GameConstants.get_current_camera().shake(3.0, 0.5)
+		GameGlobals.get_current_camera().shake(3.0, 0.5)
 		$ImpactAudioStreamPlayer2D.play(0.0)
 
 	if is_colliding_with_tilemap():
@@ -59,9 +59,9 @@ func is_colliding_with_tilemap():
 	return false
 
 func _on_FrontHitArea2D_body_entered(body):
-	if(body.get_name() == GameConstants.PLAYER):
+	if(body.get_name() == GameGlobals.PLAYER):
 		$AnimationPlayer.play("Simple_Attack")
 
 func _on_HitBoxArea2D_body_entered(body):
-	if(body.get_name() == GameConstants.PLAYER):
+	if(body.get_name() == GameGlobals.PLAYER):
 		body.take_damage()

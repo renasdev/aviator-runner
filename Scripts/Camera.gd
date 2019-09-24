@@ -6,7 +6,7 @@ var shake_amount := 0.0
 onready var skake_timer = Timer.new()
 
 func _ready():
-	GameConstants.set_current_camera(self)
+	GameGlobals.set_current_camera(self)
 	skake_timer.connect("timeout",self,"_on_shake_timeout")
 	add_child(skake_timer)
 

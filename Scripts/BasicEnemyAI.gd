@@ -37,11 +37,11 @@ func _patrol_process():
 	if distance_to_target < 10:
 		target_position = waypoints.get_next_point_position()
 		
-	motion.y += 0 if is_on_floor() else GameConstants.GRAVITY
+	motion.y += 0 if is_on_floor() else GameGlobals.GRAVITY
 	move_and_slide(motion)
 
 func _no_patrol_process():
-	movement.y += GameConstants.GRAVITY
+	movement.y += GameGlobals.GRAVITY
 	if target:
 		var direction = (target.get_position() - position).normalized()
 		var motion = direction * SPEED
@@ -61,7 +61,7 @@ func _on_FieldOfView_body_entered(body):
 		target = body
 
 func _on_BodyArea_body_entered(body):
-	if(GameConstants.is_player(body)):
+	if(GameGlobals.is_player(body)):
 		var direction = (body.get_position() - position).normalized()
 		
 		#Body is comming from above

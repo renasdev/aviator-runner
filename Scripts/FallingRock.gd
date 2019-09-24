@@ -17,7 +17,7 @@ func _process(delta):
 		motion.x = 0
 		var collision = move_and_collide(motion)
 		
-		if collision and collision.get_collider().get_name() == GameConstants.PLAYER:
+		if collision and collision.get_collider().get_name() == GameGlobals.PLAYER:
 			collision.get_collider().take_damage()
 		elif !is_colliding and collision:
 			$AudioStreamPlayer2D.play(0.0)
@@ -32,5 +32,5 @@ func _draw() -> void:
 	draw_rect(rect, Color('fff'))
 
 func _on_Area2D_body_entered(body):
-	if(body.get_name() == GameConstants.PLAYER):
+	if(body.get_name() == GameGlobals.PLAYER):
 		falling = true

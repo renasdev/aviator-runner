@@ -49,7 +49,7 @@ func _process_input():
 		
 
 func _physics_process(_delta):
-	motion.y += GameConstants.GRAVITY
+	motion.y += GameGlobals.GRAVITY
 		
 	var animation = _process_input()
 			
@@ -59,7 +59,7 @@ func _physics_process(_delta):
 	if(motion.y < -MAX_HEIGHT):
 		motion.y = -MAX_HEIGHT
 	
-	motion = move_and_slide(motion, GameConstants.UP)
+	motion = move_and_slide(motion, GameGlobals.UP)
 	
 	# Player is falling non stop
 	if motion.y > 900 and motion.y < 2000 and !$SFX/Falling.is_playing() :

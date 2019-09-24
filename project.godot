@@ -26,7 +26,7 @@ config/icon="res://Assets/icon_traveler.png"
 
 [autoload]
 
-GameConstants="*res://Scripts/GameConstants.gd"
+GameGlobals="*res://Scripts/GameGlobals.gd"
 
 [debug]
 

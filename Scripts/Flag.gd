@@ -12,7 +12,7 @@ func _ready():
 	timer.set_wait_time( 1 )
 
 func _on_Area2D_body_entered(body):
-	if(!has_touched && body.get_name() == GameConstants.PLAYER):
+	if(!has_touched && body.get_name() == GameGlobals.PLAYER):
 		has_touched = true
 		$AudioStreamPlayer2D.play(0.0)
 		timer.start()

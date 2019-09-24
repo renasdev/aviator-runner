@@ -11,6 +11,6 @@ func is_player(obj: Node2D):
 
 func set_current_camera(camera:Camera2D):
 	_camera = camera
-	
+
 func get_current_camera():
 	return _camera

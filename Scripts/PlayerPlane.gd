@@ -29,10 +29,9 @@ func _physics_process(_delta):
 		has_player_input = true
 	if !has_player_input:
 		motion.x = min(motion.x + 10, MAX_H_AUTO_SPEED)
-		#motion.x = 0
 		motion.y = 0
 	
-	motion = move_and_slide(motion, GameConstants.UP)
+	motion = move_and_slide(motion, GameGlobals.UP)
 	
 func take_damage():
 	_kill()
@@ -61,7 +60,7 @@ func _on_VisibilityNotifier2D_screen_exited():
 	
 	
 func _on_RigidBody2D_body_entered(body):
-	if(GameConstants.is_player(body)):
+	if(GameGlobals.is_player(body)):
 		print("Finished ", body.get_name())
 		print("Going to credits")
 		finished = true

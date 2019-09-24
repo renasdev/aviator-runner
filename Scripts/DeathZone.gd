@@ -1,7 +1,5 @@
 extends Area2D
 
 func _on_DeathZone_body_entered(body):
-	if(GameConstants.is_player(body)):
-	#if(body.get_name() == GameConstants.PLAYER):
-		# Kill player
+	if(GameGlobals.is_player(body)):
 		body.instant_kill()
