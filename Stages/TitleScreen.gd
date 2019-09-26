@@ -19,9 +19,7 @@ func _ready():
 		
 	if not GameSave.current_state.is_beaten:
 		$VBoxContainer/HBoxContainer/VBoxContainer/ChoseStage.disabled = true
-		
-	print("Ok")
-
+	
 #warning-ignore:return_value_discarded
 func _on_NewGame_pressed():
 	get_tree().change_scene(GameGlobals.PHASES[next_phase])

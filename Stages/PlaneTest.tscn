@@ -96,6 +96,7 @@ __meta__ = {
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="PlayerPlane"]
 
 [node name="UI" parent="PlayerPlane" instance=ExtResource( 6 )]
+has_visibility_notifier = true
 
 [node name="FinishingTimer" type="Timer" parent="PlayerPlane"]
 wait_time = 4.0
@@ -413,7 +414,6 @@ position = Vector2( 4790, 567 )
 stream = ExtResource( 13 )
 autoplay = true
 bus = "Background"
-[connection signal="screen_entered" from="PlayerPlane/VisibilityNotifier2D" to="PlayerPlane" method="_on_VisibilityNotifier2D_screen_entered"]
 [connection signal="screen_exited" from="PlayerPlane/VisibilityNotifier2D" to="PlayerPlane" method="_on_VisibilityNotifier2D_screen_exited"]
 [connection signal="timeout" from="PlayerPlane/FinishingTimer" to="PlayerPlane" method="_on_FinishingTimer_timeout"]
 [connection signal="body_entered" from="FinishingArea2D" to="PlayerPlane" method="_on_RigidBody2D_body_entered"]

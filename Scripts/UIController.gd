@@ -1,5 +1,7 @@
 extends CanvasLayer
 
+export var has_visibility_notifier := false
+
 var is_paused := false
 
 func _ready():
@@ -27,6 +29,10 @@ func _change_pause_state(value: bool):
 	get_tree().paused = value
 	
 func _on_MainMenuButton_pressed():
+	# Gambiarra para quando a cena tem visibility notifier
+	if has_visibility_notifier:
+		get_parent().remove_visibility_notifier()
+		
 	_change_pause_state(false)
 	get_tree().change_scene("res://Stages/TitleScreen.tscn")
 

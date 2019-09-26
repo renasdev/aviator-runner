@@ -51,9 +51,8 @@ func _kill():
 	if !finished:
 		get_tree().reload_current_scene()
 
-func _on_VisibilityNotifier2D_screen_entered():
-	pass
-	
+func remove_visibility_notifier():
+	remove_child($VisibilityNotifier2D)
 	
 func _on_VisibilityNotifier2D_screen_exited():
 	take_damage()
