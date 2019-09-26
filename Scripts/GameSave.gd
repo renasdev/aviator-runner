@@ -3,7 +3,7 @@ extends Node
 const SAVE_FILE = "user://savegame.save"
 
 var initial_save_date := {
-	"version" : "0.0.0",
+	"version" : ProjectSettings.get_setting("application/game/version"),
 	"options" : {
 		"volume" : 0.6,
 		"fullscreen": true,
@@ -17,6 +17,7 @@ var current_state := {}
 
 func save_game():
 	_set_options_to_State()
+	current_state.version = ProjectSettings.get_setting("application/game/version")
 	var save_game = File.new()
 	save_game.open(SAVE_FILE, File.WRITE)
 	save_game.store_string(to_json(current_state))

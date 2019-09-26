@@ -23,6 +23,7 @@ _global_script_class_icons={
 config/name="TestAndroid"
 run/main_scene="res://Stages/TitleScreen.tscn"
 config/icon="res://Assets/icon_traveler.png"
+game/version="0.0.0"
 
 [autoload]
 
