@@ -3,12 +3,14 @@ extends Node
 const SAVE_FILE = "user://savegame.save"
 
 var initial_save_date := {
+	"version" : "0.0.0",
 	"options" : {
-		"volume" : 20,
+		"volume" : 0.6,
 		"fullscreen": true,
 		"language": null
 	},
-	"next_phase" : 1
+	"next_phase" : 0,
+	"is_beaten": false
 }
 
 var current_state := {}
@@ -26,6 +28,18 @@ func load_game():
 	OS.window_fullscreen = current_state.options.fullscreen
 	TranslationServer.set_locale(current_state.options.language)
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), linear2db(current_state.options.volume))
+	
+func next_phase():
+	current_state.next_phase += 1
+	save_game()
+	
+func reset_next_phase():
+	current_state.next_phase = 0
+	save_game()
+	
+func beat_game():
+	current_state.next_phase = 0
+	current_state.is_beaten = true
 	
 func _set_options_to_State():
 	current_state.options.fullscreen = OS.window_fullscreen
@@ -47,7 +61,7 @@ func _load_state():
 	save_game.close()
 	
 func _ready():
-	print("Loading game state ", OS.get_user_data_dir())
+	print("Loading game state from ", OS.get_user_data_dir())
 	load_game()
 	print(current_state)
 	

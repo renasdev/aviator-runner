@@ -52,7 +52,7 @@ func _kill():
 		get_tree().reload_current_scene()
 
 func _on_VisibilityNotifier2D_screen_entered():
-	print("Enter")
+	pass
 	
 	
 func _on_VisibilityNotifier2D_screen_exited():
@@ -67,4 +67,5 @@ func _on_RigidBody2D_body_entered(body):
 		$FinishingTimer.start(0)
 	
 func _on_FinishingTimer_timeout():
+	GameSave.beat_game()
 	get_tree().change_scene("res://Stages/Credits.tscn")

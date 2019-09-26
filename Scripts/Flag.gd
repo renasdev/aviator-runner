@@ -19,6 +19,7 @@ func _on_Area2D_body_entered(body):
 		
 #warning-ignore:return_value_discarded
 func next_scene():
+	GameSave.next_phase()
 	get_tree().change_scene(next_scene_path)
 	
 	
