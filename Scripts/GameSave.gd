@@ -41,6 +41,7 @@ func reset_next_phase():
 func beat_game():
 	current_state.next_phase = 0
 	current_state.is_beaten = true
+	save_game()
 	
 func _set_options_to_State():
 	current_state.options.fullscreen = OS.window_fullscreen
