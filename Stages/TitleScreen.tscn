@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Stages/TitleScreen.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Menu/opp_logo.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Fonts/DynamicFonts/Open_Sans_SemiBold_42px.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Stages/montserrat_eb_48.tres" type="DynamicFont" id=3]
 [ext_resource path="res://Assets/Menu/opp_promo_traveler.png" type="Texture" id=4]
-[ext_resource path="res://Assets/Sfx/hope.ogg" type="AudioStream" id=5]
+[ext_resource path="res://Assets/Menu/opp_logo.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Sfx/hope.ogg" type="AudioStream" id=6]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -20,7 +21,6 @@ anchor_bottom = 1.0
 color = Color( 0.243137, 0.239216, 0.239216, 1 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 120.0
@@ -30,23 +30,28 @@ margin_bottom = -80.0
 size_flags_vertical = 3
 alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
-margin_top = 10.0
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
 margin_right = 1040.0
-margin_bottom = 134.0
-texture = ExtResource( 2 )
-stretch_mode = 4
+margin_bottom = 58.0
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer"]
+margin_right = 1040.0
+margin_bottom = 58.0
+custom_fonts/font = ExtResource( 2 )
+text = "aviator runner"
+align = 1
+valign = 1
+uppercase = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
-editor/display_folded = true
-margin_top = 138.0
+margin_top = 62.0
 margin_right = 1040.0
-margin_bottom = 550.0
+margin_bottom = 578.0
 alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
 margin_right = 837.0
-margin_bottom = 412.0
+margin_bottom = 516.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 alignment = 1
@@ -82,18 +87,35 @@ rect_min_size = Vector2( 300, 100 )
 custom_fonts/font = ExtResource( 3 )
 text = "credits"
 
+[node name="Quit" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_top = 416.0
+margin_right = 837.0
+margin_bottom = 516.0
+rect_min_size = Vector2( 300, 100 )
+custom_fonts/font = ExtResource( 3 )
+text = "quit"
+
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
 margin_left = 841.0
 margin_right = 1040.0
-margin_bottom = 412.0
+margin_bottom = 516.0
 texture = ExtResource( 4 )
 stretch_mode = 4
 
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
+visible = false
+margin_top = 8.0
+margin_right = 1040.0
+margin_bottom = 132.0
+texture = ExtResource( 5 )
+stretch_mode = 4
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 5 )
+stream = ExtResource( 6 )
 autoplay = true
 bus = "Background"
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/NewGame" to="." method="_on_NewGame_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/ChoseStage" to="." method="_on_ChoseStage_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/Options" to="." method="_on_Options_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/Credits" to="." method="_on_Credits_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/Quit" to="." method="_on_Quit_pressed"]

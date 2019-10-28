@@ -34,3 +34,5 @@ func _on_Options_pressed():
 func _on_Credits_pressed():
 	get_tree().change_scene(credits_scene)
 	
+func _on_Quit_pressed():
+	get_tree().quit()
