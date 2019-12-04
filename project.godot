@@ -22,6 +22,9 @@ _global_script_class_icons={
 
 config/name="Aviator Runner"
 run/main_scene="res://Stages/TitleScreen.tscn"
+boot_splash/image="res://renasdev-logo-white-splash.png"
+boot_splash/fullsize=false
+boot_splash/bg_color=Color( 0.129412, 0.266667, 0.470588, 1 )
 config/icon="res://Assets/icon_traveler.png"
 game/version="0.0.1"
 
