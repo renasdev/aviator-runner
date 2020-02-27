@@ -1,6 +1,7 @@
 extends Control
 
 export(String, FILE, "*.tscn,*.scn") var chose_stage_scene
+export(String, FILE, "*.tscn,*.scn") var touch_controls_scene
 export(String, FILE, "*.tscn,*.scn") var options_scene
 export(String, FILE, "*.tscn,*.scn") var credits_scene
 
@@ -22,7 +23,10 @@ func _ready():
 	
 #warning-ignore:return_value_discarded
 func _on_NewGame_pressed():
-	get_tree().change_scene(GameGlobals.PHASES[next_phase])
+	if next_phase == 0 && OS.has_touchscreen_ui_hint():
+		get_tree().change_scene(touch_controls_scene)
+	else:
+		get_tree().change_scene(GameGlobals.PHASES[next_phase])
 
 #warning-ignore:return_value_discarded
 func _on_ChoseStage_pressed():

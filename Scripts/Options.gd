@@ -20,6 +20,9 @@ func _ready():
 			language_menu_button.text = locale
 		popup.add_item(locale)
 		
+	if OS.has_touchscreen_ui_hint() || OS.get_name() == "HTML5":
+		$VBoxContainer/FullScreenContainer.hide()
+		
 func _on_Language_change(id):
 	var text = language_menu_button.get_popup().get_item_text(id)
 	TranslationServer.set_locale(supported_locales[text])

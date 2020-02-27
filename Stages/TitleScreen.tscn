@@ -11,7 +11,11 @@
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 chose_stage_scene = "res://Stages/ChoseStage.tscn"
+touch_controls_scene = "res://Stages/TouchControls.tscn"
 options_scene = "res://Stages/Options.tscn"
 credits_scene = "res://Stages/Credits.tscn"
 

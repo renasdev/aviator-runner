@@ -41,9 +41,11 @@ func _ready():
 		# Unset all events
 		dispach_action("ui_right", false)
 		dispach_action("ui_left", false)
-		dispach_action("ui_up", false)
-		dispach_action("ui_jump", false)
 		dispach_action("ui_down", false)
+		
+		if isSingleHand:
+			dispach_action("ui_up", false)
+			dispach_action("ui_jump", false)
 		
 
 func get_force():
@@ -154,9 +156,9 @@ func sendSignal2Listener():
 		dispach_action("ui_right", false)
 		dispach_action("ui_left", false)
 		
-	if not isSingleHand:
+	if isSingleHand:
 		dispach_action("ui_up", currentForce.y >= 0.3)
-	dispach_action("ui_jump", currentForce.y >= 0.3)
+		dispach_action("ui_jump", currentForce.y >= 0.3)
 	dispach_action("ui_down", currentForce.y <= -0.3)
 		
 	#print(currentForce)
