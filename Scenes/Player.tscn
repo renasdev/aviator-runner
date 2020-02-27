@@ -20,10 +20,10 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
-"loop": true,
-"name": "Run",
-"speed": 10.0
+"frames": [ ExtResource( 11 ), ExtResource( 12 ) ],
+"loop": false,
+"name": "Jump",
+"speed": 5.0
 }, {
 "frames": [ ExtResource( 8 ), ExtResource( 9 ) ],
 "loop": true,
@@ -35,10 +35,10 @@ animations = [ {
 "name": "Idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 11 ), ExtResource( 12 ) ],
-"loop": false,
-"name": "Jump",
-"speed": 5.0
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "Run",
+"speed": 10.0
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
@@ -82,7 +82,6 @@ smoothing_speed = 10.0
 script = ExtResource( 13 )
 
 [node name="SFX" type="Node2D" parent="."]
-editor/display_folded = true
 
 [node name="Jump" type="AudioStreamPlayer2D" parent="SFX"]
 stream = ExtResource( 14 )

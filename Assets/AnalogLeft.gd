@@ -3,6 +3,7 @@ extends Node2D
 const INACTIVE_IDX = -1;
 export var isDynamicallyShowing = false
 export var listenerNodePath = "/root/game/player"
+export var isSingleHand = false
 
 var ball
 var bg 
@@ -68,13 +69,12 @@ func _input(event):
 func need2ChangeActivePointer(event): #touch down inside analog	
 	if event is InputEventMouseButton or event is InputEventScreenTouch:
 		if isDynamicallyShowing:
-			return true
-			#return get_parent().get_global_rect().has_point(Vector2(event.position.x, event.position.y))
+			return isSingleHand || get_parent().get_global_rect().has_point(Vector2(event.position.x, event.position.y))
 		else:
 			var length = (global_position - Vector2(event.position.x, event.position.y)).length_squared();
 			return length < squaredHalfSizeLength
 	else:
-	 	return false
+		return false
 
 func isActive():
 	return currentPointerIDX != INACTIVE_IDX
@@ -82,11 +82,17 @@ func isActive():
 func extractPointerIdx(event):
 	var touch = event is InputEventScreenTouch
 	var drag = event is InputEventScreenDrag
+	var gesture = event is InputEventGesture || event is InputEventPanGesture
 	var mouseButton = event is InputEventMouseButton
 	var mouseMove = event is InputEventMouseMotion
 	
+	#Ignore event if is outside of its rect
+	var parent_rect:Rect2 = parent.get_rect()
+	if (touch or drag or gesture) && !parent_rect.has_point(event.position):
+		return INACTIVE_IDX
+	
 	#print(event)
-	if touch or drag:
+	if touch or drag or gesture:
 		return 1
 	elif mouseButton or mouseMove:
 		#plog("SOMETHING IS VERYWRONG??, I HAVE MOUSE ON TOUCH DEVICE")
@@ -148,7 +154,8 @@ func sendSignal2Listener():
 		dispach_action("ui_right", false)
 		dispach_action("ui_left", false)
 		
-	dispach_action("ui_up", currentForce.y >= 0.3)
+	if not isSingleHand:
+		dispach_action("ui_up", currentForce.y >= 0.3)
 	dispach_action("ui_jump", currentForce.y >= 0.3)
 	dispach_action("ui_down", currentForce.y <= -0.3)
 		

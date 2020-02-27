@@ -12,10 +12,10 @@ func _physics_process(_delta):
 		_change_pause_state(!is_paused)
 		
 func _notification(what):
-    if what == MainLoop.NOTIFICATION_WM_FOCUS_IN:
-        _change_pause_state(true)
-    if what == MainLoop.NOTIFICATION_WM_FOCUS_OUT:
-        _change_pause_state(true)
+	if what == MainLoop.NOTIFICATION_WM_FOCUS_IN:
+		_change_pause_state(true)
+	if what == MainLoop.NOTIFICATION_WM_FOCUS_OUT:
+		_change_pause_state(true)
 
 
 func _on_ResumeButton_pressed():

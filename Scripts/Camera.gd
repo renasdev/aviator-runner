@@ -21,7 +21,7 @@ func _on_shake_timeout():
 
 func _process(_delta):
 	if is_shaking:
-	    set_offset(Vector2( \
-	        rand_range(-1.0, 1.0) * shake_amount, \
-	        rand_range(-1.0, 1.0) * shake_amount \
-	    ))
+		set_offset(Vector2( \
+			rand_range(-1.0, 1.0) * shake_amount, \
+			rand_range(-1.0, 1.0) * shake_amount \
+		))
