@@ -94,7 +94,7 @@ func extractPointerIdx(event):
 		return INACTIVE_IDX
 	
 	#print(event)
-	if touch or drag or gesture:
+	if touch or drag:
 		return 1
 	elif mouseButton or mouseMove:
 		#plog("SOMETHING IS VERYWRONG??, I HAVE MOUSE ON TOUCH DEVICE")
