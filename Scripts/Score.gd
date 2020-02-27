@@ -13,6 +13,9 @@ func _ready():
 
 
 func _on_ContinueButton_pressed():
+	if GameSave.current_state.is_beaten:
+		get_tree().change_scene("res://Stages/TitleScreen.tscn")
+		
 	GameSave.next_phase()
 	GameSave.current_gems_score = 0
 	GameSave.current_enemies_score = 0
