@@ -19,7 +19,6 @@ extents = Vector2( 4355, 107 )
 position = Vector2( -300, 90 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-editor/display_folded = true
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_offset = Vector2( 50, 50 )
@@ -54,7 +53,6 @@ autoplay = true
 bus = "Background"
 
 [node name="DeathZone" parent="." instance=ExtResource( 6 )]
-editor/display_folded = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone"]
 position = Vector2( 3410, 750 )
@@ -219,7 +217,6 @@ position = Vector2( 650, 420 )
 position = Vector2( -480, -4.5 )
 
 [node name="Waypoints2" parent="." instance=ExtResource( 8 )]
-editor/display_folded = true
 position = Vector2( 2350, 360 )
 
 [node name="Position2D" type="Position2D" parent="Waypoints2"]

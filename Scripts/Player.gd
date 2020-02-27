@@ -7,8 +7,11 @@ const MAX_HEIGHT = 750
 export var auto_kill_on_falling := true
 
 var motion = Vector2()
-var gems := 0
+var score := 0
 var dying := false
+
+var gems_counter := 0
+var enemy_counter := 0
 
 func _ready():
 	$AnimatedSprite.play("Idle")
@@ -91,9 +94,14 @@ func instant_kill():
 		$KillerTimer.start(0.1)
 	
 	
-func increment_gems(amount:int):
-	gems += amount
-	$UI/ControlUI/HBoxContainer/GemsCounter.text = "%04d" % gems
+func increment_gems(amount:int, is_enemy:bool = true):
+	score += amount
+	$UI/ControlUI/HBoxContainer/GemsCounter.text = "%04d" % score
+	
+	if is_enemy:
+		enemy_counter += 1
+	else:
+		gems_counter += 1
 	
 func bounce(force:float):
 	motion.y += force

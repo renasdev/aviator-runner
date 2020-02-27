@@ -15,6 +15,10 @@ var initial_save_date := {
 
 var current_state := {}
 
+var current_gems_score := 0
+var current_enemies_score := 0
+var current_score := 0
+
 func save_game():
 	_set_options_to_State()
 	current_state.version = ProjectSettings.get_setting("application/game/version")
