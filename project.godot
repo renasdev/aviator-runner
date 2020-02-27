@@ -26,7 +26,7 @@ boot_splash/image="res://renasdev-logo-white-splash.png"
 boot_splash/fullsize=false
 boot_splash/bg_color=Color( 0.129412, 0.266667, 0.470588, 1 )
 config/icon="res://Assets/icon_traveler.png"
-game/version="0.0.1"
+game/version="0.0.3"
 
 [autoload]
 
