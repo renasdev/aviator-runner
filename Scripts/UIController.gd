@@ -1,11 +1,18 @@
 extends CanvasLayer
 
 export var has_visibility_notifier := false
+export var is_single_hand := false
 
 var is_paused := false
 
 func _ready():
 	$MobileUI.visible = OS.has_touchscreen_ui_hint()
+	
+	$ControlAnalog/AnalogLeft.isSingleHand = is_single_hand
+	$ControlJump/JumpButton.isSingleHand = is_single_hand
+	
+	if OS.has_touchscreen_ui_hint() || OS.get_name() == "HTML5":
+		$ControlPause/VBoxContainer/QuitButton.hide()
 
 func _physics_process(_delta):
 	if Input.is_action_just_pressed("ui_pause"):

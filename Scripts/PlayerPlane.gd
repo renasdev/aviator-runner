@@ -5,8 +5,11 @@ const MAX_H_AUTO_SPEED = 300
 const MAX_V_SPEED = 400
 
 var motion := Vector2(0, 0)
-var gems := 0
+var score := 0
 var finished := false
+
+var gems_counter := 0
+var enemy_counter := 0
 
 func _ready():
 	pass
@@ -40,9 +43,14 @@ func take_damage():
 func bounce(_value):
 	take_damage()
 	
-func increment_gems(amount:int):
-	gems += amount
-	$UI/ControlUI/HBoxContainer/GemsCounter.text = "%04d" % gems
+func increment_gems(amount:int, is_enemy:bool = false):
+	score += amount
+	$UI/ControlUI/HBoxContainer/GemsCounter.text = "%04d" % score
+	
+	if is_enemy:
+		enemy_counter += 1
+	else:
+		gems_counter += 1
 	
 func instant_kill():
 	_kill()
@@ -67,4 +75,5 @@ func _on_RigidBody2D_body_entered(body):
 	
 func _on_FinishingTimer_timeout():
 	GameSave.beat_game()
-	get_tree().change_scene("res://Stages/Credits.tscn")
+	GameGlobals.was_last_stage = true
+	get_tree().change_scene("res://Stages/Score.tscn")

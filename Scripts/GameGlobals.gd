@@ -11,6 +11,11 @@ const PHASES = ["res://Stages/cena1.tscn",
 
 var _camera:Camera2D
 
+var current_gems_score := 0
+var current_enemies_score := 0
+var current_score := 0
+var was_last_stage := false
+
 func is_player(obj: Node2D):
 	return obj.get_name() == "Player" || obj.get_name() == "PlayerPlane"
 

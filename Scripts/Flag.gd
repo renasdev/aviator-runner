@@ -9,8 +9,8 @@ var player
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	timer.connect("timeout", self, "next_scene")
-	timer.set_wait_time( 1 )
+	timer.connect("timeout", self, "go_to_score")
+	timer.set_wait_time( 2 )
 	$CPUParticles2D.emitting = false
 
 func _on_Area2D_body_entered(body):
@@ -22,12 +22,10 @@ func _on_Area2D_body_entered(body):
 		player = body
 		
 #warning-ignore:return_value_discarded
-func next_scene():
-#	GameSave.next_phase()
-#	get_tree().change_scene(next_scene_path)
-	GameSave.current_gems_score = player.gems_counter
-	GameSave.current_enemies_score = player.enemy_counter
-	GameSave.current_score = player.score
+func go_to_score():
+	GameGlobals.current_gems_score = player.gems_counter
+	GameGlobals.current_enemies_score = player.enemy_counter
+	GameGlobals.current_score = player.score
 	get_tree().change_scene("res://Stages/Score.tscn")
 	
 	

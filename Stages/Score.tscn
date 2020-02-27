@@ -16,7 +16,7 @@ font_path = "res://Assets/Fonts/Open_Sans/OpenSans-BoldItalic.ttf"
 size = 64
 font_data = SubResource( 1 )
 
-[sub_resource type="AnimatedTexture" id=4]
+[sub_resource type="AnimatedTexture" id=3]
 flags = 4
 frames = 6
 fps = 10.0
@@ -32,7 +32,7 @@ frame_4/delay_sec = 0.0
 frame_5/texture = ExtResource( 2 )
 frame_5/delay_sec = 0.0
 
-[sub_resource type="SpriteFrames" id=3]
+[sub_resource type="SpriteFrames" id=4]
 animations = [ {
 "frames": [ ExtResource( 5 ), ExtResource( 3 ), ExtResource( 6 ), ExtResource( 4 ), ExtResource( 1 ), ExtResource( 2 ) ],
 "loop": true,
@@ -42,7 +42,7 @@ animations = [ {
 
 [sub_resource type="Animation" id=5]
 resource_name = "show"
-length = 3.0
+length = 3.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("VBoxContainer/CenterContainer/Label:visible")
 tracks/0/interp = 1
@@ -127,6 +127,20 @@ tracks/6/keys = {
 "update": 1,
 "values": [ true ]
 }
+tracks/7/type = "method"
+tracks/7/path = NodePath(".")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 3.1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "animation_finished"
+} ]
+}
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -180,13 +194,13 @@ __meta__ = {
 margin_left = 479.0
 margin_right = 543.0
 margin_bottom = 120.0
-texture = SubResource( 4 )
+texture = SubResource( 3 )
 stretch_mode = 1
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="VBoxContainer/HBoxContainer"]
 visible = false
 scale = Vector2( 4, 4 )
-frames = SubResource( 3 )
+frames = SubResource( 4 )
 frame = 3
 speed_scale = 2.0
 playing = true

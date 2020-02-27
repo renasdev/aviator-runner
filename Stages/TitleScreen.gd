@@ -19,7 +19,11 @@ func _ready():
 		$VBoxContainer/HBoxContainer/VBoxContainer/NewGame.text = 'resume'
 		
 	if not GameSave.current_state.is_beaten:
-		$VBoxContainer/HBoxContainer/VBoxContainer/ChoseStage.disabled = true
+		$VBoxContainer/HBoxContainer/VBoxContainer/ChoseStage.hide()
+#		$VBoxContainer/HBoxContainer/VBoxContainer/ChoseStage.disabled = true
+	
+	if OS.has_touchscreen_ui_hint() || OS.get_name() == "HTML5":
+		$VBoxContainer/HBoxContainer/VBoxContainer/Quit.hide()
 	
 #warning-ignore:return_value_discarded
 func _on_NewGame_pressed():

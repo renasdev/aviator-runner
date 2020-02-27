@@ -33,11 +33,11 @@ __meta__ = {
 }
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 2.0
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 position = Vector2( -8.76799, 31.6055 )
 rotation = 3.13893
+emitting = false
 amount = 32
 emission_shape = 2
 emission_rect_extents = Vector2( 5, 1 )
